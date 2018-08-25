@@ -15,7 +15,7 @@ Start by:
 
 Autonomous Steps working in a Group.
 1) Clone github repository from Alfon
-    1) git clone https://github.com/AStustiyono/SES-1B-Group-3.git
+    1) git clone https://github.com/ASustiyono/SES-1B-Group-3.git
 2) Make your own git branch
     1) git branch
     2) git branch <feature_branch>
