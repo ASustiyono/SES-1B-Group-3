@@ -33,7 +33,7 @@ Autonomous Steps working in a Group.
     2) Move all done tasks to 'Completed' Tab
 6) Report any issues or follow up help through Facebook immediately.
 
-What not to do. (DO NOT USE THIS LINE)
+What not to do. (DO NOT USE THIS LINE BELOW)
 1) git push origin master
 
 INSTEAD... use as such --> 
