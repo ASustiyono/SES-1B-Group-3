@@ -24,7 +24,7 @@ import Group3.seshealthpatient.Fragments.MapFragment;
 import Group3.seshealthpatient.Fragments.PatientInformationFragment;
 import Group3.seshealthpatient.Fragments.RecordVideoFragment;
 import Group3.seshealthpatient.Fragments.SendFileFragment;
-import Group3.seshealthpatient.R;
+import Group3.seshgit thpatient.R;
 
 
 /**
