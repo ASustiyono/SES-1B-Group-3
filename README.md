@@ -36,7 +36,7 @@ Autonomous Steps working in a Group.
 What not to do. (DO NOT USE THIS LINE)
 1) git push origin master
 
-INSTEAD... use below
+INSTEAD... use as such --> 
     2) git push origin <feature_branch> (Please use this)
 
 # SES-1B-Group-3
