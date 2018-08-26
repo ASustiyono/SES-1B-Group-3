@@ -72,8 +72,8 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         // A reference to the toolbar, that way we can modify it as we please
-        Toolbar toolbar = findViewById(R.id.login_toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.login_toolbar);
+        //setSupportActionBar(toolbar);
 
         // Please try to use more String resources (values -> strings.xml) vs hardcoded Strings.
         setTitle(R.string.login_activity_title);
@@ -114,13 +114,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    if(firstTime) {
+                    if(!firstTime) {
                         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
                                 .putBoolean("isFirstRun", false).commit();
 
-                        Intent gettingStartedIntent = new Intent(LoginActivity.this, TutorialActivity.class);
-                        gettingStartedIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(gettingStartedIntent);
+                        Intent tutorialIntent = new Intent(LoginActivity.this, TutorialActivity.class);
+                        tutorialIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(tutorialIntent);
                         finish();
                     }
                     else {

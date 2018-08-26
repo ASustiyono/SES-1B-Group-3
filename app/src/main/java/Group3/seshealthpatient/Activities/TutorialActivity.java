@@ -50,7 +50,7 @@ public class TutorialActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (mCurrentPage == 4) {
+                if (mCurrentPage == 5) {
                     finish();
                     Intent startIntent = new Intent(TutorialActivity.this, MainActivity.class);
                     startActivity(startIntent);
