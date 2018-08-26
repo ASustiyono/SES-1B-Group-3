@@ -16,6 +16,9 @@ Start by:
 Autonomous Steps working in a Group.
 1) Clone github repository from Alfon
     1) git clone https://github.com/ASustiyono/SES-1B-Group-3.git
+    2) or using android studio - file -> new -> project from version control -> git -> Repository URL: https://github.com/ASustiyono/SES-1B-Group-3.git                 
+    3) Make sure in logged into your account
+    4) Make sure you have downloaded git
 2) Make your own git branch
     1) git branch
     2) git branch <feature_branch>
