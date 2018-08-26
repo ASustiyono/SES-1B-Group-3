@@ -12,11 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-
-
 import android.view.MenuItem;
 import android.view.View;
-
 
 import Group3.seshealthpatient.Fragments.DataPacketFragment;
 import Group3.seshealthpatient.Fragments.HeartRateFragment;
@@ -42,7 +39,7 @@ import Group3.seshealthpatient.R;
  * completely the design of the app, but for this design specifically I will use Fragments.
  * <p>
  */
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
     /**
      * A basic Drawer layout that helps you build the side menu. I followed the steps on how to
