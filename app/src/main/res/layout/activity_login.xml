@@ -6,15 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="Group3.seshealthpatient.Activities.LoginActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/login_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:titleTextColor="@color/whiteColor"
-        />
-
 
     <TextView
         android:id="@+id/usernameTV"
@@ -23,16 +14,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
+        android:layout_marginStart="50dp"
         android:labelFor="@+id/usernameET"
         android:text="@string/username_txt" />
 
     <EditText
         android:id="@id/usernameET"
         style="@style/LoginStyles"
-        android:layout_width="wrap_content"
+        android:layout_width="193dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
+        android:layout_marginEnd="50dp"
         android:layout_toEndOf="@id/usernameTV"
         android:hint="@string/email_example_com"
         android:inputType="textEmailAddress" />
@@ -44,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@id/usernameTV"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:labelFor="@+id/passwordET"
         android:text="@string/password_txt" />
@@ -51,12 +45,10 @@
     <EditText
         android:id="@id/passwordET"
         style="@style/LoginStyles"
-        android:layout_width="wrap_content"
+        android:layout_width="193dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/usernameET"
-        android:layout_marginTop="20dp"
-        android:layout_toEndOf="@id/passwordTV"
+        android:layout_alignTop="@+id/passwordTV"
+        android:layout_toEndOf="@+id/usernameTV"
         android:inputType="textPassword" />
 
     <Button
@@ -64,10 +56,28 @@
         style="@style/LoginStyles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/passwordTV"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginBottom="150dp"
         android:text="@string/log_in_txt" />
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-150dp"
+        android:text="@string/register_txt" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="174dp"
+        android:layout_height="149dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        app:srcCompat="@drawable/gsfragmentslide1" />
 
 
 </RelativeLayout>
