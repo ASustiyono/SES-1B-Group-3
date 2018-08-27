@@ -35,6 +35,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         mAuth = FirebaseAuth.getInstance();
 
         findViewById(R.id.register_btn).setOnClickListener(this);
+        findViewById(R.id.register_close_btn).setOnClickListener(this);
     }
 
     private void registerUser() {
@@ -89,6 +90,9 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         switch(view.getId()){
             case R.id.register_btn:
                 registerUser();
+                break;
+            case R.id.register_close_btn:
+                finish();
                 break;
         }
     }

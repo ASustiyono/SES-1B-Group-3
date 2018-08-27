@@ -163,21 +163,18 @@ public class MainActivity extends AppCompatActivity {
                                 if (currentState != MenuStates.LOG_OUT) {
                                     //ChangeFragment(new MapFragment());
                                     currentState = MenuStates.LOG_OUT;
-                                    logoutUser();
-                                    finish();
-                                    startActivity(new Intent(MainActivity.this, LoginActivity.class ));
-                                    ;
+
+                                     logoutUser();
+                                     SharedPreferences pref = getSharedPreferences("PREFERENCE",
+                                     Context.MODE_PRIVATE);
+                                     SharedPreferences.Editor editor = pref.edit();
+                                     editor.putBoolean("isRemembered", false);
+                                     editor.commit();
+                                     startActivity(new Intent(MainActivity.this, LoginActivity.class ));
+                                     finish();
+
                                 }
-                                /**
-                                logoutUser();
-                                SharedPreferences pref = getActivity().getSharedPreferences("PREFERENCE",
-                                        Context.MODE_PRIVATE);
-                                SharedPreferences.Editor editor = pref.edit();
-                                editor.putBoolean("isRemembered", false);
-                                editor.commit();
-                                startActivity(new Intent(MainActivity.this), LoginActivity.class));
-                                getActivity().finish();
-                                */
+
                                 break;
                         }
 
