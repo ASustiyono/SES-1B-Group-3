@@ -52,7 +52,7 @@ public class TutorialActivity extends AppCompatActivity {
 
                 if (mCurrentPage == 5) {
                     finish();
-                    Intent startIntent = new Intent(TutorialActivity.this, MainActivity.class);
+                    Intent startIntent = new Intent(TutorialActivity.this, AddInfoActivity.class);
                     startActivity(startIntent);
                     finish();
                 }

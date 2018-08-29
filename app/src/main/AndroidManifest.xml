@@ -18,7 +18,12 @@
         </activity>
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.TutorialActivity" />
-        <activity android:name=".Activities.RegistrationActivity"></activity>
+        <activity android:name=".Activities.RegistrationActivity" />
+        <activity android:name=".Activities.AddInfoActivity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
