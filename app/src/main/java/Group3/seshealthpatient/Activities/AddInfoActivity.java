@@ -1,6 +1,7 @@
 package Group3.seshealthpatient.Activities;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,7 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -61,6 +65,14 @@ public class AddInfoActivity extends AppCompatActivity {
         Weight  = (EditText) findViewById(R.id.weightEditText);
         BloodType = (EditText) findViewById(R.id.bloodTypeEditText);
 
+        save_btn = findViewById(R.id.firstTime_save_btn);
+        save_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SaveUserInfo();
+            }
+        });
+
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
         Male.setChecked(true);
@@ -111,13 +123,28 @@ public class AddInfoActivity extends AppCompatActivity {
             userMap.put("weight", weight);
             userMap.put("blood type", bloodType);
         }
-    }
 
+        mUserRef.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
+            @Override
+            public void onComplete(@NonNull Task task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "Entered user info successfully!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(AddInfoActivity.this, MainActivity.class));
+                    finish();
+                }else{
+                    String message = task.getException().getMessage();
+                    Toast.makeText(getApplicationContext(), "Oh no! Something went wrong OWO.\n" + message, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+/*
     @OnClick(R.id.firstTime_save_btn)
     public void onClick(View v) {
 
         // TODO: FIX THIS BUTTON
-        startActivity(new Intent(AddInfoActivity.this, MainActivity.class));
-        finish();
+        //startActivity(new Intent(AddInfoActivity.this, MainActivity.class));
+        //finish();
     }
+    */
 }

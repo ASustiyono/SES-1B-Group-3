@@ -96,20 +96,6 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth Auth;
 
-    /**
-     * This is for send files to Firebase
-     */
-    private StorageReference mStorageRef;
-
-    private static final int RESULT_LOAD_IMAGE = 1;
-    private Button mSelectButton;
-    private RecyclerView mUploadList;
-
-    private List<String> fileNameList;
-    private List<String> fileDoneList;
-    private UploadListAdapter uploadListAdapter;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,36 +116,6 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
-
-        /**
-         * This is for Send File Fragment
-         */
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-
-        mSelectButton = (Button) findViewById(R.id.send_select_btn);
-        mUploadList = (RecyclerView) findViewById(R.id.send_list_view);
-
-        fileNameList = new ArrayList<>();
-        fileDoneList = new ArrayList<>();
-
-        uploadListAdapter = new UploadListAdapter(fileNameList, fileDoneList);
-
-        mUploadList.setLayoutManager(new LinearLayoutManager(this));
-        mUploadList.setHasFixedSize(true);
-        mUploadList.setAdapter(uploadListAdapter);
-
-        mSelectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent();
-                intent.setType("video/*");
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Video"), RESULT_LOAD_IMAGE);
-            }
-        });
-
 
         // Setup the navigation drawer, most of this code was taken from:
         // https://developer.android.com/training/implementing-navigation/nav-drawer
@@ -309,66 +265,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void logoutUser() {
         FirebaseAuth.getInstance().signOut();
-    }
-
-    /**
-     * This is for File Send
-     * @param requestCode
-     * @param resultCode
-     * @param data
-     */
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK) {
-
-            if(data.getClipData() != null) {
-
-                int totalItemsSelected = data.getClipData().getItemCount();
-
-                for(int i = 0; 1 < totalItemsSelected; i++) {
-
-                    Uri fileUri = data.getClipData().getItemAt(i).getUri();
-
-                    String fileName = getFileName(fileUri);
-
-                    fileNameList.add(fileName);
-                    uploadListAdapter.notifyDataSetChanged();
-
-                }
-                //Toast.makeText(MainActivity.this, "Select Multiple Files", Toast.LENGTH_SHORT).show();
-
-            } else if (data.getData() != null) {
-
-                //Toast.makeText(MainActivity.this, "Select Multiple Files", Toast.LENGTH_SHORT).show();
-
-            }
-        }
-    }
-
-    public String getFileName(Uri uri) {
-        String result = null;
-        if (uri.getScheme().equals("Context")) {
-            Cursor cursor = getContentResolver().query(uri, null, null, null, null); {
-                try {
-                    if (cursor != null && cursor.moveToFirst()) {
-                        result = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
-                    }
-                }finally {
-                    cursor.close();
-                }
-            }
-            if (result == null) {
-                result = uri.getPath();
-                int cut = result.lastIndexOf('/');
-                if (cut != -1) {
-                    result = result.substring(cut + 1);
-                }
-            }
-        }
-        return result;
     }
 
 }

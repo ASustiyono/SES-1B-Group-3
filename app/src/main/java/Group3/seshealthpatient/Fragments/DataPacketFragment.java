@@ -18,8 +18,6 @@ import Group3.seshealthpatient.R;
  */
 public class DataPacketFragment extends Fragment {
 
-    private StorageReference mStorageRef;
-
     public DataPacketFragment() {
         // Required empty public constructor
     }
@@ -27,11 +25,6 @@ public class DataPacketFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-
-
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
         getActivity().setTitle("Message Doctor");

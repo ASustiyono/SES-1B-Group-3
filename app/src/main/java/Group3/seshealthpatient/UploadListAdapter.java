@@ -34,6 +34,17 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Vi
         String fileName = fileNameList.get(position);
         holder.fileNameView.setText(fileName);
 
+        String fileDone = fileDoneList.get(position);
+
+        if(fileDone.equals("uploading" )) {
+
+            holder.fileDoneView.setImageResource(R.drawable.ic_round_hourglass_empty_24px);
+
+        } else {
+
+            holder.fileDoneView.setImageResource(R.drawable.ic_round_check_circle_outline_24px);
+
+        }
     }
 
     @Override
@@ -53,8 +64,8 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Vi
 
             mView = itemView;
 
-            fileNameView = (TextView) mView.findViewById(R.id.upload_filename);
-            fileDoneView = (ImageView) mView.findViewById(R.id.upload_loading);
+            fileNameView = mView.findViewById(R.id.upload_filename);
+            fileDoneView = mView.findViewById(R.id.upload_loading);
 
         }
     }

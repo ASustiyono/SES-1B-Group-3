@@ -9,6 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import Group3.seshealthpatient.R;
@@ -31,18 +39,22 @@ public class PatientInformationFragment extends Fragment {
     //@BindView(R.id.blank_frag_msg)
     TextView blankFragmentTV;
 
+    DatabaseReference databaseReference;
+    FirebaseUser userId;
+    String uid;
+    TextView FirstName,LastName,Gender,Age,Height,Weight,BloodType;
 
     public PatientInformationFragment() {
         // Required empty public constructor
     }
-
+/*
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
-        getActivity().setTitle("Username Information");
-    }
+        //getActivity().setTitle("Username Information");
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,14 +65,45 @@ public class PatientInformationFragment extends Fragment {
         // Note how we are telling butter knife to bind during the on create view method
         ButterKnife.bind(this, v);
 
+        FirstName = v.findViewById(R.id.userInfo_firstName_textView);
+        LastName = v.findViewById(R.id.userInfo_lastName_textView);
+        Gender = v.findViewById(R.id.userInfo_gender_textView);
+        Age = v.findViewById(R.id.userInfo_age_textView);
+        Height = v.findViewById(R.id.userInfo_height_textView);
+        Weight = v.findViewById(R.id.userInfo_weight_textView);
+        BloodType = v.findViewById(R.id.userInfo_bloodType_textView);
+        userId = FirebaseAuth.getInstance().getCurrentUser();
+        uid = userId.getUid();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                FirstName.setText(dataSnapshot.child("Users").child(uid).child("firstName").getValue(String.class));
+                LastName.setText(dataSnapshot.child("Users").child(uid).child("lastName").getValue(String.class));
+                Gender.setText(dataSnapshot.child("Users").child(uid).child("gender").getValue(String.class));
+                Age.setText(dataSnapshot.child("Users").child(uid).child("age").getValue(String.class));
+                Height.setText(dataSnapshot.child("Users").child(uid).child("height").getValue(String.class));
+                Weight.setText(dataSnapshot.child("Users").child(uid).child("weight").getValue(String.class));
+                BloodType.setText(dataSnapshot.child("Users").child(uid).child("bloodType").getValue(String.class));
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                //Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
         return v;
     }
 
-
+/*
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Now that the view has been created, we can use butter knife functionality
         //blankFragmentTV.setText("Welcome to this fragment");
     }
+    */
 }

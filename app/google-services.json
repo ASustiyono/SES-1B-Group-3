@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "390245301141-ntghrjorjm12kqqf3u6133hs2vt99u32.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Group3.seshealthpatient",
+            "certificate_hash": "82259088e273fb7f06c28fceace8255b0fcc7cf7"
+          }
+        },
+        {
+          "client_id": "390245301141-ms5ubov74lptq7e7buqdkm7m4ph50f6c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Group3.seshealthpatient",
+            "certificate_hash": "4cc914fe0d0ff40e20729ee36948b26dbed5b9a8"
+          }
+        },
+        {
           "client_id": "390245301141-v7v397nbetmfuv54p0v5o9ht6jf90gfs.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +45,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390245301141-v7v397nbetmfuv54p0v5o9ht6jf90gfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
