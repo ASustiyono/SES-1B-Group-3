@@ -63,7 +63,7 @@ public class PatientInformationFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_patient_information, container, false);
 
         // Note how we are telling butter knife to bind during the on create view method
-        ButterKnife.bind(this, v);
+        //ButterKnife.bind(this, v);
 
         FirstName = v.findViewById(R.id.userInfo_firstName_textView);
         LastName = v.findViewById(R.id.userInfo_lastName_textView);
@@ -76,18 +76,16 @@ public class PatientInformationFragment extends Fragment {
         uid = userId.getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-                FirstName.setText(dataSnapshot.child("Users").child(uid).child("firstName").getValue(String.class));
-                LastName.setText(dataSnapshot.child("Users").child(uid).child("lastName").getValue(String.class));
-                Gender.setText(dataSnapshot.child("Users").child(uid).child("gender").getValue(String.class));
-                Age.setText(dataSnapshot.child("Users").child(uid).child("age").getValue(String.class));
-                Height.setText(dataSnapshot.child("Users").child(uid).child("height").getValue(String.class));
-                Weight.setText(dataSnapshot.child("Users").child(uid).child("weight").getValue(String.class));
-                BloodType.setText(dataSnapshot.child("Users").child(uid).child("bloodType").getValue(String.class));
+                FirstName.setText(dataSnapshot.child("Patients").child(uid).child("firstName").getValue(String.class));
+                LastName.setText(dataSnapshot.child("Patients").child(uid).child("lastName").getValue(String.class));
+                Gender.setText(dataSnapshot.child("Patients").child(uid).child("gender").getValue(String.class));
+                Age.setText(dataSnapshot.child("Patients").child(uid).child("age").getValue(String.class));
+                Height.setText(dataSnapshot.child("Patients").child(uid).child("height").getValue(String.class));
+                Weight.setText(dataSnapshot.child("Patients").child(uid).child("weight").getValue(String.class));
+                BloodType.setText(dataSnapshot.child("Patients").child(uid).child("bloodType").getValue(String.class));
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

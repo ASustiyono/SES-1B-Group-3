@@ -115,13 +115,13 @@ public class AddInfoActivity extends AppCompatActivity {
             BloodType.setError("Required");
             return;
         } else {
-            userMap.put("first name", firstName);
-            userMap.put("last name", lastName);
+            userMap.put("firstName", firstName);
+            userMap.put("lastName", lastName);
             userMap.put("gender", MaleFemale.getText());
             userMap.put("age", age);
             userMap.put("height", height);
             userMap.put("weight", weight);
-            userMap.put("blood type", bloodType);
+            userMap.put("bloodType", bloodType);
         }
 
         mUserRef.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
