@@ -52,7 +52,7 @@ public class SendFileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_send_file, container, false);
-
+        /*
         // Stores it on Firebase
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
@@ -60,11 +60,11 @@ public class SendFileFragment extends Fragment {
         fileNameList = new ArrayList<>();
         fileDoneList = new ArrayList<>();
 
-        //Select File and display recyclerview
+        //Select File and display recycler view
         mSelectButton = view.findViewById(R.id.send_select_btn);
         mUploadList = view.findViewById(R.id.send_list_view);
 
-        //Display item in a recylerview using an adapter
+        //Display item in a recyler view using an adapter
         uploadListAdapter = new UploadListAdapter(fileNameList, fileDoneList);
 
         mUploadList.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -76,34 +76,36 @@ public class SendFileFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent intent = new Intent();
-                intent.setType("video/*image/*");
+                intent.setType("video/*");
                 intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select file"), RESULT_LOAD_IMAGE);
+                startActivityForResult(Intent.createChooser(intent, "Select video"), RESULT_LOAD_IMAGE);
             }
         });
-
+*/
         return view;
     }
-
-    /**
-     * This is for File Send
-     * @param requestCode
-     * @param resultCode
-     * @param data
-     */
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == RESULT_LOAD_IMAGE && resultCode == getActivity().RESULT_OK) {
+        if(requestCode == RESULT_LOAD_IMAGE && resultCode == android.app.Activity.RESULT_OK) {
+
+        }
+
+        Uri uri = data.getData();
+
+        Toast.makeText(getActivity(), "File Selected", Toast.LENGTH_SHORT).show();
+
+/*
+        if(requestCode == RESULT_LOAD_IMAGE && resultCode == android.app.Activity.RESULT_OK) {
 
             if(data.getClipData() != null) {
 
                 int totalItemsSelected = data.getClipData().getItemCount();
 
-                for(int i = 0; 1 < totalItemsSelected; i++) {
+                for(int i = 0; i < totalItemsSelected; i++) {
 
                     Uri fileUri = data.getClipData().getItemAt(i).getUri();
 
@@ -113,7 +115,7 @@ public class SendFileFragment extends Fragment {
                     fileDoneList.add("uploading");
                     uploadListAdapter.notifyDataSetChanged();
 
-                    StorageReference fileToUpload = mStorageRef.child("Files").child(fileName);
+                    StorageReference fileToUpload = mStorageRef.child("Videos").child(fileName);
 
                     final int finalI = i;
                     fileToUpload.putFile(fileUri).addOnSuccessListener( new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -128,12 +130,11 @@ public class SendFileFragment extends Fragment {
                         }
                     });
                 }
-                //Toast.makeText(MainActivity.this, "Select Multiple Files", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Selected Multiple Files", Toast.LENGTH_SHORT).show();
 
             } else if (data.getData() != null) {
 
-                //Toast.makeText( getActivity().this, "Select Multiple Files", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText( getActivity(), "Select Multiple Files", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -159,5 +160,5 @@ public class SendFileFragment extends Fragment {
             }
         return result;
     }
-
-}
+    */
+} }

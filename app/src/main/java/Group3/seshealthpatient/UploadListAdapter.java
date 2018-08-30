@@ -9,15 +9,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.ViewHolder> {
+public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.ViewHolder>{
 
     public List<String> fileNameList;
     public List<String> fileDoneList;
 
-    public UploadListAdapter(List<String> fileNameList, List<String> fileDoneList) {
+    public UploadListAdapter(List<String> fileNameList, List<String>fileDoneList){
 
         this.fileDoneList = fileDoneList;
         this.fileNameList = fileNameList;
+
     }
 
     @Override
@@ -36,7 +37,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Vi
 
         String fileDone = fileDoneList.get(position);
 
-        if(fileDone.equals("uploading" )) {
+        if(fileDone.equals("uploading")){
 
             holder.fileDoneView.setImageResource(R.drawable.ic_round_hourglass_empty_24px);
 
@@ -45,6 +46,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Vi
             holder.fileDoneView.setImageResource(R.drawable.ic_round_check_circle_outline_24px);
 
         }
+
     }
 
     @Override
@@ -64,10 +66,9 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Vi
 
             mView = itemView;
 
-            fileNameView = mView.findViewById(R.id.upload_filename);
-            fileDoneView = mView.findViewById(R.id.upload_loading);
+            fileNameView = (TextView) mView.findViewById(R.id.upload_filename);
+            fileDoneView = (ImageView) mView.findViewById(R.id.upload_loading);
 
         }
     }
-
 }
