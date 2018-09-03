@@ -37,4 +37,9 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
+    //below here im going to include google api found:https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project
+
+    implementation 'com.google.android.gms:play-services-places:15.0.1' //compliles google places api
+    implementation 'com.google.android.gms:play-services-maps:15.0.1' //compiles google maps api
+
 }
