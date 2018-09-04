@@ -23,7 +23,7 @@ import Group3.seshealthpatient.R;
 
 import static android.content.ContentValues.TAG;
 
-public class RecordVideo extends Activity implements SurfaceHolder.Callback {
+public class RecordVideoActivity extends Activity implements SurfaceHolder.Callback {
 
     private SurfaceView mSurfaceview;
     private Button mBtnStartStop;
@@ -154,7 +154,7 @@ public class RecordVideo extends Activity implements SurfaceHolder.Callback {
                 }
                 mediaPlayer.reset();
                 Uri uri = Uri.parse(path);
-                mediaPlayer = MediaPlayer.create(RecordVideo.this, uri);
+                mediaPlayer = MediaPlayer.create(RecordVideoActivity.this, uri);
                 mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                 mediaPlayer.setDisplay(mSurfaceHolder);
                 try{

@@ -36,6 +36,7 @@ import Group3.seshealthpatient.Fragments.HeartRateFragment;
 import Group3.seshealthpatient.Fragments.MapFragment;
 import Group3.seshealthpatient.Fragments.PatientInformationFragment;
 //import Group3.seshealthpatient.Fragments.RecordVideoFragment;
+import Group3.seshealthpatient.Fragments.RecordVideoFragment;
 import Group3.seshealthpatient.Fragments.SendFileFragment;
 import Group3.seshealthpatient.R;
 import Group3.seshealthpatient.UploadListAdapter;
@@ -152,12 +153,12 @@ public class MainActivity extends AppCompatActivity {
                                     currentState = MenuStates.HEARTRATE;
                                 }
                                 break;
-                            /*case R.id.nav_recordvideo:
+                            case R.id.nav_recordvideo:
                                 if (currentState != MenuStates.RECORD_VIDEO) {
                                     ChangeFragment(new RecordVideoFragment());
                                     currentState = MenuStates.RECORD_VIDEO;
                                 }
-                                break;*/
+                                break;
                             case R.id.nav_sendfile:
                                 if (currentState != MenuStates.SEND_FILE) {
                                     ChangeFragment(new SendFileFragment());
