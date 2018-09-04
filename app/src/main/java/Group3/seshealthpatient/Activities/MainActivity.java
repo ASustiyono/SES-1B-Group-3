@@ -37,6 +37,7 @@ import Group3.seshealthpatient.Fragments.MapFragment;
 import Group3.seshealthpatient.Fragments.PatientInformationFragment;
 import Group3.seshealthpatient.Fragments.RecordVideoFragment;
 import Group3.seshealthpatient.Fragments.SendFileFragment;
+import Group3.seshealthpatient.Fragments.RecievePacket;
 import Group3.seshealthpatient.R;
 import Group3.seshealthpatient.UploadListAdapter;
 
@@ -81,6 +82,23 @@ public class MainActivity extends AppCompatActivity {
      */
     private static String TAG = "MainActivity";
 
+
+    @Override
+    public void onMessageSend(String message) {
+
+        RecievePacket recievePacket= new RecievePacket();
+        Bundle bundle = new Bundle();
+        bundle.putString("message", message);
+        recievePacket.setArguments(bundle);
+
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, recievePacket, null);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+
+
+    }
     /**
      * I am using this enum to know which is the current fragment being displayed, you will see
      * what I mean with this later in this code.
@@ -93,6 +111,27 @@ public class MainActivity extends AppCompatActivity {
      * The current fragment being displayed.
      */
     private MenuStates currentState;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        if (findViewById(R.id.fragment_container) !=null)
+        {
+            if(savedInstanceState !=null)
+            {
+                return;
+            }
+
+            DataPacketFragment messageFragment = new DataPacketFragment();
+
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,DataPacketFragment, null).commit();
+
+
+
+        }
 
     private FirebaseAuth Auth;
 
