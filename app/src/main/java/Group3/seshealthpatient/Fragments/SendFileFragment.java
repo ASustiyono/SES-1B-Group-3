@@ -26,6 +26,7 @@ import java.util.List;
 import Group3.seshealthpatient.Activities.MainActivity;
 import Group3.seshealthpatient.R;
 import Group3.seshealthpatient.UploadListAdapter;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,6 +53,8 @@ public class SendFileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_send_file, container, false);
+
+        ButterKnife.bind(this ,view);
         /*
         // Stores it on Firebase
         mStorageRef = FirebaseStorage.getInstance().getReference();

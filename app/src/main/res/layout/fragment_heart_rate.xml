@@ -6,8 +6,6 @@
     android:orientation="vertical"
     tools:context="Group3.seshealthpatient.Fragments.HeartRateFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

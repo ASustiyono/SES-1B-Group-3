@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activities.LoginActivity">
+        <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,11 +19,15 @@
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.TutorialActivity" />
         <activity android:name=".Activities.RegistrationActivity" />
-        <activity android:name=".Activities.AddInfoActivity"></activity>
+        <activity android:name=".Activities.AddInfoActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.HelloActivity"/>
+        <activity android:name=".Activities.RecordVideoActivity"/>
     </application>
 
 </manifest>

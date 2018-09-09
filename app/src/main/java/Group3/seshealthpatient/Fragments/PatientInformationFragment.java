@@ -63,7 +63,7 @@ public class PatientInformationFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_patient_information, container, false);
 
         // Note how we are telling butter knife to bind during the on create view method
-        //ButterKnife.bind(this, v);
+        ButterKnife.bind(this, v);
 
         FirstName = v.findViewById(R.id.userInfo_firstName_textView);
         LastName = v.findViewById(R.id.userInfo_lastName_textView);
