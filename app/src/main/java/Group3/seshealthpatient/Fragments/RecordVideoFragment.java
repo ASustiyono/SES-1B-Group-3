@@ -30,12 +30,10 @@ public class RecordVideoFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ButterKnife.bind(getActivity());
-
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
         //getActivity().setTitle("Message Doctor");
+        //ButterKnife.bind(getActivity());
 
     }
 
@@ -43,16 +41,17 @@ public class RecordVideoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View v = inflater.inflate(R.layout.fragment_record_video, container, false);
-        recordBtn = (Button) v.findViewById(R.id.record_video_btn);
+
+        ButterKnife.bind(this, v);
 
         return v;
     }
 
     @OnClick(R.id.record_video_btn)
-    public void OnClick(View v) {
-        startActivity(new Intent(getActivity(), RecordVideoActivity.class));
+    public void OnClick(View view) {
+        Intent intent = new Intent(getActivity(), RecordVideoActivity.class);
+        startActivity(intent);
     }
 
 }

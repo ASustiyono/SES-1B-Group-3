@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import Group3.seshealthpatient.R;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +25,8 @@ public class MapFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        ButterKnife.bind(getActivity());
+
         return inflater.inflate(R.layout.fragment_map, container, false);
     }
 

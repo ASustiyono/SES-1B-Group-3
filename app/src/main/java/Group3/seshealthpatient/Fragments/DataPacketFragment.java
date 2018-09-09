@@ -12,6 +12,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import Group3.seshealthpatient.R;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +36,8 @@ public class DataPacketFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        ButterKnife.bind(getActivity());
+
         return inflater.inflate(R.layout.fragment_data_packet, container, false);
     }
 

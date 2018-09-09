@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     tools:context="Group3.seshealthpatient.Fragments.MapFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
