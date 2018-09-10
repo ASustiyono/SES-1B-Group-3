@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import Group3.seshealthpatient.Adapter.SliderAdapter;
 import Group3.seshealthpatient.R;
 
 public class TutorialActivity extends AppCompatActivity {
@@ -50,7 +51,7 @@ public class TutorialActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (mCurrentPage == 5) {
+                if (mCurrentPage == 6) {
                     finish();
                     Intent startIntent = new Intent(TutorialActivity.this, AddInfoActivity.class);
                     startActivity(startIntent);
@@ -74,7 +75,7 @@ public class TutorialActivity extends AppCompatActivity {
     }
 
     public void addDotsIndicator(int position) {
-        mDots = new TextView[6];
+        mDots = new TextView[7];
         mDotLayout.removeAllViews();
 
         for (int i = 0; i < mDots.length; i++) {
