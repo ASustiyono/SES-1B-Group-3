@@ -26,8 +26,9 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.HelloActivity"/>
-        <activity android:name=".Activities.RecordVideoActivity"/>
+        <activity android:name=".Activities.HelloActivity" />
+        <activity android:name=".Activities.RecordVideoActivity" />
+        <activity android:name=".Activities.EditInfoActivity"></activity>
     </application>
 
 </manifest>

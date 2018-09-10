@@ -4,4 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="whiteColor">#FFFF</color>
+    <color name="text_dark_gray">#353535</color>
+    <color name="title_text">#ffffff</color>
+    <color name="text_title_lightGray">#969696</color>
+    <color name="checkUp_yellow">#fff831</color>
+    <color name="checkUp_purple">#7a5ae6</color>
+    <color name="checkUp_red">#ff3b30</color>
+    <color name="checkUp_blue">#008eee</color>
 </resources>

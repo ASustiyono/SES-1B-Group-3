@@ -21,8 +21,6 @@ import butterknife.OnClick;
  */
 public class RecordVideoFragment extends Fragment {
 
-    private Button recordBtn;
-
     public RecordVideoFragment() {
         // Required empty public constructor
     }
@@ -32,7 +30,7 @@ public class RecordVideoFragment extends Fragment {
         super.onCreate(savedInstanceState);
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
-        //getActivity().setTitle("Message Doctor");
+        getActivity().setTitle("YOUR SNIPPETS");
         //ButterKnife.bind(getActivity());
 
     }

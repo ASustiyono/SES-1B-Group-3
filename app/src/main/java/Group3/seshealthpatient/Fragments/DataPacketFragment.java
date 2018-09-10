@@ -28,7 +28,7 @@ public class DataPacketFragment extends Fragment {
         super.onCreate(savedInstanceState);
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
-        getActivity().setTitle("Message Doctor");
+        getActivity().setTitle("YOUR MESSAGES");
 
     }
 

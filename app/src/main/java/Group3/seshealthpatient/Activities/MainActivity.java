@@ -6,9 +6,6 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.net.Uri;
-import android.provider.OpenableColumns;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,20 +13,12 @@ import android.support.v7.app.ActionBar;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import Group3.seshealthpatient.Fragments.DataPacketFragment;
 import Group3.seshealthpatient.Fragments.HeartRateFragment;
@@ -39,7 +28,6 @@ import Group3.seshealthpatient.Fragments.PatientInformationFragment;
 import Group3.seshealthpatient.Fragments.RecordVideoFragment;
 import Group3.seshealthpatient.Fragments.SendFileFragment;
 import Group3.seshealthpatient.R;
-import Group3.seshealthpatient.UploadListAdapter;
 
 
 /**
@@ -138,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (currentState != MenuStates.PATIENT_INFO) {
                                     // change the fragment to the new fragment
                                     ChangeFragment(new PatientInformationFragment());
-                                    currentState = MenuStates.PATIENT_INFO;
+                                    currentState = MenuStates.PATIENT_INFO;;
                                 }
                                 break;
                             case R.id.nav_data_packet:
@@ -172,7 +160,6 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 break;
                             case R.id.nav_logout:
-
                                 if (currentState != MenuStates.LOG_OUT) {
                                     //ChangeFragment(new MapFragment());
                                     currentState = MenuStates.LOG_OUT;
@@ -187,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
                                      finish();
 
                                 }
-
                                 break;
                         }
 

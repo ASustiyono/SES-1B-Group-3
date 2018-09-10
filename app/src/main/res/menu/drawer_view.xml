@@ -3,27 +3,41 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_patient_info"
-            android:title="@string/patient_information" />
+            android:title="@string/patient_information"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
         <item
             android:id="@+id/nav_data_packet"
-            android:title="@string/create_data_packet" />
+            android:title="@string/create_data_packet"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
         <item
             android:id="@+id/nav_heartrate"
-            android:title="@string/heart_rate" />
+            android:title="@string/heart_rate"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
         <item
             android:id="@+id/nav_recordvideo"
-            android:title="@string/record_video" />
+            android:title="@string/record_video"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
         <item
             android:id="@+id/nav_sendfile"
-            android:title="@string/send_local_file" />
+            android:title="@string/send_local_file"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
 
         <item
             android:id="@+id/nav_map"
-            android:title="@string/facilities_map" />
+            android:title="@string/facilities_map"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
 
         <item
             android:id="@+id/nav_logout"
-            android:title="Logout" />
+            android:title="LOGOUT"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
 
     </group>
 </menu>

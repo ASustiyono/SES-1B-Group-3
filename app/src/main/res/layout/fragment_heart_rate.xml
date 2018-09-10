@@ -2,46 +2,173 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="@drawable/background_gradient_invert"
+    android:gravity="top|center"
     android:orientation="vertical"
     tools:context="Group3.seshealthpatient.Fragments.HeartRateFragment">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/checkUp_yellow"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:text="Record Heart Rate"
+        android:textColor="@color/checkUp_red"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/heart_timer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald_bold"
+                android:text="CURRENT"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/common_google_signin_btn_text_light_focused"
+                android:textSize="18sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/oswald_bold"
+                    android:text="80"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/checkUp_yellow"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/oswald_bold"
+                    android:gravity="center"
+                    android:text="BPM"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
+                android:text="Scanning heart rate..."
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="BPM" />
+            android:layout_margin="10dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"
+            android:text="YOUR HEART RATE"
+            android:textColor="@color/text_dark_gray" />
 
-        <TextView
-            android:id="@+id/textView3"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Scanning heart rate..." />
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:text="53-125 BPM"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="HEART RATE"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_title_lightGray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:text="55 BPM"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/checkUp_blue"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="RESTING RATE"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_title_lightGray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </TableRow>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Record Heart Rate" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="HISTORY" />
-
-    </LinearLayout>
 </LinearLayout>

@@ -1,4 +1,4 @@
-package Group3.seshealthpatient;
+package Group3.seshealthpatient.Adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import Group3.seshealthpatient.R;
 
 public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.ViewHolder>{
 
@@ -24,7 +26,7 @@ public class UploadListAdapter extends RecyclerView.Adapter<UploadListAdapter.Vi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.send_list_item_single, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate( R.layout.send_list_item_single, parent, false);
         return new ViewHolder(v);
 
     }

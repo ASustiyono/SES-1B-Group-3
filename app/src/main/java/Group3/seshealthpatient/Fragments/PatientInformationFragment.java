@@ -1,6 +1,7 @@
 package Group3.seshealthpatient.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.Nullable;
@@ -17,9 +18,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import Group3.seshealthpatient.Activities.EditInfoActivity;
+import Group3.seshealthpatient.Activities.RecordVideoActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import Group3.seshealthpatient.R;
+import butterknife.OnClick;
 
 /**
  * Class: PatientInformationFragment
@@ -47,14 +51,14 @@ public class PatientInformationFragment extends Fragment {
     public PatientInformationFragment() {
         // Required empty public constructor
     }
-/*
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
-        //getActivity().setTitle("Username Information");
-    }*/
+        getActivity().setTitle("YOUR PROFILE");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,4 +108,10 @@ public class PatientInformationFragment extends Fragment {
         //blankFragmentTV.setText("Welcome to this fragment");
     }
     */
+
+    @OnClick(R.id.edit_btn)
+    public void OnClick(View view) {
+        Intent intent = new Intent(getActivity(), EditInfoActivity.class);
+        startActivity(intent);
+    }
 }
