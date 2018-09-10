@@ -7,7 +7,7 @@
     tools:context="Group3.seshealthpatient.Fragments.MapFragment">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/search_nearest_clinic_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
