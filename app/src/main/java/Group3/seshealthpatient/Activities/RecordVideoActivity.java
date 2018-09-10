@@ -145,7 +145,7 @@ public class RecordVideoActivity extends Activity implements SurfaceHolder.Callb
         });
 
         mBtnPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
+            //@Override
             public void onClick(View view) {
                 mIsPlay = true;
                 mImageView.setVisibility(View.GONE);
