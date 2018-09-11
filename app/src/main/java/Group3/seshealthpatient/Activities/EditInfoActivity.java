@@ -179,4 +179,5 @@ public class EditInfoActivity extends AppCompatActivity {
             }
         });
     }
+
 }
