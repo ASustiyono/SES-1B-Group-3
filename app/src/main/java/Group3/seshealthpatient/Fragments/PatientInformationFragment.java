@@ -19,7 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import Group3.seshealthpatient.Activities.EditInfoActivity;
+import Group3.seshealthpatient.Activities.LoginActivity;
 import Group3.seshealthpatient.Activities.RecordVideoActivity;
+import Group3.seshealthpatient.Activities.RegistrationActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import Group3.seshealthpatient.R;
@@ -114,4 +116,19 @@ public class PatientInformationFragment extends Fragment {
         Intent intent = new Intent(getActivity(), EditInfoActivity.class);
         startActivity(intent);
     }
+
+    /***
+    @OnClick({R.id.edit_btn,R.id.new_btn})
+    public void OnClick(View view) {
+            switch(view.getId()) {
+                case R.id.edit_btn:
+                    //method
+                    break;
+                case R.id.new_btn:
+                    //method
+                    break;
+            }
+        }
+    }
+    */
 }
