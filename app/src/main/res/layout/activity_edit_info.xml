@@ -76,13 +76,13 @@
         android:gravity="center">
 
         <RadioGroup
-            android:id="@+id/genderRadioGrp"
+            android:id="@+id/edit_genderRadioGrp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/maleRadioBtn"
+                android:id="@+id/edit_maleRadioBtn"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
@@ -92,7 +92,7 @@
                 android:textSize="18sp" />
 
             <RadioButton
-                android:id="@+id/femaleRadioBtn"
+                android:id="@+id/edit_femaleRadioBtn"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
