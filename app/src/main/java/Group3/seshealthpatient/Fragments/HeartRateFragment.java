@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import Group3.seshealthpatient.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HeartRateFragment extends Fragment {
 
 
@@ -27,4 +24,7 @@ public class HeartRateFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_heart_rate, container, false);
     }
 
+/**
+ * A simple {@link Fragment} subclass.
+ */
 }

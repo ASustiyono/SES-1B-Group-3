@@ -41,7 +41,8 @@ import Group3.seshealthpatient.R;
  * completely the design of the app, but for this design specifically I will use Fragments.
  * <p>
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 
     /**
      * A basic Drawer layout that helps you build the side menu. I followed the steps on how to
@@ -70,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
      * I am using this enum to know which is the current fragment being displayed, you will see
      * what I mean with this later in this code.
      */
-    private enum MenuStates {
+    private enum MenuStates
+    {
         PATIENT_INFO, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP
     }
 
@@ -81,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -104,51 +107,60 @@ public class MainActivity extends AppCompatActivity {
         // https://developer.android.com/training/implementing-navigation/nav-drawer
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
+                new NavigationView.OnNavigationItemSelectedListener()
+                {
                     @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                    public boolean onNavigationItemSelected(MenuItem menuItem)
+                    {
                         // set item as selected to persist highlight
                         menuItem.setChecked(true);
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
 
                         // Using a switch to see which item on the menu was clicked
-                        switch (menuItem.getItemId()) {
+                        switch (menuItem.getItemId())
+                        {
                             // You can find these id's at: res -> menu -> drawer_view.xml
                             case R.id.nav_patient_info:
                                 // If the user clicked on a different item than the current item
-                                if (currentState != MenuStates.PATIENT_INFO) {
+                                if (currentState != MenuStates.PATIENT_INFO)
+                                {
                                     // change the fragment to the new fragment
                                     ChangeFragment(new PatientInformationFragment());
                                     currentState = MenuStates.PATIENT_INFO;
                                 }
                                 break;
                             case R.id.nav_data_packet:
-                                if (currentState != MenuStates.DATA_PACKET) {
+                                if (currentState != MenuStates.DATA_PACKET)
+                                {
                                     ChangeFragment(new DataPacketFragment());
                                     currentState = MenuStates.DATA_PACKET;
                                 }
                                 break;
                             case R.id.nav_heartrate:
-                                if (currentState != MenuStates.HEARTRATE) {
+                                if (currentState != MenuStates.HEARTRATE)
+                                {
                                     ChangeFragment(new HeartRateFragment());
                                     currentState = MenuStates.HEARTRATE;
                                 }
                                 break;
                             case R.id.nav_recordvideo:
-                                if (currentState != MenuStates.RECORD_VIDEO) {
+                                if (currentState != MenuStates.RECORD_VIDEO)
+                                {
                                     ChangeFragment(new RecordVideoFragment());
                                     currentState = MenuStates.RECORD_VIDEO;
                                 }
                                 break;
                             case R.id.nav_sendfile:
-                                if (currentState != MenuStates.SEND_FILE) {
+                                if (currentState != MenuStates.SEND_FILE)
+                                {
                                     ChangeFragment(new SendFileFragment());
                                     currentState = MenuStates.SEND_FILE;
                                 }
                                 break;
                             case R.id.nav_map:
-                                if (currentState != MenuStates.NAVIGATION_MAP) {
+                                if (currentState != MenuStates.NAVIGATION_MAP)
+                                {
                                     ChangeFragment(new MapFragment());
                                     currentState = MenuStates.NAVIGATION_MAP;
                                 }
@@ -161,24 +173,29 @@ public class MainActivity extends AppCompatActivity {
 
         // If you need to listen to specific events from the drawer layout.
         mDrawerLayout.addDrawerListener(
-                new DrawerLayout.DrawerListener() {
+                new DrawerLayout.DrawerListener()
+                {
                     @Override
-                    public void onDrawerSlide(View drawerView, float slideOffset) {
+                    public void onDrawerSlide(View drawerView, float slideOffset)
+                    {
                         // Respond when the drawer's position changes
                     }
 
                     @Override
-                    public void onDrawerOpened(View drawerView) {
+                    public void onDrawerOpened(View drawerView)
+                    {
                         // Respond when the drawer is opened
                     }
 
                     @Override
-                    public void onDrawerClosed(View drawerView) {
+                    public void onDrawerClosed(View drawerView)
+                    {
                         // Respond when the drawer is closed
                     }
 
                     @Override
-                    public void onDrawerStateChanged(int newState) {
+                    public void onDrawerStateChanged(int newState)
+                    {
                         // Respond when the drawer motion state changes
                     }
                 }
@@ -198,8 +215,10 @@ public class MainActivity extends AppCompatActivity {
      * Called when one of the items in the toolbar was clicked, in this case, the menu button.
      */
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
@@ -212,7 +231,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param newTitle The new title to write in the
      */
-    public void ChangeTitle(String newTitle) {
+    public void ChangeTitle(String newTitle)
+    {
         toolbar.setTitle(newTitle);
     }
 
@@ -221,7 +241,8 @@ public class MainActivity extends AppCompatActivity {
      * This function allows to change the content of the Fragment holder
      * @param fragment The fragment to be displayed
      */
-    private void ChangeFragment(Fragment fragment) {
+    private void ChangeFragment(Fragment fragment)
+    {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);

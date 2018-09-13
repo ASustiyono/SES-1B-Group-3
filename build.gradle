@@ -19,7 +19,7 @@ allprojects {
     repositories {
         google()
         maven{
-            url "https://maven.google.com"   /* //adding maven repository just incase idk*/
+            url "https://maven.google.com"   /* //adding maven repository just incase */
         }
         jcenter()
     }

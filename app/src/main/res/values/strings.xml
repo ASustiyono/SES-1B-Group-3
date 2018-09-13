@@ -20,5 +20,5 @@
     <string name="drawer_close">Drawer Close</string>
 
    <!-- //jacobs strings below-->
-    <string name="api_key">AIzaSyDGxvPVUoPTLRHl_o3BZZpuzbHAqHJRvmQ</string> <!--//convenience for cloud api key-->
+    <string name="api_key">AIzaSyDGxvPVUoPTLRHl_o3BZZpuzbHAqHJRvmQ</string> <!--//my api key-->
 </resources>
