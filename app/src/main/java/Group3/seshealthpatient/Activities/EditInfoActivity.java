@@ -120,7 +120,7 @@ public class EditInfoActivity extends AppCompatActivity {
         int gender = Gender.getCheckedRadioButtonId();
         String age = Age.getText().toString();
         String height = Height.getText().toString();
-        String weight = Height.getText().toString();
+        String weight = Weight.getText().toString();
         String bloodType = BloodType.getText().toString();
 
         MaleFemale = findViewById(gender);
