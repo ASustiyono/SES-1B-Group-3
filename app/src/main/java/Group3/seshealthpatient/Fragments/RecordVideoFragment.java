@@ -17,7 +17,7 @@ import java.io.File;
 
 import Group3.seshealthpatient.Activities.OpenSystemGalleryActivity;
 import Group3.seshealthpatient.Activities.RecordVideoActivity;
-//import Group3.seshealthpatient.Activities.UploadVideoActivity;
+import Group3.seshealthpatient.Activities.UploadVideoActivity;
 import Group3.seshealthpatient.R;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -69,14 +69,14 @@ public class RecordVideoFragment extends Fragment {
                 startActivity(intent2);
             }
         });
-       /* uploadVideoBtn=(Button)v.findViewById(R.id.upload_video_btn);
+        uploadVideoBtn=(Button)v.findViewById(R.id.upload_video_btn);
         uploadVideoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent3 = new Intent(getActivity(), UploadVideoActivity.class);
                 startActivity(intent3);
             }
-        });*/
+        });
         ButterKnife.bind(this, v);
 
 

@@ -9,14 +9,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/select_video_btn"
+        android:onClick="onClick"
         android:text="SELECT VIDEO FROM SYSTEM GALLERY" />
 
-    <Button
-        android:id="@+id/delete_video_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete" />
 
     <VideoView
         android:layout_width="match_parent"
