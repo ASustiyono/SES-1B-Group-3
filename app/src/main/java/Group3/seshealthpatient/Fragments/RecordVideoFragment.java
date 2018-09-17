@@ -17,6 +17,7 @@ import java.io.File;
 
 import Group3.seshealthpatient.Activities.OpenSystemGalleryActivity;
 import Group3.seshealthpatient.Activities.RecordVideoActivity;
+//import Group3.seshealthpatient.Activities.UploadVideoActivity;
 import Group3.seshealthpatient.R;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -28,6 +29,8 @@ import butterknife.OnClick;
 public class RecordVideoFragment extends Fragment {
 
     private Button recordBtn;
+    private Button openGalleryBtn;
+    private Button uploadVideoBtn;
     private ImageView iv_user_photo;
     private String fileName = "";
     private File tempFile;
@@ -43,7 +46,6 @@ public class RecordVideoFragment extends Fragment {
         // Note the use of getActivity() to reference the Activity holding this fragment
         //getActivity().setTitle("Message Doctor");
         //ButterKnife.bind(getActivity());
-
     }
 
     @Override
@@ -51,22 +53,42 @@ public class RecordVideoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_record_video, container, false);
-
+        recordBtn=(Button)v.findViewById(R.id.record_video_btn);
+        recordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getActivity(), RecordVideoActivity.class);
+                startActivity(intent1);
+            }
+        });
+        openGalleryBtn=(Button)v.findViewById(R.id.open_gallery_btn);
+        openGalleryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(getActivity(),OpenSystemGalleryActivity.class);
+                startActivity(intent2);
+            }
+        });
+       /* uploadVideoBtn=(Button)v.findViewById(R.id.upload_video_btn);
+        uploadVideoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(getActivity(), UploadVideoActivity.class);
+                startActivity(intent3);
+            }
+        });*/
         ButterKnife.bind(this, v);
+
 
         return v;
     }
 
-    @OnClick(R.id.record_video_btn)
-    public void OnClick(View view) {
-        Intent intent = new Intent(getActivity(), RecordVideoActivity.class);
-        startActivity(intent);
-    }
-    @OnClick(R.id.open_gallery_btn)
-    public void OnClick2(View view) {
-        Intent intent = new Intent(getActivity(),OpenSystemGalleryActivity.class);
-        startActivity(intent);
-    }
+    //@OnClick(R.id.record_video_btn)
+    //public void OnClick(View view) {
+    //    Intent intent1 = new Intent(getActivity(), RecordVideoActivity.class);
+    //    startActivity(intent1);
+    //}
+
 
 
 
