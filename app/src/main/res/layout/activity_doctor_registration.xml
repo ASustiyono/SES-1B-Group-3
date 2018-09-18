@@ -6,10 +6,10 @@
     android:background="@drawable/background_gradient_invert"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Activities.RegistrationActivity">
+    tools:context=".Activities.DoctorRegistrationActivity">
 
     <EditText
-        android:id="@+id/register_email_editText"
+        android:id="@+id/doctor_register_email_editText"
         android:layout_width="300dp"
         android:layout_height="52dp"
         android:layout_margin="10dp"
@@ -22,7 +22,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/register_password_editText"
+        android:id="@+id/doctor_register_password_editText"
         android:layout_width="300dp"
         android:layout_height="52dp"
         android:layout_margin="10dp"
@@ -35,7 +35,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/register_matchPassword_editText"
+        android:id="@+id/doctor_register_matchPassword_editText"
         android:layout_width="300dp"
         android:layout_height="52dp"
         android:layout_margin="10dp"
@@ -48,7 +48,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/register_btn"
+        android:id="@+id/doctor_register_btn"
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:layout_marginTop="50dp"
@@ -56,7 +56,7 @@
         android:scaleType="fitCenter" />
 
     <Button
-        android:id="@+id/register_close_btn"
+        android:id="@+id/doctor_register_close_btn"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_margin="10dp"
@@ -67,10 +67,10 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/patient_user_btn"
+        android:id="@+id/doctor_user_btn"
         android:layout_width="200dp"
         android:layout_height="52dp"
-        android:text="Are you a doctor?" />
+        android:text="Are you a patient?" />
 
 
 </LinearLayout>

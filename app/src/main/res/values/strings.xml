@@ -18,4 +18,5 @@
     <string name="back_txt">Back</string>
     <string name="next_txt">Forward</string>
     <string name="hello_txt_btn">New? Sign up for free.</string>
+    <string name="title_activity_doctor_main">DoctorMainActivity</string>
 </resources>
