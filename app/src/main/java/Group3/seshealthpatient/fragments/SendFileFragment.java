@@ -1,4 +1,4 @@
-package Group3.seshealthpatient.Fragments;
+package group3.seshealthpatient.fragments;
 
 
 import android.content.Intent;
@@ -17,8 +17,8 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
-import Group3.seshealthpatient.R;
-import Group3.seshealthpatient.Adapter.UploadListAdapter;
+import group3.seshealthpatient.R;
+import group3.seshealthpatient.adapters.UploadListAdapter;
 import butterknife.ButterKnife;
 
 /**
@@ -43,10 +43,10 @@ public class SendFileFragment extends Fragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate( savedInstanceState );
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
-        getActivity().setTitle("YOUR REPORTS");
+        getActivity().setTitle( "YOUR REPORTS" );
 
     }
 
@@ -54,9 +54,9 @@ public class SendFileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_send_file, container, false);
+        View view = inflater.inflate( R.layout.fragment_send_file, container, false );
 
-        ButterKnife.bind(this ,view);
+        ButterKnife.bind( this, view );
         /*
         // Stores it on Firebase
         mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -93,15 +93,15 @@ public class SendFileFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult( requestCode, resultCode, data );
 
-        if(requestCode == RESULT_LOAD_IMAGE && resultCode == android.app.Activity.RESULT_OK) {
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == android.app.Activity.RESULT_OK) {
 
         }
 
         Uri uri = data.getData();
 
-        Toast.makeText(getActivity(), "File Selected", Toast.LENGTH_SHORT).show();
+        Toast.makeText( getActivity(), "File Selected", Toast.LENGTH_SHORT ).show();
 
 /*
         if(requestCode == RESULT_LOAD_IMAGE && resultCode == android.app.Activity.RESULT_OK) {
@@ -166,4 +166,5 @@ public class SendFileFragment extends Fragment {
         return result;
     }
     */
-} }
+    }
+}

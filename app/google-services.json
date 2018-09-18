@@ -57,6 +57,37 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390245301141:android:4a29880ffdbebbe9",
+        "android_client_info": {
+          "package_name": "group3.seshealthpatient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390245301141-v7v397nbetmfuv54p0v5o9ht6jf90gfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS2qWWqVC2GjGEfpUQ_tyLQN-RZ0oM8MI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

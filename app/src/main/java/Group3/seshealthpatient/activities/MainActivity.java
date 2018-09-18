@@ -1,4 +1,4 @@
-package Group3.seshealthpatient.Activities;
+package group3.seshealthpatient.activities;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -20,10 +20,14 @@ import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import Group3.seshealthpatient.Fragments.DoctorClinicFragment;
-import Group3.seshealthpatient.Fragments.DoctorMessengerFragment;
-import Group3.seshealthpatient.Fragments.DoctorProfileFragment;
-import Group3.seshealthpatient.R;
+import group3.seshealthpatient.fragments.DataPacketFragment;
+import group3.seshealthpatient.fragments.HeartRateFragment;
+import group3.seshealthpatient.fragments.MapFragment;
+import group3.seshealthpatient.fragments.PatientInformationFragment;
+//import group3.seshealthpatient.Fragments.RecordVideoFragment;
+import group3.seshealthpatient.fragments.RecordVideoFragment;
+import group3.seshealthpatient.fragments.SendFileFragment;
+import group3.seshealthpatient.R;
 
 
 /**
@@ -41,7 +45,7 @@ import Group3.seshealthpatient.R;
  * completely the design of the app, but for this design specifically I will use Fragments.
  * <p>
  */
-public class DoctorMainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     /**
      * A basic Drawer layout that helps you build the side menu. I followed the steps on how to
@@ -71,7 +75,7 @@ public class DoctorMainActivity extends AppCompatActivity {
      * what I mean with this later in this code.
      */
     private enum MenuStates {
-        DOCTOR_PROFILE, MESSENGER, CLINIC_LOCATION, LOG_OUT
+        PATIENT_INFO, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP, LOG_OUT
     }
 
     /**
@@ -83,72 +87,91 @@ public class DoctorMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_main);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_main );
 
         // the default fragment on display is the patient information
-        currentState = MenuStates.DOCTOR_PROFILE;
+        currentState = MenuStates.PATIENT_INFO;
 
         // go look for the main drawer layout
-        mDrawerLayout = findViewById(R.id.doctor_main_drawer_layout);
+        mDrawerLayout = findViewById( R.id.main_drawer_layout );
 
-        toolbar = findViewById(R.id.doctor_toolbar);
-        setSupportActionBar(toolbar);
+        toolbar = findViewById( R.id.toolbar );
+        setSupportActionBar( toolbar );
 
         Auth = FirebaseAuth.getInstance();
 
         // Set up the menu button
         ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
-        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        actionbar.setDisplayHomeAsUpEnabled( true );
+        actionbar.setHomeAsUpIndicator( R.drawable.ic_menu );
 
         // Setup the navigation drawer, most of this code was taken from:
         // https://developer.android.com/training/implementing-navigation/nav-drawer
-        NavigationView navigationView = findViewById(R.id.doctor_nav_view);
+        NavigationView navigationView = findViewById( R.id.nav_view );
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         // set item as selected to persist highlight
-                        menuItem.setChecked(true);
+                        menuItem.setChecked( true );
                         // close drawer when item is tapped
                         mDrawerLayout.closeDrawers();
 
                         // Using a switch to see which item on the menu was clicked
                         switch (menuItem.getItemId()) {
                             // You can find these id's at: res -> menu -> drawer_view.xml
-                            case R.id.nav_doctor_profile:
+                            case R.id.nav_patient_info:
                                 // If the user clicked on a different item than the current item
-                                if (currentState != MenuStates.DOCTOR_PROFILE) {
+                                if (currentState != MenuStates.PATIENT_INFO) {
                                     // change the fragment to the new fragment
-                                    ChangeFragment(new DoctorProfileFragment());
-                                    currentState = MenuStates.DOCTOR_PROFILE;;
+                                    ChangeFragment( new PatientInformationFragment() );
+                                    currentState = MenuStates.PATIENT_INFO;
+                                    ;
                                 }
                                 break;
-                            case R.id.nav_doctor_messenger:
-                                if (currentState != MenuStates.MESSENGER) {
-                                    ChangeFragment(new DoctorMessengerFragment());
-                                    currentState = MenuStates.MESSENGER;
+                            case R.id.nav_data_packet:
+                                if (currentState != MenuStates.DATA_PACKET) {
+                                    ChangeFragment( new DataPacketFragment() );
+                                    currentState = MenuStates.DATA_PACKET;
                                 }
                                 break;
-                            case R.id.nav_doctor_clinics:
-                                if (currentState != MenuStates.CLINIC_LOCATION) {
-                                    ChangeFragment(new DoctorClinicFragment());
-                                    currentState = MenuStates.CLINIC_LOCATION;
+                            case R.id.nav_heartrate:
+                                if (currentState != MenuStates.HEARTRATE) {
+                                    ChangeFragment( new HeartRateFragment() );
+                                    currentState = MenuStates.HEARTRATE;
                                 }
                                 break;
-                            case R.id.nav_doctor_logout:
+                            case R.id.nav_recordvideo:
+                                if (currentState != MenuStates.RECORD_VIDEO) {
+                                    ChangeFragment( new RecordVideoFragment() );
+                                    currentState = MenuStates.RECORD_VIDEO;
+                                }
+                                break;
+                            case R.id.nav_sendfile:
+                                if (currentState != MenuStates.SEND_FILE) {
+                                    ChangeFragment( new SendFileFragment() );
+                                    currentState = MenuStates.SEND_FILE;
+                                }
+                                break;
+                            case R.id.nav_map:
+                                if (currentState != MenuStates.NAVIGATION_MAP) {
+                                    ChangeFragment( new MapFragment() );
+                                    currentState = MenuStates.NAVIGATION_MAP;
+                                }
+                                break;
+                            case R.id.nav_logout:
                                 if (currentState != MenuStates.LOG_OUT) {
                                     //ChangeFragment(new MapFragment());
                                     currentState = MenuStates.LOG_OUT;
 
                                     logoutUser();
-                                    SharedPreferences pref = getSharedPreferences("PREFERENCE",
-                                            Context.MODE_PRIVATE);
+                                    SharedPreferences pref = getSharedPreferences( "PREFERENCE",
+                                            Context.MODE_PRIVATE );
                                     SharedPreferences.Editor editor = pref.edit();
-                                    editor.putBoolean("isRemembered", false);
+                                    editor.putBoolean( "isRemembered", false );
                                     editor.commit();
-                                    startActivity(new Intent(DoctorMainActivity.this, LoginActivity.class ));
+                                    startActivity( new Intent( MainActivity.this, LoginActivity.class ) );
                                     finish();
 
                                 }
@@ -157,7 +180,7 @@ public class DoctorMainActivity extends AppCompatActivity {
 
                         return true;
                     }
-                });
+                } );
 
         // If you need to listen to specific events from the drawer layout.
         mDrawerLayout.addDrawerListener(
@@ -190,7 +213,7 @@ public class DoctorMainActivity extends AppCompatActivity {
 
         // Add the default Fragment once the user logged in
         FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.add(R.id.doctor_fragment_container, new DoctorProfileFragment());
+        ft.add( R.id.fragment_container, new PatientInformationFragment() );
         ft.commit();
     }
 
@@ -201,10 +224,10 @@ public class DoctorMainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                mDrawerLayout.openDrawer(GravityCompat.START);
+                mDrawerLayout.openDrawer( GravityCompat.START );
                 return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected( item );
     }
 
     /**
@@ -213,18 +236,19 @@ public class DoctorMainActivity extends AppCompatActivity {
      * @param newTitle The new title to write in the
      */
     public void ChangeTitle(String newTitle) {
-        toolbar.setTitle(newTitle);
+        toolbar.setTitle( newTitle );
     }
 
 
     /**
      * This function allows to change the content of the Fragment holder
+     *
      * @param fragment The fragment to be displayed
      */
     private void ChangeFragment(Fragment fragment) {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.doctor_fragment_container, fragment);
-        transaction.addToBackStack(null);
+        transaction.replace( R.id.fragment_container, fragment );
+        transaction.addToBackStack( null );
         transaction.commit();
     }
 

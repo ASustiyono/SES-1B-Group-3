@@ -1,4 +1,4 @@
-package Group3.seshealthpatient.Adapter;
+package group3.seshealthpatient.adapters;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.RelativeLayout;
 
-import Group3.seshealthpatient.R;
+import group3.seshealthpatient.R;
 
-public class SliderAdapter extends PagerAdapter{
+public class SliderAdapter extends PagerAdapter {
 
     Context context;
     LayoutInflater layoutInflater;
@@ -30,7 +30,7 @@ public class SliderAdapter extends PagerAdapter{
             R.drawable.tutorial_slide6
     };
 
-    public String [] slide_headings = {
+    public String[] slide_headings = {
             "LETS GET STARTED",
             "YOUR INFORMATION",
             "YOUR MESSAGES",
@@ -80,7 +80,7 @@ public class SliderAdapter extends PagerAdapter{
                     "CLICK ON CLINICS FOR MORE INFO."
     };
 
-    public String [] slide_warnings = {
+    public String[] slide_warnings = {
             "",
             "",
             "",
@@ -103,26 +103,27 @@ public class SliderAdapter extends PagerAdapter{
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
-        layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
+        layoutInflater = (LayoutInflater) context.getSystemService( context.LAYOUT_INFLATER_SERVICE );
+        View view = layoutInflater.inflate( R.layout.slide_layout, container, false );
 
-        ImageView slideImageView = (ImageView) view.findViewById(R.id.icon_slide);
-        TextView slideHeading = (TextView) view.findViewById(R.id.heading_slide);
-        TextView slideDescription = (TextView) view.findViewById(R.id.desc_slide);
-        TextView slideWarning = (TextView) view.findViewById(R.id.warning_slide);
+        ImageView slideImageView = (ImageView) view.findViewById( R.id.icon_slide );
+        TextView slideHeading = (TextView) view.findViewById( R.id.heading_slide );
+        TextView slideDescription = (TextView) view.findViewById( R.id.desc_slide );
+        TextView slideWarning = (TextView) view.findViewById( R.id.warning_slide );
 
-        slideImageView.setImageResource(slide_images[position]);
-        slideHeading.setText(slide_headings[position]);
-        slideDescription.setText(slide_descs[position]);
-        slideWarning.setText(slide_warnings[position]);
+        slideImageView.setImageResource( slide_images[position] );
+        slideHeading.setText( slide_headings[position] );
+        slideDescription.setText( slide_descs[position] );
+        slideWarning.setText( slide_warnings[position] );
 
-        container.addView(view);
+        container.addView( view );
 
         return view;
     }
+
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((RelativeLayout)object);
+        container.removeView( (RelativeLayout) object );
     }
 
 }

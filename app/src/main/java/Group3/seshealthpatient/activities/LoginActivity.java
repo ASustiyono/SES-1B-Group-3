@@ -1,10 +1,9 @@
-package Group3.seshealthpatient.Activities;
+package group3.seshealthpatient.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -14,14 +13,14 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import Group3.seshealthpatient.R;
+import group3.seshealthpatient.R;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import static Group3.seshealthpatient.Activities.DoctorRegistrationActivity.EMAIL_ADDRESS_DOCTOR;
+import static group3.seshealthpatient.activities.DoctorRegistrationActivity.EMAIL_ADDRESS_DOCTOR;
 
 /**
  * Class: LoginActivity
@@ -68,22 +67,22 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_login );
         // You need this line on your activity so Butter Knife knows what Activity-View we are referencing
-        ButterKnife.bind(this);
+        ButterKnife.bind( this );
 
         // A reference to the toolbar, that way we can modify it as we please
         //Toolbar toolbar = findViewById(R.id.login_toolbar);
         //setSupportActionBar(toolbar);
 
         // Please try to use more String resources (values -> strings.xml) vs hardcoded Strings.
-        setTitle(R.string.login_activity_title);
+        setTitle( R.string.login_activity_title );
 
         Auth = FirebaseAuth.getInstance();
 
-        firstTime = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-                .getBoolean("firstTime", true);
+        firstTime = getSharedPreferences( "PREFERENCE", MODE_PRIVATE )
+                .getBoolean( "firstTime", true );
     }
 
 
@@ -96,67 +95,67 @@ public class LoginActivity extends AppCompatActivity {
         final String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
-        if(username.isEmpty()){
-            usernameEditText.setError("Email is required");
+        if (username.isEmpty()) {
+            usernameEditText.setError( "Email is required" );
             usernameEditText.requestFocus();
             return;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(username).matches()){   // THIS METHOD CHECKS IF ITS A REAL EMAIL
-            usernameEditText.setError("Please enter a valid email");
+        if (!Patterns.EMAIL_ADDRESS.matcher( username ).matches()) {   // THIS METHOD CHECKS IF ITS A REAL EMAIL
+            usernameEditText.setError( "Please enter a valid email" );
             usernameEditText.requestFocus();
             return;
         }
-        if(password.isEmpty()){
-            passwordEditText.setError("Password is required");
+        if (password.isEmpty()) {
+            passwordEditText.setError( "Password is required" );
             passwordEditText.requestFocus();
             return;
         }
 
-        Auth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        Auth.signInWithEmailAndPassword( username, password ).addOnCompleteListener( new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    if(!firstTime) {
-                        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-                                .putBoolean("isFirstRun", false).commit();
+                if (task.isSuccessful()) {
+                    if (!firstTime) {
+                        getSharedPreferences( "PREFERENCE", MODE_PRIVATE ).edit()
+                                .putBoolean( "isFirstRun", false ).commit();
 
-                        Intent tutorialIntent = new Intent(LoginActivity.this, TutorialActivity.class);
-                        tutorialIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(tutorialIntent);
+                        Intent tutorialIntent = new Intent( LoginActivity.this, TutorialActivity.class );
+                        tutorialIntent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
+                        startActivity( tutorialIntent );
                         finish();
-                    } else if(EMAIL_ADDRESS_DOCTOR.matcher(username).matches()) {
-                        Intent homePageIntent = new Intent(LoginActivity.this, DoctorMainActivity.class);
-                        startActivity(homePageIntent);
+                    } else if (EMAIL_ADDRESS_DOCTOR.matcher( username ).matches()) {
+                        Intent homePageIntent = new Intent( LoginActivity.this, DoctorMainActivity.class );
+                        startActivity( homePageIntent );
                         finish();
                     } else {
-                        Intent homePageIntent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(homePageIntent);
+                        Intent homePageIntent = new Intent( LoginActivity.this, MainActivity.class );
+                        startActivity( homePageIntent );
                         finish();
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText( getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT ).show();
                 }
             }
-        });
+        } );
 
         // TODO: For now, the login button will simply print on the console the username/password and let you in
         // TODO: It is up to you guys to implement a proper login system
 
         // Having a tag, and the name of the function on the console message helps allot in
         // knowing where the message should appear.
-        Log.d(TAG, "LogIn: username: " + username + " password: " + password);
+        Log.d( TAG, "LogIn: username: " + username + " password: " + password );
 
 
         /**THIS IS REMOVED TO ADD FIREBASE REGISTRATION
-        // Start a new activity
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        */
+         // Start a new activity
+         Intent intent = new Intent(this, MainActivity.class);
+         startActivity(intent);
+         */
     }
 
     @OnClick(R.id.register_btn)
     public void onClick(View v) {
-        Intent RegisterIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
-        startActivity(RegisterIntent);
+        Intent RegisterIntent = new Intent( LoginActivity.this, RegistrationActivity.class );
+        startActivity( RegisterIntent );
     }
 }

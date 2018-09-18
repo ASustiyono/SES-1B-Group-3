@@ -7,7 +7,7 @@
     android:background="@drawable/background_gradient"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Activities.AddInfoActivity">
+    tools:context=".activities.AddInfoActivity">
 
     <EditText
         android:id="@+id/firstNameEditText"

@@ -5,7 +5,7 @@
     android:background="@drawable/background_gradient_invert"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="Group3.seshealthpatient.Fragments.DataPacketFragment">
+    tools:context="group3.seshealthpatient.fragments.DataPacketFragment">
 
     <Button
         android:id="@+id/send_message_btn"

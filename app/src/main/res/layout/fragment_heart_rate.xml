@@ -5,7 +5,7 @@
     android:background="@drawable/background_gradient_invert"
     android:gravity="top|center"
     android:orientation="vertical"
-    tools:context="Group3.seshealthpatient.Fragments.HeartRateFragment">
+    tools:context="group3.seshealthpatient.fragments.HeartRateFragment">
 
     <Button
         android:id="@+id/record_heart_rate_btn"
