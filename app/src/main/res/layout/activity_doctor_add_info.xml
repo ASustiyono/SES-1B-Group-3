@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Activities.DoctorAddInfoActivity">
+
+    <EditText
+        android:id="@+id/doctorFirstNameEditText"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/login_user_btn"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="FIRST NAME"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/doctorLastNameEditText"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/login_user_btn"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="LAST NAME"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TableRow
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/login_user_btn"
+        android:gravity="center">
+
+        <RadioGroup
+            android:id="@+id/doctorGenderRadioGrp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/doctorMaleRadioBtn"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Male"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/doctorFemaleRadioBtn"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Female"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+
+    </TableRow>
+
+    <EditText
+        android:id="@+id/doctorAgeEditText"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/login_user_btn"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="AGE"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/doctorHeightEditText"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/login_user_btn"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="WORK NUMBER"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/doctorWeightEditText"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/login_user_btn"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="WORK EMAIL"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/doctorBloodTypeEditText"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/login_user_btn"
+        android:fontFamily="@font/nunito_bold"
+        android:hint="WORK ADDRESS"
+        android:textAlignment="center" />
+
+
+    <Button
+        android:id="@+id/doctor_firstTime_save_btn"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/continue_btn" />
+
+</LinearLayout>

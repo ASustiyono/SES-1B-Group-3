@@ -28,7 +28,13 @@
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.HelloActivity" />
         <activity android:name=".Activities.RecordVideoActivity" />
-        <activity android:name=".Activities.EditInfoActivity"></activity>
+        <activity android:name=".Activities.EditInfoActivity" />
+        <activity android:name=".Activities.DoctorRegistrationActivity" />
+        <activity
+            android:name=".Activities.DoctorMainActivity"
+            android:label="@string/title_activity_doctor_main"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Activities.DoctorAddInfoActivity"></activity>
     </application>
 
 </manifest>

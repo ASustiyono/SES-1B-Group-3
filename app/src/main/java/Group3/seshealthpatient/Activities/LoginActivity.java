@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import static Group3.seshealthpatient.Activities.DoctorRegistrationActivity.EMAIL_ADDRESS_DOCTOR;
+
 /**
  * Class: LoginActivity
  * Extends: {@link AppCompatActivity}
@@ -91,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     @OnClick(R.id.login_btn)
     public void LogIn() {
-        String username = usernameEditText.getText().toString();
+        final String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
         if(username.isEmpty()){
@@ -122,13 +124,15 @@ public class LoginActivity extends AppCompatActivity {
                         tutorialIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(tutorialIntent);
                         finish();
-                    }
-                    else {
+                    } else if(EMAIL_ADDRESS_DOCTOR.matcher(username).matches()) {
+                        Intent homePageIntent = new Intent(LoginActivity.this, DoctorMainActivity.class);
+                        startActivity(homePageIntent);
+                        finish();
+                    } else {
                         Intent homePageIntent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(homePageIntent);
                         finish();
                     }
-
                 } else {
                     Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                 }

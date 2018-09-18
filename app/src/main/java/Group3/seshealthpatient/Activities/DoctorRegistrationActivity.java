@@ -15,9 +15,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
+import java.util.regex.Pattern;
+
 import Group3.seshealthpatient.R;
 
-public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
+public class DoctorRegistrationActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText emailEditText, passwordEditText, matchPasswordEditText;
 
@@ -26,17 +28,17 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_registration );
+        setContentView( R.layout.activity_doctor_registration );
 
-        emailEditText = (EditText) findViewById(R.id.register_email_editText);
-        passwordEditText = (EditText) findViewById(R.id.register_password_editText);
-        matchPasswordEditText = (EditText) findViewById(R.id.register_matchPassword_editText);
+        emailEditText = (EditText) findViewById(R.id.doctor_register_email_editText);
+        passwordEditText = (EditText) findViewById(R.id.doctor_register_password_editText);
+        matchPasswordEditText = (EditText) findViewById(R.id.doctor_register_matchPassword_editText);
 
         mAuth = FirebaseAuth.getInstance();
 
-        findViewById(R.id.register_btn).setOnClickListener(this);
-        findViewById(R.id.register_close_btn).setOnClickListener(this);
-        findViewById(R.id.patient_user_btn).setOnClickListener(this);
+        findViewById(R.id.doctor_register_btn).setOnClickListener(this);
+        findViewById(R.id.doctor_register_close_btn).setOnClickListener(this);
+        findViewById(R.id.doctor_user_btn).setOnClickListener(this);
     }
 
     private void registerUser() {
@@ -50,7 +52,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             emailEditText.requestFocus();
             return;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){   // THIS METHOD CHECKS IF ITS A REAL EMAIL
+        if(!EMAIL_ADDRESS_DOCTOR.matcher(email).matches()){   // THIS METHOD CHECKS IF ITS A REAL EMAIL
             emailEditText.setError("Please enter a valid email");
             emailEditText.requestFocus();
             return;
@@ -77,7 +79,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(getApplicationContext(),"You've Successfully Registered", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegistrationActivity.this, TutorialActivity.class));
+                            startActivity(new Intent(DoctorRegistrationActivity.this, DoctorAddInfoActivity.class));
                             finish();
                         } else if(task.getException() instanceof FirebaseAuthUserCollisionException){
                             Toast.makeText(getApplicationContext(), "You've already registered mate", Toast.LENGTH_SHORT).show();
@@ -86,17 +88,28 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                 });
     }
 
+    public static final Pattern EMAIL_ADDRESS_DOCTOR
+            = Pattern.compile(
+            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                    "\\@" +
+                    "doctor" +
+                    "(" +
+                    "\\." +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                    ")+"
+    );
+
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.register_btn:
+            case R.id.doctor_register_btn:
                 registerUser();
                 break;
-            case R.id.register_close_btn:
+            case R.id.doctor_register_close_btn:
                 finish();
                 break;
-            case R.id.patient_user_btn:
-                startActivity(new Intent(RegistrationActivity.this, DoctorRegistrationActivity.class));
+            case R.id.doctor_user_btn:
+                startActivity(new Intent(DoctorRegistrationActivity.this, RegistrationActivity.class));
                 finish();
                 break;
         }
