@@ -1,4 +1,4 @@
-package Group3.seshealthpatient.Fragments;
+package group3.seshealthpatient.fragments;
 
 
 import android.content.Intent;
@@ -18,13 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import Group3.seshealthpatient.Activities.EditInfoActivity;
-import Group3.seshealthpatient.Activities.LoginActivity;
-import Group3.seshealthpatient.Activities.RecordVideoActivity;
-import Group3.seshealthpatient.Activities.RegistrationActivity;
-import butterknife.BindView;
+import group3.seshealthpatient.activities.EditInfoActivity;
 import butterknife.ButterKnife;
-import Group3.seshealthpatient.R;
+import group3.seshealthpatient.R;
 import butterknife.OnClick;
 
 /**
@@ -36,9 +32,8 @@ import butterknife.OnClick;
  * This fragment's job will be that to display patients information, and be able to edit that
  * information (either edit it in this fragment or a new fragment, up to you!)
  * <p>
-
  */
-public class DoctorProfileFragment extends Fragment {
+public class PatientInformationFragment extends Fragment {
 
 
     // Note how Butter Knife also works on Fragments, but here it is a little different
@@ -48,56 +43,57 @@ public class DoctorProfileFragment extends Fragment {
     DatabaseReference databaseReference;
     FirebaseUser userId;
     String uid;
-    TextView FirstName,LastName,Gender,Age,Height,Weight,BloodType;
+    TextView FirstName, LastName, Gender, Age, Height, Weight, BloodType;
 
-    public DoctorProfileFragment() {
+    public PatientInformationFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate( savedInstanceState );
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
-        getActivity().setTitle("YOUR PROFILE");
+        getActivity().setTitle( "YOUR PROFILE" );
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_doctor_profile, container, false);
+        View v = inflater.inflate( R.layout.fragment_patient_information, container, false );
 
         // Note how we are telling butter knife to bind during the on create view method
-        ButterKnife.bind(this, v);
+        ButterKnife.bind( this, v );
 
-        FirstName = v.findViewById(R.id.doctor_userInfo_firstName_textView);
-        LastName = v.findViewById(R.id.doctor_userInfo_lastName_textView);
-        Gender = v.findViewById(R.id.doctor_userInfo_gender_textView);
-        Age = v.findViewById(R.id.doctor_userInfo_age_textView);
-        Height = v.findViewById(R.id.doctor_userInfo_height_textView);
-        Weight = v.findViewById(R.id.doctor_userInfo_weight_textView);
-        BloodType = v.findViewById(R.id.doctor_userInfo_bloodType_textView);
+        FirstName = v.findViewById( R.id.userInfo_firstName_textView );
+        LastName = v.findViewById( R.id.userInfo_lastName_textView );
+        Gender = v.findViewById( R.id.userInfo_gender_textView );
+        Age = v.findViewById( R.id.userInfo_age_textView );
+        Height = v.findViewById( R.id.userInfo_height_textView );
+        Weight = v.findViewById( R.id.userInfo_weight_textView );
+        BloodType = v.findViewById( R.id.userInfo_bloodType_textView );
         userId = FirebaseAuth.getInstance().getCurrentUser();
         uid = userId.getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                FirstName.setText("Dr. "+dataSnapshot.child("Patients").child(uid).child("firstName").getValue(String.class));
-                LastName.setText(dataSnapshot.child("Patients").child(uid).child("lastName").getValue(String.class));
-                Gender.setText(dataSnapshot.child("Patients").child(uid).child("gender").getValue(String.class));
-                Age.setText(dataSnapshot.child("Patients").child(uid).child("age").getValue(String.class));
-                Height.setText(dataSnapshot.child("Patients").child(uid).child("height").getValue(String.class));
-                Weight.setText(dataSnapshot.child("Patients").child(uid).child("weight").getValue(String.class));
-                BloodType.setText(dataSnapshot.child("Patients").child(uid).child("bloodType").getValue(String.class));
+                FirstName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "firstName" ).getValue( String.class ) );
+                LastName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "lastName" ).getValue( String.class ) );
+                Gender.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "gender" ).getValue( String.class ) );
+                Age.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "age" ).getValue( String.class ) );
+                Height.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "height" ).getValue( String.class ) );
+                Weight.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "weight" ).getValue( String.class ) );
+                BloodType.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "bloodType" ).getValue( String.class ) );
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 //Log.w(TAG, "Failed to read value.", error.toException());
             }
-        });
+        } );
 
         return v;
     }
@@ -111,15 +107,14 @@ public class DoctorProfileFragment extends Fragment {
     }
     */
 
-    @OnClick(R.id.doctor_edit_btn)
+    @OnClick(R.id.edit_btn)
     public void OnClick(View view) {
-        Intent intent = new Intent(getActivity(), EditInfoActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent( getActivity(), EditInfoActivity.class );
+        startActivity( intent );
     }
 
     /***
-     @OnClick({R.id.edit_btn,R.id.new_btn})
-     public void OnClick(View view) {
+     @OnClick({R.id.edit_btn,R.id.new_btn}) public void OnClick(View view) {
      switch(view.getId()) {
      case R.id.edit_btn:
      //method

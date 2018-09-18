@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient_invert"
     android:orientation="vertical"
-    tools:context="Group3.seshealthpatient.Fragments.MapFragment">
+    tools:context="group3.seshealthpatient.fragments.MapFragment">
 
     <Button
         android:id="@+id/search_nearest_clinic_btn"

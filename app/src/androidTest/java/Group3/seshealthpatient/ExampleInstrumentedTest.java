@@ -1,4 +1,4 @@
-package Group3.seshealthpatient;
+package group3.seshealthpatient;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("Group3.seshealthpatient", appContext.getPackageName());
+        assertEquals("group3.seshealthpatient", appContext.getPackageName());
     }
 }

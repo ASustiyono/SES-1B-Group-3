@@ -6,7 +6,7 @@
     android:background="@drawable/background_gradient_invert"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Activities.DoctorRegistrationActivity">
+    tools:context=".activities.DoctorRegistrationActivity">
 
     <EditText
         android:id="@+id/doctor_register_email_editText"

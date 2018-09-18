@@ -7,7 +7,7 @@
     android:background="@drawable/background_gradient"
     android:gravity="top|center"
     android:orientation="vertical"
-    tools:context="Group3.seshealthpatient.Fragments.PatientInformationFragment">
+    tools:context="group3.seshealthpatient.fragments.PatientInformationFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

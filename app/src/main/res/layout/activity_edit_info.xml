@@ -7,7 +7,7 @@
     android:background="@drawable/background_gradient"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Activities.EditInfoActivity">
+    tools:context=".activities.EditInfoActivity">
 
     <Button
         android:id="@+id/edit_close_btn"
@@ -25,6 +25,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="FIRST NAME"
+        android:inputType="text"
         android:textAlignment="center" />
 
     <EditText
@@ -35,6 +36,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="LAST NAME"
+        android:inputType="text"
         android:textAlignment="center"
         android:textSize="18sp" />
 
@@ -46,6 +48,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="AGE"
+        android:inputType="text"
         android:textAlignment="center" />
 
     <EditText
@@ -56,6 +59,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="HEIGHT"
+        android:inputType="text"
         android:textAlignment="center" />
 
     <EditText
@@ -66,6 +70,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="WEIGHT"
+        android:inputType="text"
         android:textAlignment="center" />
 
     <TableRow
@@ -113,6 +118,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="BLOOD TYPE"
+        android:inputType="text"
         android:textAlignment="center" />
 
     <Button

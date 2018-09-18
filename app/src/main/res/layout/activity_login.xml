@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient_invert"
-    tools:context="Group3.seshealthpatient.Activities.LoginActivity">
+    tools:context="group3.seshealthpatient.activities.LoginActivity">
 
 
     <EditText

@@ -1,6 +1,5 @@
-package Group3.seshealthpatient.Activities;
+package group3.seshealthpatient.activities;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-import Group3.seshealthpatient.R;
+import group3.seshealthpatient.R;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -53,59 +52,63 @@ public class EditInfoActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_edit_info );
 
-        ButterKnife.bind(this);
+        ButterKnife.bind( this );
 
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         mUserId = mUser.getUid();
 
         mAuth = FirebaseAuth.getInstance();
         mCurrentUserId = mAuth.getCurrentUser().getUid();
-        mUserRef = FirebaseDatabase.getInstance().getReference().child("Patients").child(mCurrentUserId);
+        mUserRef = FirebaseDatabase.getInstance().getReference().child( "Patients" ).child( mCurrentUserId );
 
-        FirstName = findViewById(R.id.edit_firstNameEditText);
-        LastName = findViewById(R.id.edit_lastNameEditText);
-        Gender = findViewById(R.id.edit_genderRadioGrp);
-        Male = findViewById(R.id.edit_maleRadioBtn);
-        Female = findViewById(R.id.edit_femaleRadioBtn);
-        Age = findViewById(R.id.edit_ageEditText);
-        Height = findViewById(R.id.edit_heightEditText);
-        Weight  = findViewById(R.id.edit_weightEditText);
-        BloodType = findViewById(R.id.edit_bloodTypeEditText);
+        FirstName = findViewById( R.id.edit_firstNameEditText );
+        LastName = findViewById( R.id.edit_lastNameEditText );
+        Gender = findViewById( R.id.edit_genderRadioGrp );
+        Male = findViewById( R.id.edit_maleRadioBtn );
+        Female = findViewById( R.id.edit_femaleRadioBtn );
+        Age = findViewById( R.id.edit_ageEditText );
+        Height = findViewById( R.id.edit_heightEditText );
+        Weight = findViewById( R.id.edit_weightEditText );
+        BloodType = findViewById( R.id.edit_bloodTypeEditText );
 
-        save_btn = findViewById(R.id.edit_save_btn);
+        save_btn = findViewById( R.id.edit_save_btn );
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
-        Male.setChecked(true);
+        Male.setChecked( true );
 
         userId = FirebaseAuth.getInstance().getCurrentUser();
         uid = userId.getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FirstName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "firstName" ).getValue( String.class ) );
                 LastName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "lastName" ).getValue( String.class ) );
                 //Gender.setText(dataSnapshot.child("Patients").child(uid).child("gender").getValue(String.class));
                 String gender = dataSnapshot.child( "Patients" ).child( uid ).child( "gender" ).getValue().toString();
-                if (gender.equalsIgnoreCase( "Male" )) { Male.setChecked( true );
-                } else if (gender.equalsIgnoreCase( "Female" )) { Female.setChecked( true ); }
-                Age.setText(dataSnapshot.child("Patients").child(uid).child("age").getValue(String.class));
-                Height.setText(dataSnapshot.child("Patients").child(uid).child("height").getValue(String.class));
-                Weight.setText(dataSnapshot.child("Patients").child(uid).child("weight").getValue(String.class));
-                BloodType.setText(dataSnapshot.child("Patients").child(uid).child("bloodType").getValue(String.class));
+                if (gender.equalsIgnoreCase( "Male" )) {
+                    Male.setChecked( true );
+                } else if (gender.equalsIgnoreCase( "Female" )) {
+                    Female.setChecked( true );
+                }
+                Age.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "age" ).getValue( String.class ) );
+                Height.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "height" ).getValue( String.class ) );
+                Weight.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "weight" ).getValue( String.class ) );
+                BloodType.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "bloodType" ).getValue( String.class ) );
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 //Log.w(TAG, "Failed to read value.", error.toException());
             }
-        });
+        } );
     }
 
-    @OnClick({R.id.edit_save_btn,R.id.edit_close_btn})
+    @OnClick({R.id.edit_save_btn, R.id.edit_close_btn})
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             case R.id.edit_save_btn:
                 SaveUserInfo();
                 break;
@@ -114,6 +117,7 @@ public class EditInfoActivity extends AppCompatActivity {
                 break;
         }
     }
+
     private void SaveUserInfo() {
         String firstName = FirstName.getText().toString();
         String lastName = LastName.getText().toString();
@@ -123,54 +127,54 @@ public class EditInfoActivity extends AppCompatActivity {
         String weight = Weight.getText().toString();
         String bloodType = BloodType.getText().toString();
 
-        MaleFemale = findViewById(gender);
+        MaleFemale = findViewById( gender );
 
         HashMap userMap = new HashMap();
 
-        if(TextUtils.isEmpty(firstName)) {
-            FirstName.setError("Required");
+        if (TextUtils.isEmpty( firstName )) {
+            FirstName.setError( "Required" );
             return;
         }
-        if(TextUtils.isEmpty(lastName)) {
-            LastName.setError("Required");
+        if (TextUtils.isEmpty( lastName )) {
+            LastName.setError( "Required" );
             return;
         }
-        if(TextUtils.isEmpty(age)) {
-            Age.setError("Required");
+        if (TextUtils.isEmpty( age )) {
+            Age.setError( "Required" );
             return;
         }
-        if(TextUtils.isEmpty(height)) {
-            Height.setError("Required");
+        if (TextUtils.isEmpty( height )) {
+            Height.setError( "Required" );
             return;
         }
-        if(TextUtils.isEmpty(weight)) {
-            Weight.setError("Required");
+        if (TextUtils.isEmpty( weight )) {
+            Weight.setError( "Required" );
             return;
         }
-        if(TextUtils.isEmpty(bloodType)) {
-            BloodType.setError("Required");
+        if (TextUtils.isEmpty( bloodType )) {
+            BloodType.setError( "Required" );
             return;
         } else {
-            userMap.put("firstName", firstName);
-            userMap.put("lastName", lastName);
-            userMap.put("gender", MaleFemale.getText());
-            userMap.put("age", age);
-            userMap.put("height", height);
-            userMap.put("weight", weight);
-            userMap.put("bloodType", bloodType);
+            userMap.put( "firstName", firstName );
+            userMap.put( "lastName", lastName );
+            userMap.put( "gender", MaleFemale.getText() );
+            userMap.put( "age", age );
+            userMap.put( "height", height );
+            userMap.put( "weight", weight );
+            userMap.put( "bloodType", bloodType );
         }
 
-        mUserRef.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
+        mUserRef.updateChildren( userMap ).addOnCompleteListener( new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "Entered user info successfully!", Toast.LENGTH_SHORT).show();
+                if (task.isSuccessful()) {
+                    Toast.makeText( getApplicationContext(), "Entered user info successfully!", Toast.LENGTH_SHORT ).show();
                     finish();
-                }else{
+                } else {
                     String message = task.getException().getMessage();
-                    Toast.makeText(getApplicationContext(), "Oh no! Something went wrong OWO.\n" + message, Toast.LENGTH_SHORT).show();
+                    Toast.makeText( getApplicationContext(), "Oh no! Something went wrong OWO.\n" + message, Toast.LENGTH_SHORT ).show();
                 }
             }
-        });
+        } );
     }
 }
