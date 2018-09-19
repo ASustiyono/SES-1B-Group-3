@@ -54,15 +54,15 @@ public class AddInfoActivity extends AppCompatActivity {
         mCurrentUserId = mAuth.getCurrentUser().getUid();
         mUserRef = FirebaseDatabase.getInstance().getReference().child( "Patients" ).child( mCurrentUserId );
 
-        FirstName = (EditText) findViewById( R.id.firstNameEditText );
-        LastName = (EditText) findViewById( R.id.lastNameEditText );
-        Gender = (RadioGroup) findViewById( R.id.genderRadioGrp );
-        Male = (RadioButton) findViewById( R.id.maleRadioBtn );
-        Female = (RadioButton) findViewById( R.id.femaleRadioBtn );
-        Age = (EditText) findViewById( R.id.ageEditText );
-        Height = (EditText) findViewById( R.id.heightEditText );
-        Weight = (EditText) findViewById( R.id.weightEditText );
-        BloodType = (EditText) findViewById( R.id.bloodTypeEditText );
+        FirstName = findViewById( R.id.firstNameEditText );
+        LastName = findViewById( R.id.lastNameEditText );
+        Gender = findViewById( R.id.genderRadioGrp );
+        Male = findViewById( R.id.maleRadioBtn );
+        Female = findViewById( R.id.femaleRadioBtn );
+        Age = findViewById( R.id.ageEditText );
+        Height = findViewById( R.id.heightEditText );
+        Weight = findViewById( R.id.weightEditText );
+        BloodType = findViewById( R.id.bloodTypeEditText );
 
         save_btn = findViewById( R.id.firstTime_save_btn );
         save_btn.setOnClickListener( new View.OnClickListener() {
@@ -86,7 +86,7 @@ public class AddInfoActivity extends AppCompatActivity {
         String weight = Height.getText().toString();
         String bloodType = BloodType.getText().toString();
 
-        MaleFemale = (RadioButton) findViewById( gender );
+        MaleFemale = findViewById( gender );
 
         HashMap userMap = new HashMap();
 
@@ -137,13 +137,4 @@ public class AddInfoActivity extends AppCompatActivity {
             }
         } );
     }
-/*
-    @OnClick(R.id.firstTime_save_btn)
-    public void onClick(View v) {
-
-        // TODO: FIX THIS BUTTON
-        //startActivity(new Intent(AddInfoActivity.this, MainActivity.class));
-        //finish();
-    }
-    */
 }
