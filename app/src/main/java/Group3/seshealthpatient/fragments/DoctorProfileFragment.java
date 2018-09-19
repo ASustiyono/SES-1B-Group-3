@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,7 +44,13 @@ public class DoctorProfileFragment extends Fragment {
     DatabaseReference databaseReference;
     FirebaseUser userId;
     String uid;
-    TextView FirstName, LastName, Gender, Age, Height, Weight, BloodType;
+    TextView FirstName, LastName, Gender, Age;
+
+    //Clinic Information
+    EditText ClinicName, ClinicNumber, ClinicEmail;
+
+    //Clinic Address
+    EditText ClinicAddressLine1, ClinicAddressLine2, ClinicCity, ClinicPostcode, ClinicCountry, ClinicState;
 
     public DoctorProfileFragment() {
         // Required empty public constructor
@@ -66,13 +73,26 @@ public class DoctorProfileFragment extends Fragment {
         // Note how we are telling butter knife to bind during the on create view method
         ButterKnife.bind( this, v );
 
+        //Doctor Info
         FirstName = v.findViewById( R.id.doctor_userInfo_firstName_textView );
         LastName = v.findViewById( R.id.doctor_userInfo_lastName_textView );
         Gender = v.findViewById( R.id.doctor_userInfo_gender_textView );
         Age = v.findViewById( R.id.doctor_userInfo_age_textView );
-        Height = v.findViewById( R.id.doctor_userInfo_height_textView );
-        Weight = v.findViewById( R.id.doctor_userInfo_weight_textView );
-        BloodType = v.findViewById( R.id.doctor_userInfo_bloodType_textView );
+
+        //Clinic Info
+        ClinicName = v.findViewById( R.id.doctor_name_textView );
+        ClinicNumber = v.findViewById( R.id.doctor_number_textView );
+        ClinicEmail = v.findViewById( R.id.doctor_email_textView );
+
+        //Clinic Address
+        ClinicAddressLine1 = v.findViewById( R.id.doctor_addressLine1_textView);
+        ClinicAddressLine2 = v.findViewBy( R.id.doctor_addressLine2_textView);
+        ClinicCity = v.findViewById(R.id.doctor_city_textView);
+        ClinicPostcode = v.findViewById(R.id.doctor_postcode_textView);
+        ClinicCountry = v.findViewById(R.id.doctor_country_textView);
+        ClinicState = v.findViewByVIew(R.id.doctor_state_textView);
+
+
         userId = FirebaseAuth.getInstance().getCurrentUser();
         uid = userId.getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -84,9 +104,9 @@ public class DoctorProfileFragment extends Fragment {
                 LastName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "lastName" ).getValue( String.class ) );
                 Gender.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "gender" ).getValue( String.class ) );
                 Age.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "age" ).getValue( String.class ) );
-                Height.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "height" ).getValue( String.class ) );
-                Weight.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "weight" ).getValue( String.class ) );
-                BloodType.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "bloodType" ).getValue( String.class ) );
+                //Height.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "height" ).getValue( String.class ) );
+                //Weight.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "weight" ).getValue( String.class ) );
+                //BloodType.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "bloodType" ).getValue( String.class ) );
             }
 
             @Override

@@ -11,6 +11,7 @@
         android:largeHeap="true"
         android:hardwareAccelerated="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,21 +23,17 @@
         <activity android:name=".activities.TutorialActivity" />
         <activity android:name=".activities.RegistrationActivity" />
         <activity android:name=".activities.AddInfoActivity" />
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.HelloActivity" />
         <activity android:name=".activities.RecordVideoActivity" />
         <activity android:name=".activities.EditInfoActivity" />
         <activity android:name=".activities.DoctorRegistrationActivity" />
-        <activity
-            android:name=".activities.DoctorMainActivity"
-            android:label="@string/title_activity_doctor_main"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".activities.DoctorAddInfoActivity"></activity>
+        <activity android:name=".activities.DoctorAddInfoActivity"/>
+        <activity android:name=".activities.DoctorMainActivity"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
