@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@color/checkUp_yellow"
         android:gravity="top"
         android:orientation="vertical">
 
@@ -69,8 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="52dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="64dp"
         android:fontFamily="@font/oswald"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"

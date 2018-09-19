@@ -48,7 +48,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="AGE"
-        android:inputType="text"
+        android:inputType="number"
         android:textAlignment="center" />
 
     <EditText
@@ -59,7 +59,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="HEIGHT"
-        android:inputType="text"
+        android:inputType="number"
         android:textAlignment="center" />
 
     <EditText
@@ -70,7 +70,7 @@
         android:background="@drawable/login_user_btn"
         android:fontFamily="@font/nunito_bold"
         android:hint="WEIGHT"
-        android:inputType="text"
+        android:inputType="number"
         android:textAlignment="center" />
 
     <TableRow
