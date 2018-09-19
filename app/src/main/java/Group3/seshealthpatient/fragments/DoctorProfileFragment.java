@@ -44,18 +44,12 @@ public class DoctorProfileFragment extends Fragment {
     DatabaseReference databaseReference;
     FirebaseUser userId;
     String uid;
-<<<<<<< HEAD
-    TextView FirstName, LastName, Gender, Age;
+
+    //Doctor Information
+    TextView FullName, Gender, Age;
 
     //Clinic Information
-    EditText ClinicName, ClinicNumber, ClinicEmail;
-
-    //Clinic Address
-    EditText ClinicAddressLine1, ClinicAddressLine2, ClinicCity, ClinicPostcode, ClinicCountry, ClinicState;
-=======
-    //TextView FirstName, LastName, Gender, Age, Height, Weight, BloodType;
-    TextView FullName, Gender, Age, Height, Weight, BloodType;
->>>>>>> eeff83571f9fe014b054dadf2416d9570d006ec6
+    TextView ClinicName, ClinicNumber, ClinicEmail, ClinicAddress;
 
     public DoctorProfileFragment() {
         // Required empty public constructor
@@ -78,31 +72,16 @@ public class DoctorProfileFragment extends Fragment {
         // Note how we are telling butter knife to bind during the on create view method
         ButterKnife.bind( this, v );
 
-<<<<<<< HEAD
         //Doctor Info
-        FirstName = v.findViewById( R.id.doctor_userInfo_firstName_textView );
-        LastName = v.findViewById( R.id.doctor_userInfo_lastName_textView );
-=======
-        //FirstName = v.findViewById( R.id.doctor_userInfo_firstName_textView );
-        //LastName = v.findViewById( R.id.doctor_userInfo_lastName_textView );
-        FullName = v.findViewById( R.id.doctor_userInfo_fullName_textView );
->>>>>>> eeff83571f9fe014b054dadf2416d9570d006ec6
-        Gender = v.findViewById( R.id.doctor_userInfo_gender_textView );
-        Age = v.findViewById( R.id.doctor_userInfo_age_textView );
+        FullName = v.findViewById( R.id.doctor_fullName_textView );
+        Gender = v.findViewById( R.id.doctor_gender_textView );
+        Age = v.findViewById( R.id.doctor_age_textView );
 
         //Clinic Info
-        ClinicName = v.findViewById( R.id.doctor_name_textView );
-        ClinicNumber = v.findViewById( R.id.doctor_number_textView );
-        ClinicEmail = v.findViewById( R.id.doctor_email_textView );
-
-        //Clinic Address
-        ClinicAddressLine1 = v.findViewById( R.id.doctor_addressLine1_textView);
-        ClinicAddressLine2 = v.findViewBy( R.id.doctor_addressLine2_textView);
-        ClinicCity = v.findViewById(R.id.doctor_city_textView);
-        ClinicPostcode = v.findViewById(R.id.doctor_postcode_textView);
-        ClinicCountry = v.findViewById(R.id.doctor_country_textView);
-        ClinicState = v.findViewByVIew(R.id.doctor_state_textView);
-
+        ClinicName = v.findViewById( R.id.clinic_name_textView );
+        ClinicNumber = v.findViewById( R.id.clinic_number_textView );
+        ClinicEmail = v.findViewById( R.id.clinic_email_textView );
+        ClinicAddress = v.findViewById( R.id.clinic_address_textView);
 
         userId = FirebaseAuth.getInstance().getCurrentUser();
         uid = userId.getUid();
@@ -111,14 +90,18 @@ public class DoctorProfileFragment extends Fragment {
         databaseReference.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                //FirstName.setText( "Dr. " + dataSnapshot.child( "Patients" ).child( uid ).child( "firstName" ).getValue( String.class ) );
-                //LastName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "lastName" ).getValue( String.class ) );
-                FullName.setText("Dr. " + dataSnapshot.child( "Patients" ).child( uid ).child( "firstName" ).getValue( String.class ) + " " + dataSnapshot.child( "Patients" ).child( uid ).child( "lastName" ).getValue( String.class ) );
-                Gender.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "gender" ).getValue( String.class ) );
-                Age.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "age" ).getValue( String.class ) );
-                //Height.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "height" ).getValue( String.class ) );
-                //Weight.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "weight" ).getValue( String.class ) );
-                //BloodType.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "bloodType" ).getValue( String.class ) );
+                FullName.setText("Dr. " + dataSnapshot.child( "Doctors" ).child( uid ).child( "firstName" ).getValue( String.class )
+                        + " " + dataSnapshot.child( "Doctors" ).child( uid ).child( "lastName" ).getValue( String.class ) );
+                Gender.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "gender" ).getValue( String.class ) );
+                Age.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "age" ).getValue( String.class ) );
+
+                ClinicName.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicName" ).getValue( String.class ) );
+                ClinicNumber.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicNumber" ).getValue( String.class ) );
+                ClinicEmail.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicEmail" ).getValue( String.class ) );
+                ClinicAddress.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicAddress" ).getValue( String.class )
+                        + ", " + dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicState" ).getValue( String.class )
+                        + ", " + dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicCountry" ).getValue( String.class )
+                        + " " + dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicPostcode" ).getValue( String.class ));
             }
 
             @Override

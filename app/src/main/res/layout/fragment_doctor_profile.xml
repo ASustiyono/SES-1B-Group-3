@@ -27,34 +27,26 @@
             android:textStyle="bold" />
     </FrameLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/whiteColor"
-        android:orientation="vertical"
-        android:padding="5dp">
+        android:layout_margin="10dp"
+        android:background="@android:color/background_light">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-<<<<<<< HEAD
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </TableRow>
-
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:padding="5dp">
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/profile_dp" />
 
             <TextView
+                android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
@@ -62,351 +54,174 @@
                 android:fontFamily="@font/open_sans"
                 android:letterSpacing="0.1"
                 android:text="FULL NAME"
-                android:textAlignment="textEnd"
+                android:textAlignment="center"
                 android:textColor="@color/text_title_lightGray" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans"
-                android:letterSpacing="0.1"
-                android:text="NAME"
-                android:textAlignment="viewStart"
-                android:textColor="@color/text_title_lightGray" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/doctor_userInfo_age_textView"
+                android:id="@+id/doctor_fullName_textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/open_sans_semibold"
+                android:padding="5dp"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textColor="@color/text_dark_gray"
                 android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/doctor_userInfo_height_textView"
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans_semibold"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@color/text_dark_gray"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/doctor_userInfo_weight_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans_semibold"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="24sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:padding="5dp">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans"
-                android:letterSpacing="0.1"
-                android:text="AGE"
-                android:textAlignment="center"
-                android:textColor="@color/text_title_lightGray" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans"
-                android:letterSpacing="0.1"
-                android:text="HEIGHT"
-                android:textAlignment="center"
-                android:textColor="@color/text_title_lightGray" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans"
-                android:letterSpacing="0.1"
-                android:text="WEIGHT"
-                android:textAlignment="center"
-                android:textColor="@color/text_title_lightGray" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/doctor_userInfo_gender_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans_semibold"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@color/text_dark_gray"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/doctor_userInfo_bloodType_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans_semibold"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="24sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/open_sans"
-                android:letterSpacing="0.1"
-                android:text="GENDER"
-                android:textAlignment="center"
-                android:textColor="@color/text_title_lightGray" />
-
-            <TextView
-=======
-            <LinearLayout
->>>>>>> eeff83571f9fe014b054dadf2416d9570d006ec6
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="125dp"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/profile_dp" />
+                android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/textView19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/open_sans"
                     android:letterSpacing="0.1"
-                    android:text="FULL NAME"
+                    android:text="GENDER"
                     android:textAlignment="center"
                     android:textColor="@color/text_title_lightGray" />
 
                 <TextView
-                    android:id="@+id/doctor_userInfo_fullName_textView"
+                    android:id="@+id/textView20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="AGE"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_title_lightGray" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/doctor_gender_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
                     android:textAlignment="center"
                     android:textAllCaps="true"
                     android:textColor="@color/text_dark_gray"
                     android:textSize="24sp" />
 
-                <TableRow
+                <TextView
+                    android:id="@+id/doctor_age_textView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
+            </TableRow>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans"
-                        android:letterSpacing="0.1"
-                        android:text="GENDER"
-                        android:textAlignment="center"
-                        android:textColor="@color/text_title_lightGray" />
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans"
+                android:letterSpacing="0.1"
+                android:text="CLINIC NAME"
+                android:textAlignment="center"
+                android:textColor="@color/text_title_lightGray" />
 
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans"
-                        android:letterSpacing="0.1"
-                        android:text="AGE"
-                        android:textAlignment="center"
-                        android:textColor="@color/text_title_lightGray" />
-                </TableRow>
+            <TextView
+                android:id="@+id/clinic_name_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/text_dark_gray"
+                android:textSize="24sp" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans"
+                android:letterSpacing="0.1"
+                android:text="CLINIC NUMBER"
+                android:textAlignment="center"
+                android:textColor="@color/text_title_lightGray" />
 
-                    <TextView
-                        android:id="@+id/doctor_userInfo_gender_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@color/text_dark_gray"
-                        android:textSize="24sp" />
+            <TextView
+                android:id="@+id/clinic_number_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/text_dark_gray"
+                android:textSize="24sp" />
 
-                    <TextView
-                        android:id="@+id/doctor_userInfo_age_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@color/text_dark_gray"
-                        android:textSize="24sp" />
-                </TableRow>
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans"
+                android:letterSpacing="0.1"
+                android:text="CLINIC EMAIL"
+                android:textAlignment="center"
+                android:textColor="@color/text_title_lightGray" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/clinic_email_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/text_dark_gray"
+                android:textSize="24sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans"
-                        android:letterSpacing="0.1"
-                        android:text="CLINIC NAME"
-                        android:textAlignment="center"
-                        android:textColor="@color/text_title_lightGray" />
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans"
+                android:letterSpacing="0.1"
+                android:text="CLINIC ADDRESS"
+                android:textAlignment="center"
+                android:textColor="@color/text_title_lightGray" />
 
-                    <TextView
-                        android:id="@+id/doctor_userInfo_clinicName_textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/holo_red_dark"
-                        android:textSize="24sp" />
+            <TextView
+                android:id="@+id/clinic_address_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/text_dark_gray"
+                android:textSize="24sp" />
 
-                    <TextView
-                        android:id="@+id/textView14"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans"
-                        android:letterSpacing="0.1"
-                        android:text="CLINIC ADDRESS"
-                        android:textAlignment="center"
-                        android:textColor="@color/text_title_lightGray" />
-
-                    <TextView
-                        android:id="@+id/doctor_userInfo_bloodType_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/holo_red_dark"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans"
-                        android:letterSpacing="0.1"
-                        android:text="WORK NUMBER"
-                        android:textAlignment="center"
-                        android:textColor="@color/text_title_lightGray" />
-
-                    <TextView
-                        android:id="@+id/doctor_userInfo_weight_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans"
-                        android:letterSpacing="0.1"
-                        android:text="EMERGENCY NUMBER"
-                        android:textAlignment="center"
-                        android:textColor="@color/text_title_lightGray" />
-
-                    <TextView
-                        android:id="@+id/doctor_userInfo_height_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@color/text_dark_gray"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans"
-                        android:letterSpacing="0.1"
-                        android:text="OPENING HOURS"
-                        android:textAlignment="center"
-                        android:textColor="@color/text_title_lightGray" />
-
-                    <TextView
-                        android:id="@+id/doctor_userInfo_openingHours_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@color/text_dark_gray"
-                        android:textSize="24sp" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </ScrollView>
-
-    </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

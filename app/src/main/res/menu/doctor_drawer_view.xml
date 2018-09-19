@@ -3,9 +3,9 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_doctor_profile"
-            android:title="Doctor Profile"
             android:fontFamily="@font/open_sans_semibold"
-            android:letterSpacing="0.1"/>
+            android:letterSpacing="0.1"
+            android:title="DOCTOR PROFILE" />
         <item
             android:id="@+id/nav_doctor_messenger"
             android:title="@string/create_data_packet"

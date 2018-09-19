@@ -36,7 +36,7 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
     EditText ClinicName, ClinicNumber, ClinicEmail;
 
     //Clinic Address
-    EditText ClinicAddressLine1, ClinicAddressLine2, ClinicCity, ClinicPostcode, ClinicCountry, ClinicState;
+    EditText ClinicAddress, ClinicCity, ClinicPostcode, ClinicCountry, ClinicState;
 
     //Button
     Button save_btn;
@@ -78,8 +78,7 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
         ClinicEmail = findViewById( R.id.doctorEmailEdtTxt);
 
         //Clinic Address
-        ClinicAddressLine1 = findViewById(R.id.doctorClinicAdLn1dtTxt);
-        ClinicAddressLine2 = findViewById(R.id.doctorClinicAdLn2dtTxt);
+        ClinicAddress = findViewById(R.id.doctorClinicAdEdtTxt);
         ClinicCity = findViewById(R.id.doctorClinicCitydtTxt);
         ClinicPostcode = findViewById(R.id.doctorClinicPstCddtTxt);
         ClinicCountry = findViewById(R.id.doctorClinicCntrydtTxt);
@@ -116,8 +115,7 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
         String clinicEmail = ClinicEmail.getText().toString();
 
         //Clinic Address
-        String addressLine1 = ClinicAddressLine1.getText().toString();
-        String addressLine2 = ClinicAddressLine2.getText().toString();
+        String addressLine1 = ClinicAddress.getText().toString();
         String city = ClinicCity.getText().toString();
         String postcode = ClinicPostcode.getText().toString();
         String country = ClinicCountry.getText().toString();
@@ -152,11 +150,7 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
             return;
         }
         if (TextUtils.isEmpty( addressLine1 )) {
-            ClinicAddressLine1.setError( "Required" );
-            return;
-        }
-        if (TextUtils.isEmpty( addressLine2 )) {
-            ClinicAddressLine2.setError( "Required" );
+            ClinicAddress.setError( "Required" );
             return;
         }
         if (TextUtils.isEmpty( city )) {
@@ -182,12 +176,11 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
             userMap.put( "clinicName", clinicName );
             userMap.put( "clinicNumber", clinicNumber );
             userMap.put( "clinicEmail", clinicEmail );
-            userMap.put( "addressLine1", addressLine1);
-            userMap.put( "addressLine2", addressLine2);
-            userMap.put( "city", city);
-            userMap.put( "postcode", postcode);
-            userMap.put( "country", country);
-            userMap.put( "state", state);
+            userMap.put( "clinicAddress", addressLine1);
+            userMap.put( "clinicCity", city);
+            userMap.put( "clinicPostcode", postcode);
+            userMap.put( "clinicCountry", country);
+            userMap.put( "clinicState", state);
 
         }
 
