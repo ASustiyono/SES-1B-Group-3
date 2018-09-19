@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import group3.seshealthpatient.activities.DoctorUpdateInfoActivity;
 import group3.seshealthpatient.activities.EditInfoActivity;
 import butterknife.ButterKnife;
 import group3.seshealthpatient.R;
@@ -124,7 +125,7 @@ public class DoctorProfileFragment extends Fragment {
 
     @OnClick(R.id.doctor_edit_btn)
     public void OnClick(View view) {
-        Intent intent = new Intent( getActivity(), EditInfoActivity.class );
+        Intent intent = new Intent( getActivity(), DoctorUpdateInfoActivity.class );
         startActivity( intent );
     }
 
