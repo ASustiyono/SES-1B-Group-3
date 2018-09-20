@@ -1,12 +1,14 @@
 package group3.seshealthpatient.activities;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -64,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
     private String tempEmail;
     private String tempPassword;
 
+    private CheckBox rememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,9 @@ public class LoginActivity extends AppCompatActivity {
 
         firstTime = getSharedPreferences( "PREFERENCE", MODE_PRIVATE )
                 .getBoolean( "firstTime", true );
+
+        //rememberMe = findViewById(R.id.rememberMe_checkBox);
+        //rememberMe.setTypeface( null, Typeface.);
     }
 
 

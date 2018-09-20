@@ -9,123 +9,144 @@
     android:orientation="vertical"
     tools:context=".activities.EditInfoActivity">
 
-    <Button
-        android:id="@+id/edit_close_btn"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_gravity="right"
-        android:layout_margin="10dp"
-        android:background="@drawable/close_btn" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edit_firstNameEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="FIRST NAME"
-        android:inputType="text"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/edit_lastNameEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="LAST NAME"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/edit_ageEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="AGE"
-        android:inputType="number"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/edit_heightEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="HEIGHT"
-        android:inputType="number"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/edit_weightEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="WEIGHT"
-        android:inputType="number"
-        android:textAlignment="center" />
-
-    <TableRow
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:gravity="center">
-
-        <RadioGroup
-            android:id="@+id/edit_genderRadioGrp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/edit_maleRadioBtn"
-                android:layout_width="125dp"
+            <Button
+                android:id="@+id/edit_close_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end"
+                android:layout_margin="10dp"
+                android:background="@drawable/close_btn" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_bold"
-                android:text="Male"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="18sp" />
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/edit_femaleRadioBtn"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_bold"
-                android:text="Female"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="18sp" />
+                <EditText
+                    android:id="@+id/edit_firstNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="FIRST NAME"
+                    android:inputType="text"
+                    android:textAlignment="center" />
 
-        </RadioGroup>
+                <EditText
+                    android:id="@+id/edit_lastNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="LAST NAME"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
 
-    </TableRow>
+                <EditText
+                    android:id="@+id/edit_ageEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="AGE"
+                    android:inputType="number"
+                    android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/edit_bloodTypeEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="BLOOD TYPE"
-        android:inputType="text"
-        android:textAlignment="center" />
+                <EditText
+                    android:id="@+id/edit_heightEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="HEIGHT"
+                    android:inputType="number"
+                    android:textAlignment="center" />
 
-    <Button
-        android:id="@+id/edit_save_btn"
-        android:layout_width="200dp"
-        android:layout_height="52dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/continue_btn" />
+                <EditText
+                    android:id="@+id/edit_weightEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="WEIGHT"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/edit_bloodTypeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="BLOOD TYPE"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:gravity="center">
+
+                    <RadioGroup
+                        android:id="@+id/edit_genderRadioGrp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/edit_maleRadioBtn"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Male"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/edit_femaleRadioBtn"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Female"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textSize="18sp" />
+
+                    </RadioGroup>
+
+                </TableRow>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/edit_save_btn"
+                android:layout_width="200dp"
+                android:layout_height="52dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/continue_btn" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -29,12 +29,11 @@
         <activity android:name=".activities.DoctorRegistrationActivity" />
         <activity android:name=".activities.DoctorAddInfoActivity" />
         <activity android:name=".activities.DoctorMainActivity" />
+        <activity android:name=".activities.DoctorUpdateInfoActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-        <activity android:name=".activities.DoctorUpdateInfoActivity"></activity>
     </application>
 
 </manifest>

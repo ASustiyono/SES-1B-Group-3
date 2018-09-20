@@ -42,7 +42,7 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
     EditText ClinicAddress, ClinicCity, ClinicPostcode, ClinicCountry, ClinicState;
 
     //Button
-    Button save_btn;
+    Button save_btn, close_btn;
 
     //Firebase Authentication
     FirebaseAuth mAuth;
@@ -94,6 +94,14 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SaveUserInfo();
+            }
+        } );
+
+        close_btn = findViewById( R.id.doctor_update_close_btn );
+        close_btn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         } );
 
