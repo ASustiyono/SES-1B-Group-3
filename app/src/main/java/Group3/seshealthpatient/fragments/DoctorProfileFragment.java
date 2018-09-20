@@ -47,7 +47,7 @@ public class DoctorProfileFragment extends Fragment {
     String uid;
 
     //Doctor Information
-    TextView FullName, Gender, Age;
+    TextView FullName, Gender, Age, Occupation;
 
     //Clinic Information
     TextView ClinicName, ClinicNumber, ClinicEmail, ClinicAddress;
@@ -77,6 +77,7 @@ public class DoctorProfileFragment extends Fragment {
         FullName = v.findViewById( R.id.doctor_fullName_textView );
         Gender = v.findViewById( R.id.doctor_gender_textView );
         Age = v.findViewById( R.id.doctor_age_textView );
+        Occupation = v.findViewById( R.id.doctor_occupation_textView );
 
         //Clinic Info
         ClinicName = v.findViewById( R.id.clinic_name_textView );
@@ -95,7 +96,7 @@ public class DoctorProfileFragment extends Fragment {
                         + " " + dataSnapshot.child( "Doctors" ).child( uid ).child( "lastName" ).getValue( String.class ) );
                 Gender.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "gender" ).getValue( String.class ) );
                 Age.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "age" ).getValue( String.class ) );
-
+                Occupation.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "occupation" ).getValue( String.class ) );
                 ClinicName.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicName" ).getValue( String.class ) );
                 ClinicNumber.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicNumber" ).getValue( String.class ) );
                 ClinicEmail.setText( dataSnapshot.child( "Doctors" ).child( uid ).child( "clinicEmail" ).getValue( String.class ) );

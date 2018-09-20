@@ -49,6 +49,18 @@
                     android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/doctorOccupationEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="OCCUPATION"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <EditText
                     android:id="@+id/doctorAgeEditText"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
