@@ -3,194 +3,380 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/blank_frag_msg"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_margin="20dp"
-    android:gravity="center"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:gravity="top|center"
     android:orientation="vertical"
-    tools:context="Group3.seshealthpatient.Fragments.PatientInformationFragment">
+    tools:context="group3.seshealthpatient.fragments.PatientInformationFragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:padding="5dp"
-        android:src="@mipmap/ic_launcher" />
-
-    <TableRow
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:text="First Name:"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
+    </FrameLayout>
 
-        <TextView
-            android:id="@+id/userInfo_firstName_textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:textAlignment="viewStart"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
-
-    </TableRow>
-
-    <TableRow
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:text="Last Name:"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/userInfo_lastName_textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:textAlignment="viewStart" />
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:padding="10dp"
+                android:text="@string/welcome_txt"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
 
-    </TableRow>
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="#fff633"
+                android:fontFamily="@font/oswald"
+                android:letterSpacing="0.1"
+                android:text="DAILY CHECKUP"
+                android:textColor="@color/checkUp_redTxt"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/background_light"
+                android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:text="Gender:"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/userInfo_gender_textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:textAlignment="viewStart" />
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="15dp"
+                        android:text="YOUR LATEST CHECKUP"
+                        android:textAllCaps="true" />
 
-    </TableRow>
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/notification_icon" />
+                </TableRow>
 
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="0dp"
+                    android:text="30/9/2018"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_dark_gray" />
 
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="3dp"
+                    android:text="CT SCAN"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="0dp"
+                    android:text="Dr. Otto Octavius"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_dark_gray" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:text="Age:"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="5dp">
 
-        <TextView
-            android:id="@+id/userInfo_age_textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:textAlignment="viewStart" />
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:padding="10dp"
+                        android:src="@drawable/video_icon" />
 
-    </TableRow>
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:padding="10dp"
+                        android:src="@drawable/file_icon" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:padding="10dp"
+                        android:src="@drawable/photo_icon" />
+                </TableRow>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:text="Height:"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/whiteColor"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/userInfo_height_textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:textAlignment="viewStart" />
-    </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="15dp"
+                        android:text="YOUR PROFILE"
+                        android:textAllCaps="true" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:text="Weight:"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
+                    <ImageButton
+                        android:id="@+id/edit_btn"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/information_icon" />
+                </TableRow>
 
-        <TextView
-            android:id="@+id/userInfo_weight_textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:textAlignment="viewStart" />
-    </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/userInfo_lastName_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textAlignment="textEnd"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_dark_gray"
+                        android:textSize="24sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:text="Blood Type:"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/userInfo_firstName_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textAlignment="textStart"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_dark_gray"
+                        android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/userInfo_bloodType_textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:textAlignment="viewStart" />
-    </TableRow>
+                </TableRow>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EDIT INFO" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EDIT PHOTO" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="FULL"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/text_title_lightGray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="NAME"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text_title_lightGray" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/userInfo_age_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_dark_gray"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/userInfo_height_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_dark_gray"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/userInfo_weight_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textSize="24sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="AGE"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_title_lightGray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="HEIGHT"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_title_lightGray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="WEIGHT"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_title_lightGray" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/userInfo_gender_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_dark_gray"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/userInfo_bloodType_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="24sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="GENDER"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_title_lightGray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="BLOOD TYPE"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_title_lightGray" />
+                </TableRow>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
 
 </LinearLayout>

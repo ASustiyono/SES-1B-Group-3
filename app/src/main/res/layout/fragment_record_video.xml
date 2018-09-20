@@ -1,14 +1,17 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_invert"
     android:orientation="vertical"
-    tools:context="Group3.seshealthpatient.Fragments.RecordVideoFragment">
+    tools:context="group3.seshealthpatient.fragments.RecordVideoFragment">
 
     <Button
         android:id="@+id/record_video_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="RECORD VIDEO SNIPPET" />
@@ -29,3 +32,29 @@
         android:layout_below="@+id/open_gallery_btn"
         android:text="Upload Video" />
 </RelativeLayout>
+=======
+        android:layout_margin="10dp"
+        android:background="@color/checkUp_yellow"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:text="RECORD VIDEO SNIPPET"
+        android:textAlignment="center"
+        android:textColor="@color/checkUp_red"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="95dp"
+        android:layout_margin="10dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/temp_video_upload" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        android:layout_marginTop="0dp" />
+
+</LinearLayout>
+>>>>>>> acd88766a8638c4351557c2f704df292764997e6

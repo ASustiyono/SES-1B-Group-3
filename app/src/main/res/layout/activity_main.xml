@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="Group3.seshealthpatient.Activities.MainActivity">
+    tools:context="group3.seshealthpatient.activities.MainActivity">
 
 
     <!-- This layout will be the one in charge of loading the different fragments-->
@@ -20,9 +20,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:titleTextColor="@color/whiteColor" />
+            android:background="@android:color/transparent"
+            app:popupTheme="@style/AppTheme"
+            app:titleTextAppearance="@style/TitleBarTextAppearance"/>
 
         <FrameLayout
             android:id="@+id/fragment_container"

@@ -6,52 +6,60 @@
     android:background="@drawable/background_gradient_invert"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Activities.RegistrationActivity">
+    tools:context=".activities.RegistrationActivity">
 
-    <EditText
-        android:id="@+id/register_email_editText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="EMAIL"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="20sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <EditText
-        android:id="@+id/register_password_editText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="PASSWORD"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="20sp" />
+        <EditText
+            android:id="@+id/register_email_editText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/login_user_btn"
+            android:fontFamily="@font/nunito_bold"
+            android:hint="EMAIL"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/register_matchPassword_editText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="CONFIRM PASSWORD"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="20sp" />
+        <EditText
+            android:id="@+id/register_matchPassword_editText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/login_user_btn"
+            android:fontFamily="@font/nunito_bold"
+            android:hint="CONFIRM PASSWORD"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/register_password_editText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/login_user_btn"
+            android:fontFamily="@font/nunito_bold"
+            android:hint="PASSWORD"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/register_btn"
         android:layout_width="200dp"
         android:layout_height="52dp"
-        android:layout_marginTop="50dp"
         android:background="@drawable/login_signup_button"
         android:scaleType="fitCenter" />
 
@@ -59,12 +67,27 @@
         android:id="@+id/register_close_btn"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/nunito_semibold"
         android:text="Already have an account?"
         android:textAllCaps="false"
         android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/patient_user_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/stroke_outline"
+        android:fontFamily="@font/nunito_bold"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Are you a doctor?"
+        android:textAllCaps="false"
+        android:textColor="@color/whiteColor"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

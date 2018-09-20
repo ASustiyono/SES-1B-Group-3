@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="Group3.seshealthpatient">
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
@@ -12,35 +13,51 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+=======
+    package="group3.seshealthpatient">
+>>>>>>> acd88766a8638c4351557c2f704df292764997e6
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activities.SplashActivity">
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MainActivity" />
-        <activity android:name=".Activities.TutorialActivity" />
-        <activity android:name=".Activities.RegistrationActivity" />
-        <activity android:name=".Activities.AddInfoActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.TutorialActivity" />
+        <activity android:name=".activities.RegistrationActivity" />
+        <activity android:name=".activities.AddInfoActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.HelloActivity" />
+        <activity android:name=".activities.RecordVideoActivity" />
+        <activity android:name=".activities.EditInfoActivity" />
+        <activity android:name=".activities.DoctorRegistrationActivity" />
+        <activity android:name=".activities.DoctorAddInfoActivity" />
+        <activity android:name=".activities.DoctorMainActivity" />
+        <activity android:name=".activities.DoctorUpdateInfoActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+<<<<<<< HEAD
 
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.HelloActivity"/>
         <activity android:name=".Activities.RecordVideoActivity"/>
         <activity android:name=".Activities.UploadVideoActivity"/>
         <activity android:name=".Activities.OpenSystemGalleryActivity"/>
+=======
+>>>>>>> acd88766a8638c4351557c2f704df292764997e6
     </application>
 
 </manifest>

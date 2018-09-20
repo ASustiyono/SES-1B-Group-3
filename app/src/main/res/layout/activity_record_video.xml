@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
 android:id="@+id/activity_camera_vodeo"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
+=======
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.RecordVideoActivity">
+
+    <SurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_height="match_parent" />
+>>>>>>> acd88766a8638c4351557c2f704df292764997e6
 
 
     <Button

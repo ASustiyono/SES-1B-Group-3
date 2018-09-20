@@ -4,27 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.TutorialActivity">
+    tools:context=".activities.TutorialActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="false"
-        android:layout_centerInParent="false"
-        android:layout_centerVertical="false"
-        android:layout_marginBottom="54dp"
-        android:gravity="center"
+        android:gravity="top"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/icon_slide"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:padding="10dp" />
+            android:layout_marginTop="50dp">
+
+            <ImageView
+                android:id="@+id/icon_slide"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:padding="10dp" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/heading_slide"
@@ -32,11 +37,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-condensed"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="TextView"
-            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/oswald_bold"
+            android:padding="10dp"
+            android:text="Title"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/checkUp_purple"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -46,13 +52,31 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-condensed"
-            android:gravity="center"
+            android:fontFamily="@font/oswald"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:text="TextView"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="Description"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/text_dark_gray"
             android:textSize="16sp" />
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/warning_slide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/oswald"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="Warning"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="12sp" />
 
 </RelativeLayout>
