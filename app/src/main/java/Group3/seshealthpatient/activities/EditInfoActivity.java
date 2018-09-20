@@ -106,14 +106,11 @@ public class EditInfoActivity extends AppCompatActivity {
         } );
     }
 
-    @OnClick({R.id.edit_save_btn, R.id.edit_close_btn})
+    @OnClick({R.id.edit_save_btn})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.edit_save_btn:
                 SaveUserInfo();
-                break;
-            case R.id.edit_close_btn:
-                finish();
                 break;
         }
     }

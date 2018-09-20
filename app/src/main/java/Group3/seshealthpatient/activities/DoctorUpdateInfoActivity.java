@@ -97,14 +97,6 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
             }
         } );
 
-        close_btn = findViewById( R.id.doctor_update_close_btn );
-        close_btn.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        } );
-
         //Tick Male Button Default as True
         Male.setChecked( true );
 

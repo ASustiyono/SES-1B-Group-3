@@ -8,6 +8,18 @@
     android:orientation="vertical"
     tools:context=".activities.RegistrationActivity">
 
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:text="Patient Registration"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_margin="10dp"
-            android:background="@drawable/login_user_btn"
+            android:background="@drawable/rounded_corner"
             android:fontFamily="@font/nunito_bold"
             android:hint="EMAIL"
             android:inputType="textEmailAddress"
@@ -34,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_margin="10dp"
-            android:background="@drawable/login_user_btn"
+            android:background="@drawable/rounded_corner"
             android:fontFamily="@font/nunito_bold"
             android:hint="CONFIRM PASSWORD"
             android:inputType="textPassword"
@@ -47,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_margin="10dp"
-            android:background="@drawable/login_user_btn"
+            android:background="@drawable/rounded_corner"
             android:fontFamily="@font/nunito_bold"
             android:hint="PASSWORD"
             android:inputType="textPassword"
@@ -72,8 +84,8 @@
         android:background="@android:color/transparent"
         android:fontFamily="@font/nunito_semibold"
         android:text="Already have an account?"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/patient_user_btn"
@@ -84,7 +96,6 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="Are you a doctor?"
-        android:textAllCaps="false"
         android:textColor="@color/whiteColor"
         android:textSize="14sp"
         android:textStyle="bold" />
