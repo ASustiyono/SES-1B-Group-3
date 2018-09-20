@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@drawable/stroke_outline"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp">
@@ -61,7 +60,6 @@
         android:id="@+id/register_btn"
         android:layout_width="200dp"
         android:layout_height="52dp"
-        android:layout_marginTop="50dp"
         android:background="@drawable/login_signup_button"
         android:scaleType="fitCenter" />
 
@@ -69,7 +67,8 @@
         android:id="@+id/register_close_btn"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/nunito_semibold"
         android:text="Already have an account?"
@@ -79,8 +78,16 @@
     <Button
         android:id="@+id/patient_user_btn"
         android:layout_width="200dp"
-        android:layout_height="52dp"
-        android:text="Are you a doctor?" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/stroke_outline"
+        android:fontFamily="@font/nunito_bold"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Are you a doctor?"
+        android:textAllCaps="false"
+        android:textColor="@color/whiteColor"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
