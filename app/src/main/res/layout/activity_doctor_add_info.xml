@@ -12,221 +12,232 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/doctorFirstNameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/login_user_btn"
-                android:fontFamily="@font/nunito_bold"
-                android:hint="FIRST NAME"
-                android:inputType="text"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/doctorLastNameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/login_user_btn"
-                android:fontFamily="@font/nunito_bold"
-                android:hint="LAST NAME"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/doctorAgeEditText"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/login_user_btn"
-                android:fontFamily="@font/nunito_bold"
-                android:hint="AGE"
-                android:inputType="number"
-                android:textAlignment="center" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/login_user_btn"
-                android:gravity="center">
-
-                <RadioGroup
-                    android:id="@+id/doctorGenderRadioGrp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/doctorMaleRadioBtn"
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_bold"
-                        android:text="Male"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textSize="18sp" />
-
-                    <RadioButton
-                        android:id="@+id/doctorFemaleRadioBtn"
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_bold"
-                        android:text="Female"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textSize="18sp" />
-
-                </RadioGroup>
-
-            </TableRow>
-
-            <EditText
-                android:id="@+id/doctorClinicNameEdtTxt"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/login_user_btn"
-                android:fontFamily="@font/nunito_bold"
-                android:hint="CLINIC NAME"
-                android:inputType="text"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/doctorNumberEdtTxt"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/login_user_btn"
-                android:fontFamily="@font/nunito_bold"
-                android:hint="CLINIC NUMBER"
-                android:inputType="number"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/doctorEmailEdtTxt"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/login_user_btn"
-                android:fontFamily="@font/nunito_bold"
-                android:hint="CLINIC EMAIL"
-                android:inputType="textEmailAddress"
-                android:textAlignment="center" />
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="20dp"
-                app:contentPadding="5dp">
-
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <EditText
-                            android:id="@+id/doctorClinicAdEdtTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:fontFamily="@font/nunito_bold"
-                            android:hint="CLINIC ADDRESS LINE 1"
-                            android:inputType="text"
-                            android:textAllCaps="false" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <EditText
-                            android:id="@+id/doctorClinicCitydtTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:ems="10"
-                            android:fontFamily="@font/nunito_bold"
-                            android:hint="CITY"
-                            android:inputType="text"
-                            android:textAllCaps="false" />
-
-                        <EditText
-                            android:id="@+id/doctorClinicPstCddtTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.8"
-                            android:ems="10"
-                            android:fontFamily="@font/nunito_bold"
-                            android:hint="POSTCODE"
-                            android:inputType="number"
-                            android:textAllCaps="true" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <EditText
-                            android:id="@+id/doctorClinicCntrydtTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.3"
-                            android:ems="10"
-                            android:fontFamily="@font/nunito_bold"
-                            android:hint="COUNTRY"
-                            android:inputType="text"
-                            android:textAllCaps="false" />
-
-                        <EditText
-                            android:id="@+id/doctorClinicSttEdtTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.7"
-                            android:ems="10"
-                            android:fontFamily="@font/nunito_bold"
-                            android:hint="STATE"
-                            android:inputType="text"
-                            android:textAllCaps="false" />
-                    </TableRow>
-                </TableLayout>
-            </android.support.v7.widget.CardView>
-
             <Button
-                android:id="@+id/doctor_firstTime_save_btn"
-                android:layout_width="200dp"
-                android:layout_height="52dp"
-                android:layout_gravity="center"
-                android:layout_margin="20dp"
-                android:background="@drawable/continue_btn" />
+                android:id="@+id/doctor_update_close_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/close_btn" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/doctorFirstNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="FIRST NAME"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/doctorLastNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="LAST NAME"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/doctorAgeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="AGE"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:gravity="center">
+
+                    <RadioGroup
+                        android:id="@+id/doctorGenderRadioGrp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/doctorMaleRadioBtn"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Male"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/doctorFemaleRadioBtn"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Female"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textSize="18sp" />
+
+                    </RadioGroup>
+
+                </TableRow>
+
+                <EditText
+                    android:id="@+id/doctorClinicNameEdtTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="CLINIC NAME"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/doctorNumberEdtTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="CLINIC NUMBER"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/doctorEmailEdtTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="CLINIC EMAIL"
+                    android:inputType="textEmailAddress"
+                    android:textAlignment="center" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="20dp"
+                    app:contentPadding="5dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/doctorClinicAdEdtTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:fontFamily="@font/nunito_bold"
+                                android:hint="CLINIC ADDRESS LINE 1"
+                                android:inputType="text"
+                                android:textAllCaps="false" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/doctorClinicCitydtTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.2"
+                                android:ems="10"
+                                android:fontFamily="@font/nunito_bold"
+                                android:hint="CITY"
+                                android:inputType="text"
+                                android:textAllCaps="false" />
+
+                            <EditText
+                                android:id="@+id/doctorClinicPstCddtTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:ems="10"
+                                android:fontFamily="@font/nunito_bold"
+                                android:hint="POSTCODE"
+                                android:inputType="number"
+                                android:textAllCaps="true" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/doctorClinicCntrydtTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:ems="10"
+                                android:fontFamily="@font/nunito_bold"
+                                android:hint="COUNTRY"
+                                android:inputType="text"
+                                android:textAllCaps="false" />
+
+                            <EditText
+                                android:id="@+id/doctorClinicSttEdtTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:ems="10"
+                                android:fontFamily="@font/nunito_bold"
+                                android:hint="STATE"
+                                android:inputType="text"
+                                android:textAllCaps="false" />
+                        </TableRow>
+                    </TableLayout>
+                </android.support.v7.widget.CardView>
+
+                <Button
+                    android:id="@+id/doctor_firstTime_save_btn"
+                    android:layout_width="200dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/continue_btn" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
 
 </LinearLayout>

@@ -7,8 +7,9 @@
     <color name="text_dark_gray">#353535</color>
     <color name="title_text">#ffffff</color>
     <color name="text_title_lightGray">#c8c8c8</color>
-    <color name="checkUp_yellow">#fffcb4</color>
+    <color name="checkUp_yellow">#fff85a</color>
     <color name="checkUp_purple">#7a5ae6</color>
     <color name="checkUp_red">#ff3b30</color>
     <color name="checkUp_blue">#008eee</color>
+    <color name="checkUp_redTxt">#ff3b30</color>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SESHealthPatient</string>
+    <string name="app_name">CheckUp</string>
     <string name="username_txt">Username</string>
     <string name="email_example_com">email@example.com</string>
     <string name="password_txt">Password</string>
@@ -19,4 +19,5 @@
     <string name="next_txt">Forward</string>
     <string name="hello_txt_btn">New? Sign up for free.</string>
     <string name="title_activity_doctor_main">DoctorMainActivity</string>
+    <string name="welcome_txt">Welcome to\nMyCheckUp!</string>
 </resources>
