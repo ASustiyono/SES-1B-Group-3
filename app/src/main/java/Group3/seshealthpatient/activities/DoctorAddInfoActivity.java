@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 public class DoctorAddInfoActivity extends AppCompatActivity {
 
     //Doctor Information
-    EditText FirstName, LastName, Age;
+    EditText FirstName, LastName, Age, Occupation;
     RadioGroup Gender;
     RadioButton MaleFemale;
     RadioButton Male, Female;
@@ -71,6 +71,7 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
         Male = findViewById( R.id.doctorMaleRadioBtn );
         Female = findViewById( R.id.doctorFemaleRadioBtn );
         Age = findViewById( R.id.doctorAgeEditText );
+        Occupation = findViewById( R.id.doctorOccupationEditText );
 
         //Clinic Information
         ClinicName = findViewById( R.id.doctorClinicNameEdtTxt);
@@ -108,6 +109,7 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
         int gender = Gender.getCheckedRadioButtonId();
         MaleFemale = (RadioButton) findViewById( gender );
         String age = Age.getText().toString();
+        String occupation = Occupation.getText().toString();
 
         //Clinic Info
         String clinicName = ClinicName.getText().toString();
@@ -134,6 +136,10 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
             return;
         }
         if (TextUtils.isEmpty( age )) {
+            Age.setError( "Required" );
+            return;
+        }
+        if (TextUtils.isEmpty( occupation )) {
             Age.setError( "Required" );
             return;
         }
@@ -173,6 +179,7 @@ public class DoctorAddInfoActivity extends AppCompatActivity {
             userMap.put( "lastName", lastName );
             userMap.put( "gender", MaleFemale.getText() );
             userMap.put( "age", age );
+            userMap.put( "occupation", occupation );
             userMap.put( "clinicName", clinicName );
             userMap.put( "clinicNumber", clinicNumber );
             userMap.put( "clinicEmail", clinicEmail );

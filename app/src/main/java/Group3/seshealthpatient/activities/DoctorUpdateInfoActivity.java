@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
 public class DoctorUpdateInfoActivity extends AppCompatActivity {
 
     //Doctor Information
-    EditText FirstName, LastName, Age;
+    EditText FirstName, LastName, Age, Occupation;
     RadioGroup Gender;
     RadioButton MaleFemale;
     RadioButton Male, Female;
@@ -42,7 +42,7 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
     EditText ClinicAddress, ClinicCity, ClinicPostcode, ClinicCountry, ClinicState;
 
     //Button
-    Button save_btn, close_btn;
+    Button save_btn;
 
     //Firebase Authentication
     FirebaseAuth mAuth;
@@ -75,6 +75,7 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
         Male = findViewById( R.id.doctorMaleRadioBtn );
         Female = findViewById( R.id.doctorFemaleRadioBtn );
         Age = findViewById( R.id.doctorAgeEditText );
+        Occupation = findViewById( R.id.doctorOccupationEditText );
 
         //Clinic Information
         ClinicName = findViewById( R.id.doctorClinicNameEdtTxt);
@@ -97,14 +98,6 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
             }
         } );
 
-        close_btn = findViewById( R.id.doctor_update_close_btn );
-        close_btn.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        } );
-
         //Tick Male Button Default as True
         Male.setChecked( true );
 
@@ -121,6 +114,7 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
                     Female.setChecked( true );
                 }
                 Age.setText( dataSnapshot.child( "Doctors" ).child( mUserId ).child( "age" ).getValue( String.class ) );
+                Occupation.setText( dataSnapshot.child( "Doctors" ).child( mUserId ).child( "occupation" ).getValue( String.class ) );
                 ClinicName.setText( dataSnapshot.child( "Doctors" ).child( mUserId ).child( "clinicName" ).getValue( String.class ) );
                 ClinicNumber.setText( dataSnapshot.child( "Doctors" ).child( mUserId ).child( "clinicNumber" ).getValue( String.class ) );
                 ClinicEmail.setText( dataSnapshot.child( "Doctors" ).child( mUserId ).child( "clinicEmail" ).getValue( String.class ) );
@@ -147,6 +141,7 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
         int gender = Gender.getCheckedRadioButtonId();
         MaleFemale = (RadioButton) findViewById( gender );
         String age = Age.getText().toString();
+        String occupation = Occupation.getText().toString();
 
         //Clinic Info
         String clinicName = ClinicName.getText().toString();
@@ -173,6 +168,10 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
             return;
         }
         if (TextUtils.isEmpty( age )) {
+            Age.setError( "Required" );
+            return;
+        }
+        if (TextUtils.isEmpty( occupation )) {
             Age.setError( "Required" );
             return;
         }
@@ -212,6 +211,7 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
             userMap.put( "lastName", lastName );
             userMap.put( "gender", MaleFemale.getText() );
             userMap.put( "age", age );
+            userMap.put( "occupation", occupation );
             userMap.put( "clinicName", clinicName );
             userMap.put( "clinicNumber", clinicNumber );
             userMap.put( "clinicEmail", clinicEmail );

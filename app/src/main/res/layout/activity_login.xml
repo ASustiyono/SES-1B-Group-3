@@ -14,7 +14,7 @@
         android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         app:srcCompat="@drawable/hello_logo" />
 
     <LinearLayout
@@ -23,19 +23,6 @@
         android:layout_margin="20dp"
         android:orientation="vertical"
         android:padding="20dp">
-
-        <EditText
-            android:id="@+id/passwordET"
-            style="@style/LoginStyles"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/rounded_corner"
-            android:fontFamily="@font/nunito_bold"
-            android:hint="PASSWORD"
-            android:inputType="textPassword"
-            android:textAlignment="center"
-            android:textSize="22sp" />
 
         <EditText
             android:id="@+id/usernameET"
@@ -47,6 +34,19 @@
             android:fontFamily="@font/nunito_bold"
             android:hint="EMAIL"
             android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/passwordET"
+            style="@style/LoginStyles"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/nunito_bold"
+            android:hint="PASSWORD"
+            android:inputType="textPassword"
             android:textAlignment="center"
             android:textSize="22sp" />
 
@@ -64,7 +64,6 @@
     <TableRow
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
         android:gravity="center">
 
         <CheckBox
@@ -74,11 +73,12 @@
             android:layout_gravity="center"
             android:layout_weight="0.5"
             android:buttonTint="@android:color/white"
-            android:fontFamily="@font/nunito_bold"
+            android:fontFamily="@font/nunito_semibold"
             android:gravity="center"
             android:text="Remember Me"
+            android:textAllCaps="true"
             android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/forgot_password_btn"
@@ -87,22 +87,23 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="0.5"
             android:background="@android:color/transparent"
-            android:fontFamily="@font/nunito_bold"
+            android:fontFamily="@font/nunito_semibold"
             android:text="Forgot Password?"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
     </TableRow>
 
     <Button
         android:id="@+id/register_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/nunito_bold"
         android:padding="15dp"
         android:text="@string/register_txt"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
 
 
 </LinearLayout>
