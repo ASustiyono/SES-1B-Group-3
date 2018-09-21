@@ -1,3 +1,10 @@
+<<<<<<< HEAD:app/src/main/java/Group3/seshealthpatient/Activities/RecordVideoActivity.java
+package Group3.seshealthpatient.Activities;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.media.ThumbnailUtils;
+=======
 package group3.seshealthpatient.activities;
 
 import android.app.Activity;
@@ -5,23 +12,34 @@ import android.hardware.Camera;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+>>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9:app/src/main/java/Group3/seshealthpatient/activities/RecordVideoActivity.java
 import android.net.Uri;
-import android.os.Environment;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import java.io.File;
-import java.util.Calendar;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import group3.seshealthpatient.R;
 
+<<<<<<< HEAD:app/src/main/java/Group3/seshealthpatient/Activities/RecordVideoActivity.java
+public class RecordVideoActivity extends AppCompatActivity {
+    private VideoView recordVideoView;
+    private ImageView recordImageView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_record_video);
+
+
+        recordVideoView = (VideoView) findViewById(R.id.my_vv);
+        recordImageView = (ImageView) findViewById(R.id.my_iv);
+
+=======
 import static android.content.ContentValues.TAG;
 
 public class RecordVideoActivity extends Activity implements SurfaceHolder.Callback {
@@ -194,10 +212,12 @@ public class RecordVideoActivity extends Activity implements SurfaceHolder.Callb
 
         String date = "" + year + (month + 1) + day + hour + minute + second;
         Log.d( TAG, "date:" + date );
+>>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9:app/src/main/java/Group3/seshealthpatient/activities/RecordVideoActivity.java
 
-        return date;
     }
 
+<<<<<<< HEAD:app/src/main/java/Group3/seshealthpatient/Activities/RecordVideoActivity.java
+=======
     /**
      * get sd part
      */
@@ -212,18 +232,46 @@ public class RecordVideoActivity extends Activity implements SurfaceHolder.Callb
 
         return null;
     }
+>>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9:app/src/main/java/Group3/seshealthpatient/activities/RecordVideoActivity.java
 
-    @Override
-    public void surfaceCreated(SurfaceHolder surfaceHolder) {
-        mSurfaceHolder = surfaceHolder;
+    public void camera(View view) {
+        //lunch system camera to take video
+        Intent intent = new Intent();
+        intent.setAction(MediaStore.ACTION_VIDEO_CAPTURE);//take video
+        startActivityForResult(intent,100);
     }
 
-    @Override
-    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
-        mSurfaceHolder = surfaceHolder;
-    }
 
     @Override
+<<<<<<< HEAD:app/src/main/java/Group3/seshealthpatient/Activities/RecordVideoActivity.java
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if (requestCode==100 && resultCode == RESULT_OK) {
+            Log.e("sxl","Finish shooting");
+            //get the uri
+            Uri uri = data.getData();
+            //get data from uri
+            Cursor cursor =  getContentResolver().query(uri,null,null,null,null);
+
+
+            if (cursor.moveToFirst()) {
+                //get the uri from first video
+                String path = cursor.getString(cursor.getColumnIndex("_data"));
+                Log.d("sxl", "onActivityResult: "+path);
+                //set the uri
+                recordVideoView.setVideoURI(Uri.parse(path));
+                //add media controller
+                recordVideoView.setMediaController(new MediaController(this));
+                //play video
+                recordVideoView.start();
+                //crate the bitmap for video
+                Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(path,MediaStore.Video.Thumbnails.MINI_KIND);
+                //set bitmap
+                recordImageView.setImageBitmap(bitmap);
+            }
+=======
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
         mSurfaceview = null;
         mSurfaceHolder = null;
@@ -240,7 +288,7 @@ public class RecordVideoActivity extends Activity implements SurfaceHolder.Callb
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
+>>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9:app/src/main/java/Group3/seshealthpatient/activities/RecordVideoActivity.java
         }
     }
 }
-

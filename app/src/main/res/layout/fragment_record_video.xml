@@ -11,6 +11,28 @@
         android:id="@+id/record_video_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="RECORD VIDEO SNIPPET" />
+
+    <Button
+        android:id="@+id/open_gallery_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/record_video_btn"
+        android:text="Open System Gallery" />
+
+    <Button
+        android:id="@+id/upload_video_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/open_gallery_btn"
+        android:text="Upload Video" />
+</RelativeLayout>
+=======
         android:layout_margin="10dp"
         android:background="@color/checkUp_yellow"
         android:fontFamily="@font/oswald"
@@ -35,3 +57,4 @@
         android:layout_marginTop="0dp" />
 
 </LinearLayout>
+>>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9
