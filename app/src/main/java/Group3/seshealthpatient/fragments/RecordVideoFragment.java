@@ -10,21 +10,16 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD:app/src/main/java/Group3/seshealthpatient/Fragments/RecordVideoFragment.java
 import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.File;
 
-import Group3.seshealthpatient.Activities.OpenSystemGalleryActivity;
-import Group3.seshealthpatient.Activities.RecordVideoActivity;
-import Group3.seshealthpatient.Activities.UploadVideoActivity;
-import Group3.seshealthpatient.R;
-=======
-
+import group3.seshealthpatient.activities.OpenSystemGalleryActivity;
 import group3.seshealthpatient.activities.RecordVideoActivity;
+import group3.seshealthpatient.activities.UploadVideoActivity;
 import group3.seshealthpatient.R;
->>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9:app/src/main/java/Group3/seshealthpatient/fragments/RecordVideoFragment.java
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -34,7 +29,6 @@ import butterknife.OnClick;
  */
 public class RecordVideoFragment extends Fragment {
 
-<<<<<<< HEAD:app/src/main/java/Group3/seshealthpatient/Fragments/RecordVideoFragment.java
     private Button recordBtn;
     private Button openGalleryBtn;
     private Button uploadVideoBtn;
@@ -42,8 +36,7 @@ public class RecordVideoFragment extends Fragment {
     private String fileName = "";
     private File tempFile;
     private static final int IMAGE = 1;
-=======
->>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9:app/src/main/java/Group3/seshealthpatient/fragments/RecordVideoFragment.java
+
     public RecordVideoFragment() {
         // Required empty public constructor
     }
@@ -61,7 +54,7 @@ public class RecordVideoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-<<<<<<< HEAD:app/src/main/java/Group3/seshealthpatient/Fragments/RecordVideoFragment.java
+
         View v = inflater.inflate(R.layout.fragment_record_video, container, false);
         recordBtn=(Button)v.findViewById(R.id.record_video_btn);
         recordBtn.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +68,7 @@ public class RecordVideoFragment extends Fragment {
         openGalleryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(getActivity(),OpenSystemGalleryActivity.class);
+                Intent intent2 = new Intent(getActivity(), OpenSystemGalleryActivity.class);
                 startActivity(intent2);
             }
         });
@@ -88,31 +81,7 @@ public class RecordVideoFragment extends Fragment {
             }
         });
         ButterKnife.bind(this, v);
-=======
-        View v = inflater.inflate( R.layout.fragment_record_video, container, false );
-
-        ButterKnife.bind( this, v );
->>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9:app/src/main/java/Group3/seshealthpatient/fragments/RecordVideoFragment.java
-
 
         return v;
     }
-
-<<<<<<< HEAD:app/src/main/java/Group3/seshealthpatient/Fragments/RecordVideoFragment.java
-    //@OnClick(R.id.record_video_btn)
-    //public void OnClick(View view) {
-    //    Intent intent1 = new Intent(getActivity(), RecordVideoActivity.class);
-    //    startActivity(intent1);
-    //}
-
-
-
-=======
-    @OnClick(R.id.record_video_btn)
-    public void OnClick(View view) {
-        Intent intent = new Intent( getActivity(), RecordVideoActivity.class );
-        startActivity( intent );
-    }
->>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9:app/src/main/java/Group3/seshealthpatient/fragments/RecordVideoFragment.java
-
 }

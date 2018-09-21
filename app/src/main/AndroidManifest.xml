@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    package="Group3.seshealthpatient">
+    package="group3.seshealthpatient">
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
     <uses-permission android:name="android.permission.CAMERA" >
@@ -12,10 +11,6 @@
     </uses-permission>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-=======
-    package="group3.seshealthpatient">
->>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9
 
     <application
         android:allowBackup="true"
@@ -45,19 +40,8 @@
         <activity android:name=".activities.DoctorAddInfoActivity" />
         <activity android:name=".activities.DoctorMainActivity" />
         <activity android:name=".activities.DoctorUpdateInfoActivity"/>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-<<<<<<< HEAD
-
-        <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.HelloActivity"/>
-        <activity android:name=".Activities.RecordVideoActivity"/>
-        <activity android:name=".Activities.UploadVideoActivity"/>
-        <activity android:name=".Activities.OpenSystemGalleryActivity"/>
-=======
->>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9
+        <activity android:name=".activities.UploadVideoActivity"/>
+        <activity android:name=".activities.OpenSystemGalleryActivity"/>
     </application>
 
 </manifest>

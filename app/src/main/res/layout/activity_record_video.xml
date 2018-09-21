@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
 android:id="@+id/activity_camera_vodeo"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
-=======
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.RecordVideoActivity">
 
     <SurfaceView
@@ -15,8 +10,6 @@ android:layout_height="match_parent">
         android:layout_width="match_parent"
         android:layout_marginBottom="60dp"
         android:layout_height="match_parent" />
->>>>>>> 47d6d779c923a8203e79fbf47a0d3971f51848d9
-
 
     <Button
         android:id="@+id/but_camera"
@@ -34,10 +27,10 @@ android:layout_height="match_parent">
         android:layout_centerHorizontal="true"
         android:src="@mipmap/ic_launcher" />
 
-
 <VideoView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/my_vv"
     android:layout_below="@id/my_iv"/>
+
 </RelativeLayout>

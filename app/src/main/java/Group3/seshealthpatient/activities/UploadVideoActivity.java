@@ -1,4 +1,4 @@
-package Group3.seshealthpatient.Activities;
+package group3.seshealthpatient.activities;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -18,7 +18,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.UUID;
 
-import Group3.seshealthpatient.R;
+import group3.seshealthpatient.R;
 
 public class UploadVideoActivity extends AppCompatActivity {
     private Button btnChoose, btnUpload;

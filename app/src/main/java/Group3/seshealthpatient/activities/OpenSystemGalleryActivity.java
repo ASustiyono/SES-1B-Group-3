@@ -1,4 +1,4 @@
-package Group3.seshealthpatient.Activities;
+package group3.seshealthpatient.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,13 +12,14 @@ import android.widget.VideoView;
 
 import java.io.File;
 
-import Group3.seshealthpatient.R;
+import group3.seshealthpatient.R;
 
 
 public class OpenSystemGalleryActivity extends AppCompatActivity {
 
     private static final int VIDEO = 1;
     private VideoView galleryVideoView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
