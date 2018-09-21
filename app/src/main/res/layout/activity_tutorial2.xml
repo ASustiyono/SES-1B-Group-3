@@ -4,7 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    tools:context=".Activities.TutorialActivity">
+    tools:context=".activities.TutorialActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/checkUp_yellow">
+
+    </FrameLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/slideViewPager"
@@ -35,11 +44,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-condensed"
         android:padding="20dp"
         android:text="@string/back_txt"
+        android:textColor="@color/checkUp_purple"
         android:textStyle="bold"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/colorPrimary"
         android:visibility="invisible" />
 
     <Button
@@ -49,11 +58,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-condensed"
         android:padding="20dp"
         android:text="@string/next_txt"
-        android:fontFamily="sans-serif-condensed"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/checkUp_purple"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

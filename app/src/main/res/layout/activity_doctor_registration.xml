@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_invert"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activities.DoctorRegistrationActivity">
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:text="DOCTOR Registration"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/doctor_register_email_editText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/nunito_bold"
+            android:hint="EMAIL"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/doctor_register_matchPassword_editText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/nunito_bold"
+            android:hint="CONFIRM PASSWORD"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/doctor_register_password_editText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corner"
+            android:fontFamily="@font/nunito_bold"
+            android:hint="PASSWORD"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/doctor_register_btn"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:background="@drawable/login_signup_button"
+        android:scaleType="fitCenter" />
+
+    <Button
+        android:id="@+id/doctor_register_close_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Already have an account?"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/doctor_user_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/stroke_outline"
+        android:fontFamily="@font/nunito_bold"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Are you a patient?"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

@@ -4,115 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
+    android:layout_gravity="center"
+    android:background="@drawable/background_gradient_invert"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Activities.AddInfoActivity">
+    tools:context=".activities.AddInfoActivity">
 
-    <EditText
-        android:id="@+id/firstNameEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="FIRST NAME"
-        android:textAlignment="center" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/lastNameEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="LAST NAME"
-        android:textAlignment="center"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/ageEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="AGE"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/heightEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="HEIGHT"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/weightEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="WEIGHT"
-        android:textAlignment="center" />
-
-    <TableRow
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:gravity="center">
-
-        <RadioGroup
-            android:id="@+id/genderRadioGrp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/maleRadioBtn"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_bold"
-                android:text="Male"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <RadioButton
-                android:id="@+id/femaleRadioBtn"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_bold"
-                android:text="Female"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="18sp" />
+                <EditText
+                    android:id="@+id/firstNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="FIRST NAME"
+                    android:inputType="text"
+                    android:textAlignment="center" />
 
-        </RadioGroup>
+                <EditText
+                    android:id="@+id/lastNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="LAST NAME"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
 
-    </TableRow>
+                <EditText
+                    android:id="@+id/ageEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="AGE"
+                    android:inputType="number"
+                    android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/bloodTypeEditText"
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/login_user_btn"
-        android:fontFamily="@font/nunito_bold"
-        android:hint="BLOOD TYPE"
-        android:textAlignment="center" />
+                <EditText
+                    android:id="@+id/heightEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="HEIGHT"
+                    android:inputType="number"
+                    android:textAlignment="center" />
 
+                <EditText
+                    android:id="@+id/weightEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="WEIGHT"
+                    android:inputType="number"
+                    android:textAlignment="center" />
 
-    <Button
-        android:id="@+id/firstTime_save_btn"
-        android:layout_width="200dp"
-        android:layout_height="52dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/continue_btn" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:gravity="center">
+
+                    <RadioGroup
+                        android:id="@+id/genderRadioGrp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/maleRadioBtn"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Male"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textSize="18sp" />
+
+                        <RadioButton
+                            android:id="@+id/femaleRadioBtn"
+                            android:layout_width="125dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="Female"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textSize="18sp" />
+
+                    </RadioGroup>
+
+                </TableRow>
+
+                <EditText
+                    android:id="@+id/bloodTypeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="BLOOD TYPE"
+                    android:inputType="text"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/firstTime_save_btn"
+                    android:layout_width="200dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/continue_btn" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

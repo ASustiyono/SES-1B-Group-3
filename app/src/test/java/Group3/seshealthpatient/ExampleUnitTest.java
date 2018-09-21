@@ -1,4 +1,4 @@
-package Group3.seshealthpatient;
+package group3.seshealthpatient;
 
 import org.junit.Test;
 

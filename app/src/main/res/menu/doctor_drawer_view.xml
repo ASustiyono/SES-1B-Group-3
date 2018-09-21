@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_doctor_profile"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"
+            android:title="DOCTOR PROFILE" />
+        <item
+            android:id="@+id/nav_doctor_messenger"
+            android:title="@string/create_data_packet"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
+        <item
+            android:id="@+id/nav_doctor_clinics"
+            android:title="@string/heart_rate"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
+        <item
+            android:id="@+id/nav_doctor_logout"
+            android:title="LOGOUT"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
+
+    </group>
+</menu>

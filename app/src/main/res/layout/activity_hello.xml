@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
-    tools:context=".Activities.HelloActivity">
+    android:background="@drawable/background_gradient_invert"
+    tools:context=".activities.HelloActivity">
 
     <ImageButton
         android:id="@+id/hello_btn"
@@ -26,8 +26,9 @@
         android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/nunito_bold"
-        android:text="We present..."
-        android:textColor="@android:color/white" />
+        android:text="G3 presents..."
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView6"
@@ -37,8 +38,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="An educational project"
-        android:textColor="@android:color/white" />
+        android:text="A studio project"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/hello_register_btn"

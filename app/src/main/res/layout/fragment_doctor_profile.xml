@@ -1,0 +1,352 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/blank_frag_msg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:gravity="top|center"
+    android:orientation="vertical"
+    tools:context="group3.seshealthpatient.fragments.DoctorProfileFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:padding="10dp"
+                android:text="@string/welcome_txt"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                android:background="#fff633"
+                android:fontFamily="@font/oswald"
+                android:letterSpacing="0.1"
+                android:text="REVIEW CHECKUPS"
+                android:textColor="@color/checkUp_redTxt"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/background_light"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="15dp"
+                        android:text="YOUR PROFILE"
+                        android:textAllCaps="true" />
+
+                    <ImageButton
+                        android:id="@+id/doctor_edit_btn"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/information_icon" />
+                </TableRow>
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/profile_dp" />
+
+                <TextView
+                    android:id="@+id/doctor_fullName_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="FULL NAME"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_title_lightGray" />
+
+                <TextView
+                    android:id="@+id/doctor_occupation_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="OCCUPATION"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_title_lightGray" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/doctor_gender_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:padding="5dp"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_dark_gray"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/doctor_age_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:padding="5dp"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_dark_gray"
+                        android:textSize="24sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="GENDER"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_title_lightGray" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:text="AGE"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_title_lightGray" />
+                </TableRow>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/background_light"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="15dp"
+                        android:text="YOUR CLINIC"
+                        android:textAllCaps="true" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/information_icon" />
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="CLINIC NAME"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_title_lightGray" />
+
+                <TextView
+                    android:id="@+id/clinic_name_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="CLINIC NUMBER"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_title_lightGray" />
+
+                <TextView
+                    android:id="@+id/clinic_number_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="CLINIC EMAIL"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_title_lightGray" />
+
+                <TextView
+                    android:id="@+id/clinic_email_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans"
+                    android:letterSpacing="0.1"
+                    android:text="CLINIC ADDRESS"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_title_lightGray" />
+
+                <TextView
+                    android:id="@+id/clinic_address_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,31 +1,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_invert"
     android:orientation="vertical"
-    tools:context="Group3.seshealthpatient.Fragments.SendFileFragment">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="File Upload"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="24sp" />
+    tools:context="group3.seshealthpatient.fragments.SendFileFragment">
 
     <Button
         android:id="@+id/send_select_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_semibold"
+        android:layout_margin="10dp"
+        android:background="@color/checkUp_yellow"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
         android:text="Select files to upload"
+        android:textColor="@color/checkUp_red"
+        android:textSize="18sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/temp_file_upload" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/send_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" ></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
