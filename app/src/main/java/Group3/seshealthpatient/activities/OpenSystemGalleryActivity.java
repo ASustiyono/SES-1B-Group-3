@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -24,7 +25,33 @@ public class OpenSystemGalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_gallery);
+
+        //Setting Toolbar Text
+        setTitle( "OPEN SYSTEM GALLERY" );
+
+        //Adding Toolbar
+        Toolbar toolbar = findViewById(R.id.tool);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //startActivity(new Intent(ActivityOne.this, ActivityTwo.class));
+        finish();
+    }
+
 
     public void onClick(View v) {
         //open the system galley

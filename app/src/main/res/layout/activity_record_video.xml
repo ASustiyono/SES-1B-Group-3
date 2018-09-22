@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/activity_camera_vodeo"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_camera_video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_invert"
     tools:context=".activities.RecordVideoActivity">
 
     <SurfaceView
         android:id="@+id/surfaceview"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginBottom="60dp"
-        android:layout_height="match_parent" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/but_camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tool"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:background="@color/whiteColor"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
         android:onClick="camera"
-        android:text="START" />
+        android:text="START"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
     <ImageView
@@ -27,10 +40,19 @@ android:layout_height="match_parent">
         android:layout_centerHorizontal="true"
         android:src="@mipmap/ic_launcher" />
 
-<VideoView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/my_vv"
-    android:layout_below="@id/my_iv"/>
+    <VideoView
+        android:id="@+id/my_vv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/my_iv"
+        android:background="@android:color/transparent" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        app:popupTheme="@style/AppTheme"
+        app:titleTextAppearance="@style/TitleBarTextAppearance" />
 
 </RelativeLayout>

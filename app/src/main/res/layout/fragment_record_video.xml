@@ -13,7 +13,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="RECORD VIDEO SNIPPET" />
+        android:text="RECORD VIDEO SNIPPET"
+        android:layout_margin="15dp"
+        android:background="#fff633"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:textColor="@color/checkUp_redTxt"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/open_gallery_btn"
@@ -21,7 +28,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/record_video_btn"
-        android:text="Open System Gallery" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/whiteColor"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:text="Open System Gallery"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/upload_video_btn"
@@ -29,19 +44,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/open_gallery_btn"
-        android:text="Upload Video" />
+        android:text="Upload Video"
+        android:layout_margin="15dp"
+        android:background="@color/whiteColor"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="95dp"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:scaleType="fitStart"
         android:src="@drawable/temp_video_upload" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="510dp"
-        android:layout_marginTop="0dp" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
 
 </LinearLayout>

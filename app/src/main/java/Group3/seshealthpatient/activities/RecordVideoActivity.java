@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -31,18 +32,41 @@ public class RecordVideoActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_record_video );
 
-
         recordVideoView = (VideoView) findViewById( R.id.my_vv );
         recordImageView = (ImageView) findViewById( R.id.my_iv );
 
+        //Setting Toolbar Text
+        setTitle( "VIDEO SNIPPET" );
+
+        //Adding Toolbar
+        Toolbar toolbar = findViewById(R.id.tool);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //startActivity(new Intent(ActivityOne.this, ActivityTwo.class));
+        finish();
+    }
 
     public void camera(View view) {
         //lunch system camera to take video
         Intent intent = new Intent();
         intent.setAction(MediaStore.ACTION_VIDEO_CAPTURE);//take video
         startActivityForResult(intent,100);
+        intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 30);
     }
 
 
