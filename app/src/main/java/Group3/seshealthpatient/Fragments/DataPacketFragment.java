@@ -2,7 +2,7 @@ package Group3.seshealthpatient.Fragments;
 
 
 import android.app.Activity;
-import android.app.FragmentManager;
+//import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -14,9 +14,11 @@ import android.widget.EditText;
 
 import Group3.seshealthpatient.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
+
+
+ // * A simple {@link Fragment} subclass.
+
 public class DataPacketFragment extends Fragment {
 
     private Button btn;
@@ -102,3 +104,4 @@ public class DataPacketFragment extends Fragment {
 // }
 // });
 // return v;
+

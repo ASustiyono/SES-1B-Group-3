@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
      * TAG to use
      */
     private static String TAG = "MainActivity";
-
+/*
 
     @Override
     public void onMessageSend(String message) {
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private MenuStates currentState;
 
-
+/*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+        */
 
     private FirebaseAuth Auth;
 
