@@ -25,6 +25,7 @@ import group3.seshealthpatient.fragments.HeartRateFragment;
 import group3.seshealthpatient.fragments.MapFragment;
 import group3.seshealthpatient.fragments.PatientInformationFragment;
 //import group3.seshealthpatient.Fragments.RecordVideoFragment;
+import group3.seshealthpatient.fragments.PatientViewDoctorsFragment;
 import group3.seshealthpatient.fragments.RecordVideoFragment;
 import group3.seshealthpatient.fragments.SendFileFragment;
 import group3.seshealthpatient.R;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
      * what I mean with this later in this code.
      */
     private enum MenuStates {
-        PATIENT_INFO, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP, LOG_OUT
+        PATIENT_INFO, VIEW_DOCTORS, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP, LOG_OUT
     }
 
     /**
@@ -127,7 +128,14 @@ public class MainActivity extends AppCompatActivity {
                                     // change the fragment to the new fragment
                                     ChangeFragment( new PatientInformationFragment() );
                                     currentState = MenuStates.PATIENT_INFO;
-                                    ;
+                                }
+                                break;
+                            case R.id.nav_view_doctors:
+                                // If the user clicked on a different item than the current item
+                                if (currentState != MenuStates.VIEW_DOCTORS) {
+                                    // change the fragment to the new fragment
+                                    ChangeFragment( new PatientViewDoctorsFragment());
+                                    currentState = MenuStates.VIEW_DOCTORS;
                                 }
                                 break;
                             case R.id.nav_data_packet:
