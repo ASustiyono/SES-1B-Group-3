@@ -229,7 +229,7 @@ public class DoctorUpdateInfoActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task task) {
                 if (task.isSuccessful()) {
                     Toast.makeText( getApplicationContext(), "Entered user info successfully!", Toast.LENGTH_SHORT ).show();
-                    startActivity( new Intent( DoctorUpdateInfoActivity.this, DoctorMainActivity.class ) );
+                    //startActivity( new Intent( DoctorUpdateInfoActivity.this, DoctorMainActivity.class ) );
                     finish();
                 } else {
                     String message = task.getException().getMessage();

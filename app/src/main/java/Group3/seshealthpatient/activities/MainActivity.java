@@ -29,6 +29,7 @@ import group3.seshealthpatient.fragments.PatientViewDoctorsFragment;
 import group3.seshealthpatient.fragments.RecordVideoFragment;
 import group3.seshealthpatient.fragments.SendFileFragment;
 import group3.seshealthpatient.R;
+import group3.seshealthpatient.fragments.SettingsFragment;
 
 
 /**
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
      * what I mean with this later in this code.
      */
     private enum MenuStates {
-        PATIENT_INFO, VIEW_DOCTORS, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP, LOG_OUT
+        PATIENT_INFO, VIEW_DOCTORS, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP, SETTINGS, LOG_OUT
     }
 
     /**
@@ -166,6 +167,12 @@ public class MainActivity extends AppCompatActivity {
                                 if (currentState != MenuStates.NAVIGATION_MAP) {
                                     ChangeFragment( new MapFragment() );
                                     currentState = MenuStates.NAVIGATION_MAP;
+                                }
+                                break;
+                            case R.id.nav_settings:
+                                if (currentState != MenuStates.SETTINGS) {
+                                    ChangeFragment( new SettingsFragment() );
+                                    currentState = MenuStates.SETTINGS;
                                 }
                                 break;
                             case R.id.nav_logout:

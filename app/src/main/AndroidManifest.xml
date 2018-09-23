@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="group3.seshealthpatient">
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
-    <uses-permission android:name="android.permission.CAMERA" >
-    </uses-permission>
-    <uses-permission android:name="android.permission.RECORD_AUDIO" >
-    </uses-permission>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
-    </uses-permission>
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -39,10 +38,11 @@
         <activity android:name=".activities.DoctorRegistrationActivity" />
         <activity android:name=".activities.DoctorAddInfoActivity" />
         <activity android:name=".activities.DoctorMainActivity" />
-        <activity android:name=".activities.DoctorUpdateInfoActivity"/>
-        <activity android:name=".activities.UploadVideoActivity"/>
-        <activity android:name=".activities.OpenSystemGalleryActivity"/>
-
+        <activity android:name=".activities.DoctorUpdateInfoActivity" />
+        <activity android:name=".activities.UploadVideoActivity" />
+        <activity android:name=".activities.OpenSystemGalleryActivity" />
+        <activity android:name=".activities.PatientChangePasswordActivity" />
+        <activity android:name=".activities.PatientChangeEmailActivity"></activity>
     </application>
 
 </manifest>

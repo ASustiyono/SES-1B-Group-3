@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_invert"
+    android:orientation="vertical"
+    tools:context=".fragments.SettingsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:id="@+id/settings_changePassword_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/whiteColor"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:onClick="onClick"
+        android:text="CHANGE PASSWORD"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/settings_changeEmail_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:onClick="onClick"
+        android:text="CHANGE EMAIL"
+        android:textColor="@android:color/transparent"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</LinearLayout>
