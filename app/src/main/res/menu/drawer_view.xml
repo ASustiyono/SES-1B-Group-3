@@ -31,13 +31,16 @@
             android:title="@string/send_local_file"
             android:fontFamily="@font/open_sans_semibold"
             android:letterSpacing="0.1"/>
-
         <item
             android:id="@+id/nav_map"
             android:title="@string/facilities_map"
             android:fontFamily="@font/open_sans_semibold"
             android:letterSpacing="0.1"/>
-
+        <item
+            android:id="@+id/nav_settings"
+            android:title="SETTINGS"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
         <item
             android:id="@+id/nav_logout"
             android:title="LOGOUT"
