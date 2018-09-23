@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import group3.seshealthpatient.fragments.DoctorClinicFragment;
 import group3.seshealthpatient.fragments.DoctorMessengerFragment;
+import group3.seshealthpatient.fragments.DoctorPatientSearchFragment;
 import group3.seshealthpatient.fragments.DoctorProfileFragment;
 import group3.seshealthpatient.R;
 
@@ -71,7 +72,7 @@ public class DoctorMainActivity extends AppCompatActivity {
      * what I mean with this later in this code.
      */
     private enum MenuStates {
-        DOCTOR_PROFILE, MESSENGER, CLINIC_LOCATION, LOG_OUT
+        DOCTOR_PROFILE, DOCTOR_SEARCH, MESSENGER, CLINIC_LOCATION, LOG_OUT
     }
 
     /**
@@ -123,7 +124,14 @@ public class DoctorMainActivity extends AppCompatActivity {
                                     // change the fragment to the new fragment
                                     ChangeFragment( new DoctorProfileFragment() );
                                     currentState = MenuStates.DOCTOR_PROFILE;
-                                    ;
+                                }
+                                break;
+                            case R.id.nav_doctor_search:
+                                // If the user clicked on a different item than the current item
+                                if (currentState != MenuStates.DOCTOR_SEARCH) {
+                                    // change the fragment to the new fragment
+                                    ChangeFragment( new DoctorPatientSearchFragment());
+                                    currentState = MenuStates.DOCTOR_SEARCH;
                                 }
                                 break;
                             case R.id.nav_doctor_messenger:
