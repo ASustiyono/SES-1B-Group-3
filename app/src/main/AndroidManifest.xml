@@ -42,7 +42,8 @@
         <activity android:name=".activities.UploadVideoActivity" />
         <activity android:name=".activities.OpenSystemGalleryActivity" />
         <activity android:name=".activities.PatientChangePasswordActivity" />
-        <activity android:name=".activities.PatientChangeEmailActivity"></activity>
+        <activity android:name=".activities.PatientChangeEmailActivity" />
+        <activity android:name=".activities.UploadPhoto"></activity>
     </application>
 
 </manifest>
