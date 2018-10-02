@@ -17,7 +17,11 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
+import butterknife.OnClick;
 import group3.seshealthpatient.R;
+import group3.seshealthpatient.activities.LoginActivity;
+import group3.seshealthpatient.activities.RegistrationActivity;
+import group3.seshealthpatient.activities.UploadPhoto;
 import group3.seshealthpatient.adapters.UploadListAdapter;
 import butterknife.ButterKnife;
 
@@ -57,6 +61,8 @@ public class SendFileFragment extends Fragment {
         View view = inflater.inflate( R.layout.fragment_send_file, container, false );
 
         ButterKnife.bind( this, view );
+
+
         /*
         // Stores it on Firebase
         mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -90,6 +96,14 @@ public class SendFileFragment extends Fragment {
 */
         return view;
     }
+
+    @OnClick({R.id.send_select_btn})
+    public void onClick(View v){
+        startActivity(new Intent(getActivity(), UploadPhoto.class));
+
+    }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
