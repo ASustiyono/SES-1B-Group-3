@@ -21,6 +21,7 @@ import android.view.View;
 import com.google.firebase.auth.FirebaseAuth;
 
 import group3.seshealthpatient.fragments.DoctorClinicFragment;
+import group3.seshealthpatient.fragments.DoctorDisplayVideoFragment;
 import group3.seshealthpatient.fragments.DoctorMessengerFragment;
 import group3.seshealthpatient.fragments.DoctorPatientSearchFragment;
 import group3.seshealthpatient.fragments.DoctorProfileFragment;
@@ -72,7 +73,7 @@ public class DoctorMainActivity extends AppCompatActivity {
      * what I mean with this later in this code.
      */
     private enum MenuStates {
-        DOCTOR_PROFILE, DOCTOR_SEARCH, MESSENGER, CLINIC_LOCATION, LOG_OUT
+        DOCTOR_PROFILE, DOCTOR_SEARCH, MESSENGER, CLINIC_LOCATION, LOG_OUT, PATIENTS_VIDEO
     }
 
     /**
@@ -144,6 +145,12 @@ public class DoctorMainActivity extends AppCompatActivity {
                                 if (currentState != MenuStates.CLINIC_LOCATION) {
                                     ChangeFragment( new DoctorClinicFragment() );
                                     currentState = MenuStates.CLINIC_LOCATION;
+                                }
+                                break;
+                            case R.id.nav_doctor_display_video:
+                                if (currentState != MenuStates.PATIENTS_VIDEO) {
+                                    ChangeFragment( new DoctorDisplayVideoFragment() );
+                                    currentState = MenuStates.PATIENTS_VIDEO;
                                 }
                                 break;
                             case R.id.nav_doctor_logout:

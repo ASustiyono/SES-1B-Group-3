@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
      * what I mean with this later in this code.
      */
     private enum MenuStates {
-        PATIENT_INFO, VIEW_DOCTORS, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP, SETTINGS, LOG_OUT
+        PATIENT_INFO, VIEW_DOCTORS, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP,SETTINGS, LOG_OUT
     }
 
     /**
