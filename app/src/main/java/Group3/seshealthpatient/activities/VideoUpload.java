@@ -6,7 +6,7 @@ public class VideoUpload {
 
     public String name;
     public String url;
-
+    private String userId;
     public String getName() {
         return name;
     }
@@ -15,9 +15,14 @@ public class VideoUpload {
         return url;
     }
 
-    public VideoUpload(String name, String url) {
+    public String getUserId() {
+        return userId;
+    }
+
+    public VideoUpload(String name, String url,String userId) {
         this.name = name;
         this.url = url;
+        this.userId = userId;
     }
 
     public VideoUpload(){}

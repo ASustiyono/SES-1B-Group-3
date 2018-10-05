@@ -19,6 +19,9 @@ import android.widget.VideoView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -30,9 +33,12 @@ import group3.seshealthpatient.R;
 public class UploadVideoActivity extends AppCompatActivity {
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
+    private DatabaseReference patientsInfor;
     private VideoView videoView;
+    FirebaseUser userId;
     private EditText txtVideoName;
     private Uri vidUrl;
+
 
 
     public static final String FB_DATABASE_PART="video";
@@ -46,6 +52,7 @@ public class UploadVideoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_upload_video);
         mStorageRef = FirebaseStorage.getInstance().getReference();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference(FB_DATABASE_PART);
+        patientsInfor=FirebaseDatabase.getInstance().getReference();
         videoView = (VideoView) findViewById(R.id.selectedVideo);
         txtVideoName = (EditText)findViewById(R.id.txtVideoname);
 
@@ -80,6 +87,11 @@ public class UploadVideoActivity extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
 
     }
+    public String getUid(){
+        userId = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = userId.getUid();
+        return uid;
+    }
 
     @SuppressWarnings("VisibleForTests")
     public void btnUploadVideo(View v){
@@ -101,7 +113,7 @@ public class UploadVideoActivity extends AppCompatActivity {
                     dialog.dismiss();
                     //Display success toast mas
                     Toast.makeText(getApplicationContext(), "Video uploaded", Toast.LENGTH_SHORT).show();
-                    VideoUpload videoUpload = new VideoUpload(txtVideoName.getText().toString(),downloadUrl.toString());
+                    VideoUpload videoUpload = new VideoUpload(txtVideoName.getText().toString(),downloadUrl.toString(),getUid());
                     //Save video info in to firebase database
                     String uploadID = mDatabaseRef.push().getKey();
                     mDatabaseRef.child(uploadID).setValue(videoUpload);

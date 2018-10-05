@@ -11,11 +11,18 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center"/>
+
     <TextView
+        android:id="@+id/tvVideoName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Video name"
-        android:id="@+id/tvVideoName"/>
+        android:text="Video name" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Patient Name" />
 
 </LinearLayout>
