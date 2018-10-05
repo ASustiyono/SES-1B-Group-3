@@ -7,25 +7,69 @@
     android:orientation="vertical"
     tools:context="group3.seshealthpatient.activities.UploadVideoActivity">
 
-    <Button
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/setting_upload_video_tool"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select video to upload"
-        android:onClick="btnSelectVideo"/>
-    <VideoView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center"
-        android:id="@+id/selectedVideo"/>
-    <EditText
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        app:popupTheme="@style/AppTheme"
+        app:titleTextAppearance="@style/TitleBarTextAppearance" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtVideoname"
-        android:hint="Video Name"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Upload video"
-        android:onClick="btnUploadVideo"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/checkUp_yellow"
+                android:fontFamily="@font/oswald"
+                android:letterSpacing="0.1"
+                android:onClick="btnSelectVideo"
+                android:text="Select video to upload"
+                android:textColor="@color/checkUp_redTxt"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <VideoView
+                android:id="@+id/selectedVideo"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_margin="15dp" />
+
+            <EditText
+                android:id="@+id/txtVideoname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="Add Video Name"
+                android:inputType="text"
+                android:textAlignment="center" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@color/checkUp_yellow"
+                android:fontFamily="@font/oswald"
+                android:letterSpacing="0.1"
+                android:onClick="btnUploadVideo"
+                android:text="Upload video"
+                android:textColor="@color/checkUp_redTxt"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

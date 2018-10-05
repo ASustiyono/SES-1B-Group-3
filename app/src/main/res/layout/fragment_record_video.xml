@@ -7,64 +7,46 @@
     android:orientation="vertical"
     tools:context="group3.seshealthpatient.fragments.RecordVideoFragment">
 
-    <Button
-        android:id="@+id/record_video_btn"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="RECORD VIDEO SNIPPET"
-        android:layout_margin="15dp"
-        android:background="#fff633"
-        android:fontFamily="@font/oswald"
-        android:letterSpacing="0.1"
-        android:textColor="@color/checkUp_redTxt"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/open_gallery_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/record_video_btn"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/whiteColor"
-        android:fontFamily="@font/oswald"
-        android:letterSpacing="0.1"
-        android:text="Open System Gallery"
-        android:textColor="@color/text_dark_gray"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/upload_video_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/open_gallery_btn"
-        android:text="Upload Video"
-        android:layout_margin="15dp"
-        android:background="@color/whiteColor"
-        android:fontFamily="@font/oswald"
-        android:letterSpacing="0.1"
-        android:textColor="@color/text_dark_gray"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+            <Button
+                android:id="@+id/record_video_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="15dp"
+                android:background="#fff633"
+                android:fontFamily="@font/oswald"
+                android:letterSpacing="0.1"
+                android:text="RECORD VIDEO SNIPPET"
+                android:textColor="@color/checkUp_redTxt"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="95dp"
-        android:layout_margin="15dp"
-        android:scaleType="fitStart"
-        android:src="@drawable/temp_video_upload" />
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="510dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+            <Button
+                android:id="@+id/upload_video_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/open_gallery_btn"
+                android:layout_margin="15dp"
+                android:background="@color/whiteColor"
+                android:fontFamily="@font/oswald"
+                android:letterSpacing="0.1"
+                android:text="Upload Video"
+                android:textColor="@color/text_dark_gray"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
@@ -56,6 +57,30 @@ public class UploadVideoActivity extends AppCompatActivity {
         videoView = (VideoView) findViewById(R.id.selectedVideo);
         txtVideoName = (EditText)findViewById(R.id.txtVideoname);
 
+        //Setting Toolbar Text
+        //setTitle( "RESET PASSWORD" );\
+        setTitle("SETTINGS");
+
+        //Adding Toolbar
+        Toolbar toolbar = findViewById(R.id.setting_upload_video_tool);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //startActivity(new Intent(ActivityOne.this, ActivityTwo.class));
+        finish();
     }
 
     public void btnSelectVideo(View v){
@@ -138,12 +163,12 @@ public class UploadVideoActivity extends AppCompatActivity {
                             //Show upload progress
 
                             double progress = (100 * taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
-                            dialog.setMessage("Uploaded"+(int)progress+"%");
+                            dialog.setMessage("Uploaded "+(int)progress+"%");
                         }
                     });
 
-        }else {
-            Toast.makeText(getApplicationContext(),"Please select video",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(),"Please Select Video",Toast.LENGTH_SHORT).show();
         }
     }
 
