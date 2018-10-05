@@ -64,9 +64,11 @@ public class RecordVideoActivity extends AppCompatActivity {
     public void camera(View view) {
         //lunch system camera to take video
         Intent intent = new Intent();
-        intent.setAction(MediaStore.ACTION_VIDEO_CAPTURE);//take video
-        startActivityForResult(intent,100);
         intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 30);
+        intent.setAction(MediaStore.ACTION_VIDEO_CAPTURE);//take video
+
+        startActivityForResult(intent,100);
+
     }
 
 

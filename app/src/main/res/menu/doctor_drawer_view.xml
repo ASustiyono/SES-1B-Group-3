@@ -22,6 +22,11 @@
             android:fontFamily="@font/open_sans_semibold"
             android:letterSpacing="0.1"/>
         <item
+            android:id="@+id/nav_doctor_display_video"
+            android:title="PATIENT'S VIDEO"
+            android:fontFamily="@font/open_sans_semibold"
+            android:letterSpacing="0.1"/>
+        <item
             android:id="@+id/nav_doctor_logout"
             android:title="LOGOUT"
             android:fontFamily="@font/open_sans_semibold"
