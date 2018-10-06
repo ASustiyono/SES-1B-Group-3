@@ -23,6 +23,9 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    // adding to database
+    implementation 'com.google.firebase:firebase-database:11.8.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     // Using the design implementation to use the navigation drawer
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
