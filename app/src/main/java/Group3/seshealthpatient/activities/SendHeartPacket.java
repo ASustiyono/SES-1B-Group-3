@@ -58,7 +58,7 @@ public class SendHeartPacket extends AppCompatActivity {
     private TextView textTitle, textMedCon, textVideo, textHR;
 
 
-    String heartRate = "No BPM value was recorded";
+    String heartRate = "N/A";
 
 
 
