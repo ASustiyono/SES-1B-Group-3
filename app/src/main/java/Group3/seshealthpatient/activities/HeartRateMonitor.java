@@ -2,6 +2,7 @@ package group3.seshealthpatient.activities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
@@ -80,9 +81,20 @@ public class HeartRateMonitor extends Activity {
         image = findViewById(R.id.image);
         text = (TextView) findViewById(R.id.text);
 
+        title=getIntent().getStringExtra("title");
+        saveButton =findViewById(R.id.submitHeartRate);
 
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(HeartRateMonitor.this,SendHeartPacket.class);
+                intent.putExtra("HR",heartRate);
+                intent.putExtra("title",title);
+                startActivity(intent);
 
+            }
+        });
 
 
 
