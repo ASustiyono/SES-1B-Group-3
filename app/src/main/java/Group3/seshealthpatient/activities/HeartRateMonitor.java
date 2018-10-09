@@ -40,7 +40,7 @@ public class HeartRateMonitor extends Activity {
     private Button saveButton;
     private static TextView text = null;
 
-    private static String heartRate ="No Heart was recorded";
+    private static String heartRate ="N/A: No value was recorded";
 
     private static WakeLock wakeLock = null;
 
