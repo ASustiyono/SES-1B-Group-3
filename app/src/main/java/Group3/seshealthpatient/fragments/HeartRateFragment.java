@@ -1,13 +1,16 @@
 package group3.seshealthpatient.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import group3.seshealthpatient.activities.HeartRateMonitor;
 import group3.seshealthpatient.R;
 import butterknife.ButterKnife;
 
@@ -16,6 +19,7 @@ import butterknife.ButterKnife;
  */
 public class HeartRateFragment extends Fragment {
 
+    private Button recordBtn;
 
     public HeartRateFragment() {
         // Required empty public constructor
@@ -34,9 +38,18 @@ public class HeartRateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_heart_rate, container, false);
+        recordBtn=(Button)v.findViewById(R.id.record_heart_rate_btn);
+        recordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getActivity(), HeartRateMonitor.class);
+                startActivity(intent1);
+            }
+        });
         ButterKnife.bind( getActivity() );
 
-        return inflater.inflate( R.layout.fragment_heart_rate, container, false );
+        return v;
     }
 
 }
