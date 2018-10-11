@@ -65,6 +65,7 @@ public class RecordVideoFragment extends Fragment {
             }
         });
         openGalleryBtn=(Button)v.findViewById(R.id.open_gallery_btn);
+        /*
         openGalleryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +73,7 @@ public class RecordVideoFragment extends Fragment {
                 startActivity(intent2);
             }
         });
+        */
         uploadVideoBtn=(Button)v.findViewById(R.id.upload_video_btn);
         uploadVideoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
