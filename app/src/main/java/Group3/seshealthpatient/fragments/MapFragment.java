@@ -1,15 +1,16 @@
 package group3.seshealthpatient.fragments;
 
 
+import android.app.Fragment;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import android.app.Dialog;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,6 +29,9 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import android.Manifest;
 import android.support.annotation.NonNull;
+
+import java.util.Map;
+
 import group3.seshealthpatient.R;
 import butterknife.ButterKnife;
 
@@ -38,7 +43,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     private static final String TAG = "MapFragment";
 
     private Boolean LocationPermissionsGranted = false;  //boolean for location method
-    private GoogleMap Map;
+    private GoogleMap mGoogleMap;
+    private MapView mMapView;
+
     private static final int ERROR_REQUEST = 69; //error code relates to isservicesOK method
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COURSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -56,6 +63,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         //TODO: Instead of hardcoding the title perhaps take the user name from somewhere?
         // Note the use of getActivity() to reference the Activity holding this fragment
         getActivity().setTitle( "YOUR CLINICS" );
+
         isServicesOK();
         getLocationPermission();
     }
@@ -63,10 +71,19 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         ButterKnife.bind( getActivity() );
 
-        return inflater.inflate( R.layout.fragment_map, container, false );
+        // Inflate the layout for this fragment
+        View v = inflater.inflate( R.layout.fragment_map, container, false );
+
+        mMapView = v.findViewById(R.id.map);
+        mMapView.onCreate(savedInstanceState);
+        mMapView.getMapAsync(this);
+        mMapView.onResume();
+
+        //initMap();
+
+        return v;
 
 
     }
@@ -74,7 +91,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     public void onMapReady(GoogleMap googleMap) {
         Toast.makeText(getActivity(), "Maps is ready", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "Map is ready");
-        Map = googleMap;
+        mGoogleMap = googleMap;
         if (LocationPermissionsGranted) {
             getDeviceLocation();
 
@@ -83,18 +100,23 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
                     Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
-            Map.setMyLocationEnabled(true);
-            Map.getUiSettings().setMyLocationButtonEnabled(true);
+            mGoogleMap.setMyLocationEnabled(true);
+            mGoogleMap.getUiSettings().setMyLocationButtonEnabled(true);
 
 
         }
     }
+    /*
     private void initMap() {
+        super.onStart();
         Log.d(TAG, "initializing map...");
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        //SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        //mapFragment.getMapAsync(MapFragment.this);
 
-        mapFragment.getMapAsync(MapFragment.this);
+        //MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        //mapFragment.getMapAsync(MapFragment.this);
     }
+    */
 
     private void getLocationPermission()
     {
@@ -107,14 +129,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
             if (ContextCompat.checkSelfPermission(this.getActivity().getApplicationContext(),
                     COURSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 LocationPermissionsGranted = true;
-                initMap();
+                //initMap();
             } else {
-               requestPermissions(permissions,
-                        LOCATION_PERMISSION_CODE);
+               //requestPermissions(permissions, LOCATION_PERMISSION_CODE);
             }
         } else {
-            requestPermissions(permissions,
-                    LOCATION_PERMISSION_CODE);
+            //requestPermissions(permissions, LOCATION_PERMISSION_CODE);
         }
     }
     private void getDeviceLocation(){
@@ -150,7 +170,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
 
     private void moveCamera(LatLng latLng, float zoom){
         Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude );
-        Map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
     }
 
 
@@ -178,7 +198,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
                     Log.d(TAG, "onRequestPermissionsResult: permission granted");
                     LocationPermissionsGranted = true;
                     //if permissions are granted we initialize the map
-                    initMap();
+                    //initMap();
                 }
             }
         }
