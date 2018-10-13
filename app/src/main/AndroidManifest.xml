@@ -46,7 +46,12 @@
         <activity android:name=".activities.UploadPhoto" />
         <activity android:name=".activities.HeartRateMonitor" />
         <activity android:name=".activities.SendHeartPacket" />
-        <activity android:name=".activities.VideoListActivity"></activity>
+        <activity android:name=".activities.VideoListActivity">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAS2qWWqVC2GjGEfpUQ_tyLQN-RZ0oM8MI"/>
     </application>
 
 </manifest>
