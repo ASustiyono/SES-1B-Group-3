@@ -1,20 +1,25 @@
 package group3.seshealthpatient.activities;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -40,7 +45,7 @@ public class HeartRateMonitor extends Activity {
     private Button saveButton;
     private static TextView text = null;
 
-    private static String heartRate ="N/A: No value was recorded";
+    private static String heartRate;
 
     private static WakeLock wakeLock = null;
 
@@ -70,40 +75,46 @@ public class HeartRateMonitor extends Activity {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_heart_rate_monitor);
-
-        preview = (SurfaceView) findViewById(R.id.preview);
-        previewHolder = preview.getHolder();
-        previewHolder.addCallback(surfaceCallback);
-        previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-
-        image = findViewById(R.id.image);
-        text = (TextView) findViewById(R.id.text);
-
-        title=getIntent().getStringExtra("title");
-        saveButton =findViewById(R.id.submitHeartRate);
-
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(HeartRateMonitor.this,SendHeartPacket.class);
-                intent.putExtra("HR",heartRate);
-                intent.putExtra("title",title);
-                startActivity(intent);
-
-            }
-        });
 
 
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_heart_rate_monitor);
+
+            preview = (SurfaceView) findViewById(R.id.preview);
+            previewHolder = preview.getHolder();
+            previewHolder.addCallback(surfaceCallback);
+            previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+
+            image = findViewById(R.id.image);
+            text = (TextView) findViewById(R.id.text);
+
+            title = getIntent().getStringExtra("title");
+            saveButton = findViewById(R.id.submitHeartRate);
+
+            saveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (heartRate == null) {
+                        Toast.makeText(HeartRateMonitor.this, "BPM Value cannot be null", Toast.LENGTH_LONG).show();
+
+                    } else {
+                        Intent intent = new Intent(HeartRateMonitor.this, SendHeartPacket.class);
+                        intent.putExtra("HR", heartRate);
+                        intent.putExtra("title", title);
+                        startActivity(intent);
+                    }
+
+                }
+
+            });
 
 
-        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "DoNotDimScreen");
+            PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+            wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "DoNotDimScreen");
 
+        }
 
-    }
 
     /**
      * {@inheritDoc}
