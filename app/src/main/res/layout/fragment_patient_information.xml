@@ -39,7 +39,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/daily_checkUp_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -181,35 +181,16 @@
                         android:src="@drawable/information_icon" />
                 </TableRow>
 
-                <TableRow
+                <TextView
+                    android:id="@+id/userInfo_fullName_textView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/userInfo_lastName_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="textEnd"
-                        android:textAllCaps="true"
-                        android:textColor="@color/text_dark_gray"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:id="@+id/userInfo_firstName_textView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textAlignment="textStart"
-                        android:textAllCaps="true"
-                        android:textColor="@color/text_dark_gray"
-                        android:textSize="24sp" />
-
-                </TableRow>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="24sp" />
 
                 <TableRow
                     android:layout_width="match_parent"
