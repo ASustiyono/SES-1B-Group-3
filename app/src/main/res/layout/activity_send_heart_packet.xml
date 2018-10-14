@@ -14,27 +14,63 @@
         android:orientation="vertical"
         android:padding="10dp">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/checkUp_yellow"
-            android:fontFamily="@font/oswald"
-            android:letterSpacing="0.1"
             android:text="Heart Rate Data Packet"
-            android:textColor="@color/checkUp_red"
-            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
             android:textStyle="bold" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heart Rate BPM Value:"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+            <Space
+                android:layout_width="30sp"
+                android:layout_height="12sp" />
+
+            <TextView
+                android:id="@+id/displayHeartRate"
+                android:layout_width="107sp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text=""/>
+        </LinearLayout>
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
-            android:layout_height="219dp"
+            android:layout_height="65dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="1dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="133dp"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="168dp"
-                android:layout_height="65dp"
-                android:text="Heart Rate BPM Value recorded at: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heart Rate recorded on:"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
@@ -43,13 +79,37 @@
                 android:layout_height="12sp" />
 
             <TextView
-                android:id="@+id/displayHeartRate"
-                android:layout_width="152dp"
-                android:layout_height="177dp"
-                android:text=""
+                android:id="@+id/displayTimeStamp"
+                android:layout_width="107sp"
+                android:layout_height="65dp"
                 android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                android:text="" />
         </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="30sp"
+                android:layout_height="12sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/confirmBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            android:background="@color/checkUp_yellow"
+            android:fontFamily="@font/oswald"
+            android:textColor="@color/checkUp_red"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+
 
     </LinearLayout>
 
