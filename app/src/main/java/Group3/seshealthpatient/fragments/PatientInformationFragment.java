@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import group3.seshealthpatient.activities.DailyCheckUpActivity;
 import group3.seshealthpatient.activities.EditInfoActivity;
 import butterknife.ButterKnife;
 import group3.seshealthpatient.R;
@@ -43,7 +44,8 @@ public class PatientInformationFragment extends Fragment {
     DatabaseReference databaseReference;
     FirebaseUser userId;
     String uid;
-    TextView FirstName, LastName, Gender, Age, Height, Weight, BloodType;
+    //TextView FirstName, LastName
+    TextView FullName, Gender, Age, Height, Weight, BloodType;
 
     public PatientInformationFragment() {
         // Required empty public constructor
@@ -66,8 +68,10 @@ public class PatientInformationFragment extends Fragment {
         // Note how we are telling butter knife to bind during the on create view method
         ButterKnife.bind( this, v );
 
-        FirstName = v.findViewById( R.id.userInfo_firstName_textView );
-        LastName = v.findViewById( R.id.userInfo_lastName_textView );
+        //FirstName = v.findViewById( R.id.userInfo_firstName_textView );
+        //LastName = v.findViewById( R.id.userInfo_lastName_textView );
+
+        FullName = v.findViewById( R.id.userInfo_fullName_textView );
         Gender = v.findViewById( R.id.userInfo_gender_textView );
         Age = v.findViewById( R.id.userInfo_age_textView );
         Height = v.findViewById( R.id.userInfo_height_textView );
@@ -80,8 +84,9 @@ public class PatientInformationFragment extends Fragment {
         databaseReference.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                FirstName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "firstName" ).getValue( String.class ) );
-                LastName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "lastName" ).getValue( String.class ) );
+                FullName.setText(dataSnapshot.child( "Patients" ).child( uid ).child( "firstName" ).getValue( String.class ) + " " + dataSnapshot.child( "Patients" ).child( uid ).child( "lastName" ).getValue( String.class )   );
+                //FirstName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "firstName" ).getValue( String.class ) );
+                //LastName.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "lastName" ).getValue( String.class ) );
                 Gender.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "gender" ).getValue( String.class ) );
                 Age.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "age" ).getValue( String.class ) );
                 Height.setText( dataSnapshot.child( "Patients" ).child( uid ).child( "height" ).getValue( String.class ) );
@@ -107,23 +112,15 @@ public class PatientInformationFragment extends Fragment {
     }
     */
 
-    @OnClick(R.id.edit_btn)
+    @OnClick({R.id.edit_btn,R.id.daily_checkUp_btn})
     public void OnClick(View view) {
-        Intent intent = new Intent( getActivity(), EditInfoActivity.class );
-        startActivity( intent );
+        switch(view.getId()) {
+            case R.id.edit_btn:
+                startActivity( new Intent( getActivity(), EditInfoActivity.class ) );
+                break;
+            case R.id.daily_checkUp_btn:
+                startActivity( new Intent( getActivity(), DailyCheckUpActivity.class ));
+                break;
+        }
     }
-
-    /***
-     @OnClick({R.id.edit_btn,R.id.new_btn}) public void OnClick(View view) {
-     switch(view.getId()) {
-     case R.id.edit_btn:
-     //method
-     break;
-     case R.id.new_btn:
-     //method
-     break;
-     }
-     }
-     }
-     */
 }

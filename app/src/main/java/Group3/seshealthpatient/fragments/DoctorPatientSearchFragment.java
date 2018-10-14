@@ -1,12 +1,14 @@
 package group3.seshealthpatient.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import group3.seshealthpatient.R;
 import butterknife.ButterKnife;
 import group3.seshealthpatient.activities.Patients;
+import group3.seshealthpatient.activities.ViewPatientProfileActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -71,15 +74,12 @@ public class DoctorPatientSearchFragment extends Fragment {
         FirebaseRecyclerAdapter<Patients, PatientsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Patients, PatientsViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull PatientsViewHolder holder, int position, @NonNull Patients patients) {
-                //holder.setFirstName( patients.getFirstName() );
-                //holder.setLastName( patients.getLastName() );
                 holder.setFullName( patients.getFirstName() + " " + patients.getLastName() );
                 holder.setGender( patients.getGender() );
                 holder.setAge( patients.getAge() );
                 holder.setHeight( patients.getHeight() );
                 holder.setWeight( patients.getWeight() );
                 holder.setBloodType( patients.getBloodType() );
-
             }
 
             @NonNull
@@ -91,34 +91,50 @@ public class DoctorPatientSearchFragment extends Fragment {
                 return new PatientsViewHolder(view);
             }
         };
+
         mPatientList.setAdapter(firebaseRecyclerAdapter);
         firebaseRecyclerAdapter.startListening();
     }
 
     public static class PatientsViewHolder extends RecyclerView.ViewHolder {
 
-        View mView;
+        private View mView;
+
+        private PatientsViewHolder.ClickListener mClickListener;
 
         public PatientsViewHolder(View itemView) {
             super( itemView );
 
             mView = itemView;
 
+            //listener set on ENTIRE ROW, you may set on individual components within a row.
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mClickListener != null) {
+                        mClickListener.onItemClick( v, getAdapterPosition() );
+                        Intent intent = new Intent( v.getContext(), ViewPatientProfileActivity.class );
+                        v.getContext().startActivity( intent );
+                    }
+                }
+            });
         }
+
+        //Interface to send callbacks...
+        public interface ClickListener{
+            public void onItemClick(View view, int position);
+            public void onItemLongClick(View view, int position);
+        }
+
+        public void setOnClickListener(PatientsViewHolder.ClickListener clickListener){
+            mClickListener = clickListener;
+        }
+
         public void setFullName(String firstName) {
             TextView patientsFullNameView = mView.findViewById( R.id.patients_single_fullName );
             patientsFullNameView.setText(firstName);
         }
-        /*
-        public void setFirstName(String firstName) {
-            TextView patientsFirstNameView = mView.findViewById( R.id.patients_single_firstName );
-            patientsFirstNameView.setText(firstName);
-        }
-        public void setLastName(String lastName) {
-            TextView patientsFirstNameView = mView.findViewById( R.id.patients_single_lastName );
-            patientsFirstNameView.setText(lastName);
-        }
-        */
+
         public void setGender(String gender) {
             TextView patientsGenderView = mView.findViewById( R.id.patients_single_gender );
             patientsGenderView.setText(gender);
