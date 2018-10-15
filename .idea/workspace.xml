@@ -16,6 +16,7 @@
     <list default="true" id="e14f3f40-de65-4f26-836a-4cd3ebe29caf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Group3/seshealthpatient/fragments/MapFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/Group3/seshealthpatient/fragments/MapFragment.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,8 +52,8 @@
       <file leaf-file-name="DailyCheckUpActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/activities/DailyCheckUpActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="235" column="61" lean-forward="false" selection-start-line="235" selection-start-column="61" selection-end-line="235" selection-end-column="61" />
+            <state relative-caret-position="357">
+              <caret line="79" column="4" lean-forward="false" selection-start-line="79" selection-start-column="4" selection-end-line="80" selection-end-column="43" />
               <folding>
                 <element signature="e#5136#5282#0" expanded="true" />
                 <element signature="e#5281#5282#0" expanded="true" />
@@ -129,16 +130,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PatientViewDoctorsFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/fragments/PatientViewDoctorsFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="patients_single_layout.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/patients_single_layout.xml">
           <provider selected="true" editor-type-id="android-designer2">
@@ -175,11 +166,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/fragments/MapFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="159" column="115" lean-forward="false" selection-start-line="159" selection-start-column="115" selection-end-line="159" selection-end-column="115" />
               <folding />
             </state>
           </provider>
@@ -2247,7 +2248,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/fragments/MapFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_patient_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/activities/ViewPatientProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/fragments/DoctorPatientSearchFragment.java" />
@@ -2289,14 +2289,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/activities/DailyCheckUpActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/checkup_single_layout.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/fragments/MapFragment.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="807" />
-    <option name="y" value="55" />
+    <option name="x" value="824" />
+    <option name="y" value="129" />
     <option name="width" value="1080" />
-    <option name="height" value="987" />
+    <option name="height" value="907" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -2403,7 +2404,7 @@
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/HealthClientApp-master/HealthClientApp-master" />
-    <property name="device.picker.selection" value="Nexus_5X_API_P" />
+    <property name="device.picker.selection" value="101b8525" />
     <property name="android.profiler.active" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Agusoy/StudioProjects/SES-1B-Group-3/app/src/main/java/group3/seshealthpatient/activities/HeartRateMonitor.java" />
   </component>
@@ -2607,10 +2608,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="807" y="55" width="1080" height="987" extended-state="0" />
+    <frame x="824" y="129" width="1080" height="907" extended-state="0" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32603937" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3249453" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32555124" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3242542" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -2618,13 +2619,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3249453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32603937" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33019978" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33479214" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32555124" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36446175" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33463034" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.327451" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.327451" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299075" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2703,14 +2704,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/activities/DoctorRegistrationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/doctor_drawer_view.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -3154,17 +3147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_daily_check_up.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="212" column="47" lean-forward="false" selection-start-line="212" selection-start-column="47" selection-end-line="212" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/activities/LocationDefaults.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -3178,27 +3160,6 @@
         <state relative-caret-position="187">
           <caret line="79" column="46" lean-forward="false" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/activities/DailyCheckUpActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="235" column="61" lean-forward="false" selection-start-line="235" selection-start-column="61" selection-end-line="235" selection-end-column="61" />
-          <folding>
-            <element signature="e#5136#5282#0" expanded="true" />
-            <element signature="e#5281#5282#0" expanded="true" />
-            <element signature="e#5389#5682#0" expanded="true" />
-            <element signature="e#5681#5682#0" expanded="true" />
-            <element signature="e#5782#5967#0" expanded="true" />
-            <element signature="e#5966#5967#0" expanded="true" />
-            <element signature="e#6298#6492#0" expanded="true" />
-            <element signature="e#6491#6492#0" expanded="true" />
-            <element signature="e#8429#9517#0" expanded="true" />
-            <element signature="e#9516#9517#0" expanded="true" />
-            <element signature="e#15887#17093#0" expanded="true" />
-            <element signature="e#17092#17093#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3225,6 +3186,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/activities/DailyCheckUpActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="79" column="4" lean-forward="false" selection-start-line="79" selection-start-column="4" selection-end-line="80" selection-end-column="43" />
+          <folding>
+            <element signature="e#5136#5282#0" expanded="true" />
+            <element signature="e#5281#5282#0" expanded="true" />
+            <element signature="e#5389#5682#0" expanded="true" />
+            <element signature="e#5681#5682#0" expanded="true" />
+            <element signature="e#5782#5967#0" expanded="true" />
+            <element signature="e#5966#5967#0" expanded="true" />
+            <element signature="e#6298#6492#0" expanded="true" />
+            <element signature="e#6491#6492#0" expanded="true" />
+            <element signature="e#8429#9517#0" expanded="true" />
+            <element signature="e#9516#9517#0" expanded="true" />
+            <element signature="e#15887#17093#0" expanded="true" />
+            <element signature="e#17092#17093#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_daily_check_up.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="212" column="47" lean-forward="false" selection-start-line="212" selection-start-column="47" selection-end-line="212" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/group3/seshealthpatient/fragments/MapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="159" column="115" lean-forward="false" selection-start-line="159" selection-start-column="115" selection-end-line="159" selection-end-column="115" />
           <folding />
         </state>
       </provider>

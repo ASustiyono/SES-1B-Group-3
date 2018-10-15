@@ -3,6 +3,7 @@ package group3.seshealthpatient.fragments;
 
 import android.app.Fragment;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.annotation.Nullable;
@@ -52,6 +53,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     private static final int LOCATION_PERMISSION_CODE = 1234;
     private static final float DEFAULT_ZOOM = 15f;
     private FusedLocationProviderClient FusedLocationProviderClient;
+
+    private String bestProvider;
+    public LocationManager locationManager;
 
     public MapFragment() {
         // Required empty public constructor
@@ -153,12 +157,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
 
-                            moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
-                                    DEFAULT_ZOOM);
+                            //moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),DEFAULT_ZOOM);
 
                         }else{
                             Log.d(TAG, "onComplete: current location is null");
                             Toast.makeText(getActivity(), "unable to get current location", Toast.LENGTH_SHORT).show();
+                            //locationManager.requestLocationUpdates(bestProvider, 1000, 0, getActivity());
                         }
                     }
                 });
