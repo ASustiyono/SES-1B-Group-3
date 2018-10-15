@@ -27,7 +27,7 @@
         android:letterSpacing="0.1"
         android:text="CHANGE EMAIL"
         android:textAlignment="center"
-        android:textAllCaps="true"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 

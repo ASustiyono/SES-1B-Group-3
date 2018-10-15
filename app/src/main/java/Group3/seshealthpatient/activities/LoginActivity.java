@@ -9,6 +9,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -67,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
     private String tempPassword;
 
     private CheckBox rememberMe;
+    private boolean isRemembered;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,13 +84,31 @@ public class LoginActivity extends AppCompatActivity {
         // Please try to use more String resources (values -> strings.xml) vs hardcoded Strings.
         setTitle( R.string.login_activity_title );
 
+        rememberMe = findViewById(R.id.rememberMe_checkBox);
+
         Auth = FirebaseAuth.getInstance();
 
         firstTime = getSharedPreferences( "PREFERENCE", MODE_PRIVATE )
                 .getBoolean( "firstTime", true );
 
-        //rememberMe = findViewById(R.id.rememberMe_checkBox);
-        //rememberMe.setTypeface( null, Typeface.);
+        isRemembered = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isRemembered", false);
+
+        rememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked) {
+                    isRemembered = getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                            .putBoolean("isRemembered", true).commit();
+
+                }
+                else {
+                    isRemembered = getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                            .putBoolean("isRemembered", false).commit();
+                }
+            }
+        });
+
     }
 
 
@@ -100,6 +120,8 @@ public class LoginActivity extends AppCompatActivity {
     public void LogIn() {
         final String username = usernameEditText.getText().toString();
         String password = passwordEditText.getText().toString();
+
+        checkRemember();
 
         if (username.isEmpty()) {
             usernameEditText.setError( "Email is required" );
@@ -128,16 +150,14 @@ public class LoginActivity extends AppCompatActivity {
                         Intent tutorialIntent = new Intent( LoginActivity.this, TutorialActivity.class );
                         tutorialIntent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
                         startActivity( tutorialIntent );
-                        finish();
                     } else if (EMAIL_ADDRESS_DOCTOR.matcher( username ).matches()) {
                         Intent homePageIntent = new Intent( LoginActivity.this, DoctorMainActivity.class );
                         startActivity( homePageIntent );
-                        finish();
                     } else {
                         Intent homePageIntent = new Intent( LoginActivity.this, MainActivity.class );
                         startActivity( homePageIntent );
-                        finish();
                     }
+
                 } else {
                     Toast.makeText( getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT ).show();
                 }
@@ -157,6 +177,23 @@ public class LoginActivity extends AppCompatActivity {
          Intent intent = new Intent(this, MainActivity.class);
          startActivity(intent);
          */
+    }
+    private void checkRemember() {
+        if(isRemembered) {
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                    .putString("rememberEmail", tempEmail).commit();
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                    .putString("rememberPw", tempPassword).commit();
+
+        }
+        else {
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                    .putString("rememberEmail", "").commit();
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                    .putString("rememberPw", "").commit();
+        }
     }
 
     @OnClick(R.id.register_btn)

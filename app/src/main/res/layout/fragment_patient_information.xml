@@ -43,10 +43,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
+                android:text="DAILY CHECKUP"
                 android:background="#fff633"
                 android:fontFamily="@font/oswald"
                 android:letterSpacing="0.1"
-                android:text="DAILY CHECKUP"
                 android:textColor="@color/checkUp_redTxt"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -87,33 +87,30 @@
                 </TableRow>
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/latestcu_date_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_semibold"
                     android:padding="0dp"
-                    android:text="30/9/2018"
                     android:textAlignment="center"
                     android:textColor="@color/text_dark_gray" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/latestcu_title_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_semibold"
                     android:padding="3dp"
-                    android:text="CT SCAN"
                     android:textAlignment="center"
                     android:textColor="@color/text_dark_gray"
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/latestcu_description_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_semibold"
                     android:padding="0dp"
-                    android:text="Dr. Otto Octavius"
                     android:textAlignment="center"
                     android:textColor="@color/text_dark_gray" />
 
@@ -122,6 +119,20 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/latestcu_heartRate_textview"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/oswald"
+                        android:gravity="center"
+                        android:paddingBottom="2dp"
+                        android:text="HR"
+                        android:textAlignment="center"
+                        android:textColor="@color/LOGO_GREY"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/imageView7"

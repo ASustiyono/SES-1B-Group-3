@@ -75,9 +75,7 @@ public class SliderAdapter extends PagerAdapter {
             "LOCATE THE NEAREST CLINICS\n" +
                     "WITH ONE SIMPLE CLICK.\n" +
                     "\n" +
-                    "PINCH TO ZOOM.\n" +
-                    "\n" +
-                    "CLICK ON CLINICS FOR MORE INFO."
+                    "PINCH TO ZOOM.\n"
     };
 
     public String[] slide_warnings = {

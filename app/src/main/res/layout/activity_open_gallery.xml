@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient_invert"
+    android:background="@color/browser_actions_bg_grey"
     android:orientation="vertical"
     tools:context=".activities.OpenSystemGalleryActivity">
 
@@ -19,21 +19,24 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="SELECT VIDEO FROM SYSTEM GALLERY"
         android:layout_margin="15dp"
         android:background="@color/whiteColor"
         android:fontFamily="@font/oswald"
         android:letterSpacing="0.1"
+        android:onClick="onClick"
+        android:text="SELECT VIDEO FROM SYSTEM GALLERY"
         android:textColor="@color/text_dark_gray"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <VideoView
         android:id="@+id/gallery_video_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/my_iv"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:background="@android:color/transparent" />
 
 

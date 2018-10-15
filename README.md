@@ -1,4 +1,14 @@
 # HealthClientApp
+Welcome to CheckUp! A patient doctor android application.
+
+To use the android APK, download or clone the repository.
+
+Open the project in Android Studio.
+
+Sync with Gradle.
+
+
+<detail><summary> Learning GitHub Tutorial</summary>
 > The information below is from Carlo's Repo.
 
 Simple "training wheels" app for the subject of Software Engineering Studio 1B.
@@ -41,5 +51,5 @@ What not to do. (DO NOT USE THIS LINE BELOW)
 
 INSTEAD... use as such --> 
     2) git push origin <feature_branch> (Please use this)
-
+<detail>
 # SES-1B-Group-3

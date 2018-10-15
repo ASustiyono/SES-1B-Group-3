@@ -135,6 +135,7 @@ public class DoctorMainActivity extends AppCompatActivity {
                                     currentState = MenuStates.DOCTOR_SEARCH;
                                 }
                                 break;
+                                /*
                             case R.id.nav_doctor_messenger:
                                 if (currentState != MenuStates.MESSENGER) {
                                     ChangeFragment( new DoctorMessengerFragment() );
@@ -147,6 +148,7 @@ public class DoctorMainActivity extends AppCompatActivity {
                                     currentState = MenuStates.CLINIC_LOCATION;
                                 }
                                 break;
+                                */
                             case R.id.nav_doctor_display_video:
                                 if (currentState != MenuStates.PATIENTS_VIDEO) {
                                     ChangeFragment( new DoctorDisplayVideoFragment() );

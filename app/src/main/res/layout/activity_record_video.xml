@@ -12,6 +12,7 @@
         android:id="@+id/surfaceview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="15dp"
         android:layout_marginBottom="60dp"
         android:background="@android:color/transparent" />
 
@@ -22,12 +23,12 @@
         android:layout_below="@+id/tool"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
-        android:background="@color/whiteColor"
-        android:fontFamily="@font/oswald"
-        android:letterSpacing="0.1"
         android:onClick="camera"
         android:text="START"
-        android:textColor="@color/text_dark_gray"
+        android:background="#fff633"
+        android:fontFamily="@font/oswald"
+        android:letterSpacing="0.1"
+        android:textColor="@color/checkUp_redTxt"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -38,6 +39,7 @@
         android:layout_height="100dp"
         android:layout_below="@+id/but_camera"
         android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
         android:src="@mipmap/ic_launcher" />
 
     <VideoView
@@ -45,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/my_iv"
+        android:layout_margin="15dp"
         android:background="@android:color/transparent" />
 
     <android.support.v7.widget.Toolbar
