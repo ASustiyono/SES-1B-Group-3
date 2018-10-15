@@ -1,18 +1,23 @@
 # HealthClientApp
 Welcome to CheckUp! A patient doctor android application.
 
-To use the android APK, download or clone the repository.
+## Installing our App!
 
-Open the project in Android Studio.
+### Via APK Install (Recommended)
+1. Go to this Repository https://github.com/apagala/CheckUp-APK
+2. Follow the instruction in the new repository.
 
-Sync with Gradle.
+### Via Android Studio
+1. To use the android APK, download or clone the repository.
+2. Open the project in Android Studio.
+3. Sync with Gradle.
 
+# For Group 3
+## Learning GitHub Tutorial
 
-<detail><summary> Learning GitHub Tutorial</summary>
-> The information below is from Carlo's Repo.
+> <b>The information below is from Carlo's Repo.</b>
 
 Simple "training wheels" app for the subject of Software Engineering Studio 1B.
-
 
 Please let me know if you need any help getting a handle of it.
 
@@ -21,7 +26,7 @@ Start by:
 1) Changing the package name to your team number.
 2) Read the LoginActivity.java file.
 
->The information below is from Andre.
+> <b>The information below is from Andre.</b>
 
 Autonomous Steps working in a Group.
 1) Clone github repository from Alfon
@@ -51,5 +56,3 @@ What not to do. (DO NOT USE THIS LINE BELOW)
 
 INSTEAD... use as such --> 
     2) git push origin <feature_branch> (Please use this)
-<detail>
-# SES-1B-Group-3
