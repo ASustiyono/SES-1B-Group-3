@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient_invert"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context="group3.seshealthpatient.fragments.SendFileFragment">
 
@@ -19,17 +20,5 @@
         android:textColor="@color/checkUp_red"
         android:textSize="18sp"
         android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="95dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/temp_file_upload" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/send_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

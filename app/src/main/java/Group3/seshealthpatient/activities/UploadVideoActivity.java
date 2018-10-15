@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
@@ -50,12 +51,35 @@ public class UploadVideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_video);
+        setTitle( "UPLOAD VIDEO" );
+
         mStorageRef = FirebaseStorage.getInstance().getReference();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference(FB_DATABASE_PART);
         patientsInfor=FirebaseDatabase.getInstance().getReference();
         videoView = (VideoView) findViewById(R.id.selectedVideo);
         txtVideoName = (EditText)findViewById(R.id.txtVideoname);
 
+        //Adding Toolbar
+        Toolbar toolbar = findViewById(R.id.tool);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //startActivity(new Intent(ActivityOne.this, ActivityTwo.class));
+        finish();
     }
 
     public void btnSelectVideo(View v){

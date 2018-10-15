@@ -13,6 +13,8 @@ import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -33,7 +35,7 @@ import group3.seshealthpatient.R;
  *
  * @author Justin Wetherell <phishman3579@gmail.com>
  */
-public class HeartRateMonitor extends Activity {
+public class HeartRateMonitor extends AppCompatActivity {
 
     private static final String TAG = "HeartRateMonitor";
     private static final AtomicBoolean processing = new AtomicBoolean(false);
@@ -75,10 +77,10 @@ public class HeartRateMonitor extends Activity {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
-
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_heart_rate_monitor);
+
+            setTitle( "RECORDING HR" );
 
             preview = (SurfaceView) findViewById(R.id.preview);
             previewHolder = preview.getHolder();
@@ -103,6 +105,7 @@ public class HeartRateMonitor extends Activity {
                         intent.putExtra("HR", heartRate);
                         intent.putExtra("title", title);
                         startActivity(intent);
+                        finish();
                     }
 
                 }
@@ -113,7 +116,28 @@ public class HeartRateMonitor extends Activity {
             PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
             wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "DoNotDimScreen");
 
+        //Adding Toolbar
+        Toolbar toolbar = findViewById(R.id.tool);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //startActivity(new Intent(ActivityOne.this, ActivityTwo.class));
+        finish();
+    }
 
 
     /**

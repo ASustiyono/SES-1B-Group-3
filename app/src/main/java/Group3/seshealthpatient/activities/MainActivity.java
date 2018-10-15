@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import group3.seshealthpatient.fragments.DataPacketFragment;
 import group3.seshealthpatient.fragments.HeartRateFragment;
 import group3.seshealthpatient.fragments.MapFragment;
+import group3.seshealthpatient.fragments.PatientCheckUpFragment;
 import group3.seshealthpatient.fragments.PatientInformationFragment;
 //import group3.seshealthpatient.Fragments.RecordVideoFragment;
 import group3.seshealthpatient.fragments.PatientViewDoctorsFragment;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
      * what I mean with this later in this code.
      */
     private enum MenuStates {
-        PATIENT_INFO, VIEW_DOCTORS, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP,SETTINGS, LOG_OUT
+        PATIENT_INFO, VIEW_DOCTORS, CHECKUPS, DATA_PACKET, HEARTRATE, RECORD_VIDEO, SEND_FILE, NAVIGATION_MAP,SETTINGS, LOG_OUT
     }
 
     /**
@@ -129,6 +130,12 @@ public class MainActivity extends AppCompatActivity {
                                     // change the fragment to the new fragment
                                     ChangeFragment( new PatientInformationFragment() );
                                     currentState = MenuStates.PATIENT_INFO;
+                                }
+                                break;
+                            case R.id.nav_checkups:
+                                if (currentState != MenuStates.CHECKUPS) {
+                                    ChangeFragment( new PatientCheckUpFragment() );
+                                    currentState = MenuStates.CHECKUPS;
                                 }
                                 break;
                             case R.id.nav_view_doctors:

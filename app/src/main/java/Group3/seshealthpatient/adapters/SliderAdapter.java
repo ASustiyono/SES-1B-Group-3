@@ -59,9 +59,8 @@ public class SliderAdapter extends PagerAdapter {
             "THE HEART MONITOR ALLOWS PATIENTS\n" +
                     "TO RECORD THEIR HEART RATE.\n" +
                     "\n" +
-                    "HOLDING YOUR FINGER OVER YOUR\n" +
-                    "CAMERA FLASHLIGHT FOR 3SECS WILL\n" +
-                    "ALLOW US TO DETERMINE YOUR RATE.*",
+                    "PLACE YOUR FINGER ON THE FLASHLIGHT\n" +
+                    "FOR 5S TO DETERMINE YOUR HEART RATE\n",
             "RECORD YOUR VIDEO SNIPPETS AND\n" +
                     "SEND THEM TO YOUR DOCTOR.*\n" +
                     "\n" +
@@ -75,9 +74,7 @@ public class SliderAdapter extends PagerAdapter {
             "LOCATE THE NEAREST CLINICS\n" +
                     "WITH ONE SIMPLE CLICK.\n" +
                     "\n" +
-                    "PINCH TO ZOOM.\n" +
-                    "\n" +
-                    "CLICK ON CLINICS FOR MORE INFO."
+                    "PINCH TO ZOOM.\n"
     };
 
     public String[] slide_warnings = {

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class UploadPhoto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_photo);
+        setTitle( "UPLOAD PHOTO" );
 
         mStorage = FirebaseStorage.getInstance().getReference();
 
@@ -43,6 +45,27 @@ public class UploadPhoto extends AppCompatActivity {
                 startActivityForResult(intent,GALLERY_INTENT );
             }
         });
+        //Adding Toolbar
+        Toolbar toolbar = findViewById(R.id.tool);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //startActivity(new Intent(ActivityOne.this, ActivityTwo.class));
+        finish();
     }
 
     @Override

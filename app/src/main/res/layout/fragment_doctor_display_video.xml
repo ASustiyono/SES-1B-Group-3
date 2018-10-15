@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_invert"
     tools:context=".fragments.DoctorDisplayVideoFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,13 +11,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/display_video_list_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_margin="15dp"
+            android:background="#fff633"
+            android:fontFamily="@font/oswald"
+            android:letterSpacing="0.1"
+            android:text="Display All Patient Videos"
+            android:textColor="@color/checkUp_redTxt"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </FrameLayout>

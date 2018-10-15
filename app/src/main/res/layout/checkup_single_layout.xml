@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="15dp"
+    android:background="@color/whiteColor"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.1"
+            android:text="DATE:" />
+
+        <TextView
+            android:id="@+id/cu_date_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="Date Placeholder"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/text_dark_gray" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.1"
+            android:text="TITLE:" />
+
+        <TextView
+            android:id="@+id/cu_title_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="Title Placeholder"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/text_dark_gray" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.1"
+            android:text="DESCRIPTION:" />
+
+        <TextView
+            android:id="@+id/cu_desc_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="Description Placeholder"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/text_dark_gray" />
+    </TableRow>
+
+</LinearLayout>

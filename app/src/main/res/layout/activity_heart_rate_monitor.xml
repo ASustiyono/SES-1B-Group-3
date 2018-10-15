@@ -1,30 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/layout">
-    <LinearLayout android:id="@+id/top"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:orientation="horizontal"
+    android:background="@color/browser_actions_bg_grey"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tool"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        app:popupTheme="@style/AppTheme"
+        app:titleTextAppearance="@style/TitleBarTextAppearance" />
+
+    <LinearLayout
+        android:id="@+id/top"
         android:layout_width="fill_parent"
-        android:layout_height="50dp">
-        <TextView android:id="@+id/text"
-            android:text="Heart Rate"
-            android:textSize="32sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:id="@+id/text"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </TextView>
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Heart Rate"
+            android:textSize="32sp"></TextView>
+
         <RelativeLayout
-            android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-            <group3.seshealthpatient.activities.HeartbeatView android:id="@+id/image"
-                android:layout_centerInParent="true"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <group3.seshealthpatient.activities.HeartbeatView
+                android:id="@+id/image"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </group3.seshealthpatient.activities.HeartbeatView>
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dp"></group3.seshealthpatient.activities.HeartbeatView>
         </RelativeLayout>
     </LinearLayout>
 
@@ -33,7 +50,8 @@
         android:id="@+id/submitHeartRate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:background="@color/checkUp_yellow"
         android:fontFamily="@font/oswald"
         android:letterSpacing="0.1"
@@ -42,11 +60,12 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <SurfaceView android:id="@+id/preview"
-        android:layout_weight="1"
+    <SurfaceView
+        android:id="@+id/preview"
         android:layout_width="fill_parent"
-        android:layout_height="0dp">
-    </SurfaceView>
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1"></SurfaceView>
 
 
 </LinearLayout>

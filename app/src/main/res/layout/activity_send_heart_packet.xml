@@ -1,118 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient_invert"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-
-    <LinearLayout
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tool"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        app:popupTheme="@style/AppTheme"
+        app:titleTextAppearance="@style/TitleBarTextAppearance" />
 
-        <Space
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Heart Rate Data Packet"
-            android:textColor="@android:color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
+            android:layout_margin="15dp"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Heart Rate BPM Value:"
-                android:textSize="20sp"
-                android:textColor="@android:color/white"/>
-            <Space
-                android:layout_width="30sp"
-                android:layout_height="12sp" />
-
-            <TextView
-                android:id="@+id/displayHeartRate"
-                android:layout_width="107sp"
-                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Heart Rate Data Packet"
+                android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:text=""/>
-        </LinearLayout>
-
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="30dp"
-                android:layout_height="1dp" />
-
-        </LinearLayout>
-
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="133dp"
-            android:orientation="horizontal">
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Heart Rate recorded on:"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Heart Rate BPM Value:"
+                android:textAlignment="center"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
-            <Space
-                android:layout_width="30sp"
-                android:layout_height="12sp" />
-
             <TextView
                 android:id="@+id/displayTimeStamp"
-                android:layout_width="107sp"
-                android:layout_height="65dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Heart Rate recorded on:"
+                android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:text="" />
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/displayHeartRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/confirmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_weight="1"
+                android:background="@color/checkUp_yellow"
+                android:fontFamily="@font/oswald"
+                android:text="Confirm"
+                android:textColor="@color/checkUp_red"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="30sp"
-                android:layout_height="12sp" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/confirmBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirm"
-            android:background="@color/checkUp_yellow"
-            android:fontFamily="@font/oswald"
-            android:textColor="@color/checkUp_red"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            />
-
-
-
-    </LinearLayout>
-
+    </ScrollView>
 
 
 </LinearLayout>
