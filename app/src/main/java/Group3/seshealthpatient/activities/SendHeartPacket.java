@@ -46,6 +46,8 @@ public class SendHeartPacket extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_heart_packet);
 
+        setTitle( "SAVE HR" );
+
         textHR = findViewById(R.id.displayHeartRate);
         textTime = findViewById(R.id.displayTimeStamp);
         sendButton = findViewById(R.id.confirmBtn);
@@ -98,7 +100,7 @@ public class SendHeartPacket extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText( getApplicationContext(), "Saved Heart Rate@", Toast.LENGTH_SHORT ).show();
+                            Toast.makeText( getApplicationContext(), "Saved Heart Rate!", Toast.LENGTH_SHORT ).show();
 
                             userMap.put( "tempHeartRate", heartRate );
 

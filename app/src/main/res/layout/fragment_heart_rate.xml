@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:fontFamily="@font/open_sans_semibold"
+            android:fontFamily="@font/open_sans"
             android:letterSpacing="0.1"
             android:text="1. Press 'Record Heart Rate' to begin recording your heart rate. \n
 2. Place your finger on the back camera and press against it, making sure the camera shows redness. \n

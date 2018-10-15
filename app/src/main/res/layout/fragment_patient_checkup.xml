@@ -14,7 +14,7 @@
         android:padding="15dp"
         android:text="Latest CheckUps"
         android:textAlignment="center"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/text_dark_gray"
         android:textSize="30sp" />
 
     <android.support.v7.widget.RecyclerView
