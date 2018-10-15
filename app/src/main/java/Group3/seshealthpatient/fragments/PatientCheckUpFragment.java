@@ -80,6 +80,8 @@ public class PatientCheckUpFragment extends Fragment {
                 holder.setDate( dataPacket.getDate() );
                 holder.setDescription( dataPacket.getDescription() );
                 holder.setTitle( dataPacket.getTitle() );
+                holder.setHeartRate( dataPacket.getHeartRate() );
+                holder.setLocation( dataPacket.getLocation() );
             }
 
             @NonNull
@@ -143,6 +145,14 @@ public class PatientCheckUpFragment extends Fragment {
         public void setDate(String date) {
             TextView tvDate = mView.findViewById( R.id.cu_date_textview );
             tvDate.setText(date);
+        }
+        public void setHeartRate(String date) {
+            TextView tvHeartRate = mView.findViewById( R.id.cu_heart_textview );
+            tvHeartRate.setText(date);
+        }
+        public void setLocation(String date) {
+            TextView tvLocation = mView.findViewById( R.id.cu_location_textview );
+            tvLocation.setText(date);
         }
     }
 }

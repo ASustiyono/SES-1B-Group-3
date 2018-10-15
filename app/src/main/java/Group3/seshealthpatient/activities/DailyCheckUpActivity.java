@@ -4,14 +4,20 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +26,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -62,7 +70,15 @@ public class DailyCheckUpActivity extends AppCompatActivity {
     private String mCurrentUserId;
 
     private Button send;
-    private Button heartRateBtn, videoBtn, medicalBtn;
+    private Button heartRateBtn, videoBtn, medicalBtn, locationBtn;
+
+    //Current Location
+    private boolean mLocationPermissionGranted;
+    private FusedLocationProviderClient mFusedLocationProviderClient;
+    private TextView txtLocation;
+
+    private String bestProvider;
+    public LocationManager locationManager;
 
     //Data packet
     private DataPacket dataPacket;
@@ -86,6 +102,8 @@ public class DailyCheckUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_daily_check_up );
+
+        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         setTitle( "YOUR DAILY CHECKUP" );
 
@@ -155,6 +173,15 @@ public class DailyCheckUpActivity extends AppCompatActivity {
             }
         } );
 
+        locationBtn = findViewById( R.id.dcu_location_button );
+        locationBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getLocationPermission();
+                setDeviceLocation();
+            }
+        } );
+
         //Adding Toolbar
         Toolbar toolbar = findViewById(R.id.tool);
         setSupportActionBar(toolbar);
@@ -183,8 +210,7 @@ public class DailyCheckUpActivity extends AppCompatActivity {
         mDescription = findViewById(R.id.daily_description_editText);
         mHeartRate = findViewById(R.id.dcu_heart_textview);
         mCurrentTime = findViewById( R.id.dcu_time_textview );
-
-        //mLatestTitle = findViewById( R.id.latestcu_title_textview );
+        txtLocation = findViewById(R.id.dcu_location_textview);
     }
 
     private void CheckUp() {
@@ -192,6 +218,7 @@ public class DailyCheckUpActivity extends AppCompatActivity {
         final String description = mDescription.getText().toString();
         final String heartRate = mHeartRate.getText().toString();
         final String timeAndDate = mCurrentTime.getText().toString();
+        final String location = txtLocation.getText().toString();
 
         final HashMap userMap = new HashMap();
 
@@ -222,6 +249,7 @@ public class DailyCheckUpActivity extends AppCompatActivity {
                     dataPacket.setTitle( title );
                     dataPacket.setHeartRate( heartRate );
                     dataPacket.setDate( timeAndDate );
+                    dataPacket.setLocation( location );
 
                     mUserRef.child("CheckUp Packets").child(queryKey).setValue(dataPacket);
 
@@ -371,5 +399,71 @@ public class DailyCheckUpActivity extends AppCompatActivity {
         intent.setType("video/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Video"), PICK_VIDEO_REQUEST);
+    }
+
+    private void setDeviceLocation() {
+        /*
+         * Get the best and most recent location of the device, which may be null in rare
+         * cases when a location is not available.
+         */
+        try {
+            if (mLocationPermissionGranted) {
+                Task<Location> locationResult = mFusedLocationProviderClient.getLastLocation();
+                locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Location> task) {
+                        if (task.isSuccessful()) {
+                            // Set the map's camera position to the current location of the device.
+                            Location location = task.getResult();
+                            if (location == null) {
+                                location.setLatitude(LocationDefaults.DEFAULT_LOCATION.latitude);
+                                location.setLongitude(LocationDefaults.DEFAULT_LOCATION.longitude);
+                            }
+                            dataPacket.setLatitude(location.getLatitude());
+                            dataPacket.setLongitude(location.getLongitude());
+                            txtLocation.setText(String.format("%s, %s", location.getLatitude(), location.getLongitude()));
+
+                            final HashMap userMap = new HashMap();
+
+                            userMap.put("latitude", location.getLatitude());
+                            userMap.put("longitude", location.getLongitude());
+                        }
+                    }
+                });
+            }
+        } catch (SecurityException e)  {
+            Log.e("Exception: %s", e.getMessage());
+        }
+    }
+
+    private void getLocationPermission() {
+        /*
+         * Request location permission, so that we can get the location of the
+         * device. The result of the permission request is handled by a callback,
+         * onRequestPermissionsResult.
+         */
+        if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                android.Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mLocationPermissionGranted = true;
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    LocationDefaults.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults ) {
+        switch (requestCode) {
+            case LocationDefaults.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    mLocationPermissionGranted = true;
+                }
+            }
+        }
+        setDeviceLocation();
     }
 }

@@ -29,9 +29,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/open_sans_semibold"
             android:padding="5dp"
             android:text="Date Placeholder"
-            android:fontFamily="@font/open_sans_semibold"
             android:textColor="@color/text_dark_gray" />
     </TableRow>
 
@@ -54,9 +54,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/open_sans_semibold"
             android:padding="5dp"
             android:text="Title Placeholder"
-            android:fontFamily="@font/open_sans_semibold"
             android:textColor="@color/text_dark_gray" />
 
     </TableRow>
@@ -80,9 +80,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/open_sans_semibold"
             android:padding="5dp"
             android:text="Description Placeholder"
+            android:textColor="@color/text_dark_gray" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.1"
+            android:text="HEART RATE:" />
+
+        <TextView
+            android:id="@+id/cu_heart_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:fontFamily="@font/open_sans_semibold"
+            android:padding="5dp"
+            android:text="Heart Rate Placeholder"
+            android:textColor="@color/text_dark_gray" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.1"
+            android:text="LOCATION:" />
+
+        <TextView
+            android:id="@+id/cu_location_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/open_sans_semibold"
+            android:padding="5dp"
+            android:text="Location Placeholder"
             android:textColor="@color/text_dark_gray" />
     </TableRow>
 
