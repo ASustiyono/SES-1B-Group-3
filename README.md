@@ -8,9 +8,12 @@ Welcome to CheckUp! A patient doctor android application.
 2. Follow the instruction in the new repository.
 
 ### Via Android Studio
-1. To use the android APK, download or clone the repository.
+1. Download or clone the repository.
 2. Open the project in Android Studio.
 3. Sync with Gradle.
+4. Build Project.
+5. Run App through an emulator or on an android. (Please use minimum API 21 Lollipop)
+6. Done.
 
 # For Group 3
 ## Learning GitHub Tutorial
