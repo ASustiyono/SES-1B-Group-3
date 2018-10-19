@@ -93,6 +93,7 @@ public class HeartRateMonitor extends AppCompatActivity {
             title = getIntent().getStringExtra("title");
             saveButton = findViewById(R.id.submitHeartRate);
 
+            //Launches a new screen when pressed after a Heart Rate Value has been read.
             saveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -135,7 +136,6 @@ public class HeartRateMonitor extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        //startActivity(new Intent(ActivityOne.this, ActivityTwo.class));
         finish();
     }
 
@@ -184,7 +184,7 @@ public class HeartRateMonitor extends AppCompatActivity {
 
     }
 
-
+    //Reads the back camera and calls the ImageProcessing class to process the image redness
     private static PreviewCallback previewCallback = new PreviewCallback() {
 
         /**
@@ -202,7 +202,6 @@ public class HeartRateMonitor extends AppCompatActivity {
             int height = size.height;
 
             int imgAvg = ImageProcessing.decodeYUV420SPtoRedAvg(data.clone(), height, width);
-            // Log.i(TAG, "imgAvg="+imgAvg);
             if (imgAvg == 0 || imgAvg == 255) {
                 processing.set(false);
                 return;
@@ -223,7 +222,6 @@ public class HeartRateMonitor extends AppCompatActivity {
                 newType = TYPE.RED;
                 if (newType != currentType) {
                     beats++;
-                    // Log.d(TAG, "BEAT!! beats="+beats);
                 }
             } else if (imgAvg > rollingAverage) {
                 newType = TYPE.GREEN;
@@ -233,7 +231,7 @@ public class HeartRateMonitor extends AppCompatActivity {
             averageArray[averageIndex] = imgAvg;
             averageIndex++;
 
-            // Transitioned from one state to another to the same
+            // Transitioned from one state to another
             if (newType != currentType) {
                 currentType = newType;
                 image.postInvalidate();
@@ -251,8 +249,6 @@ public class HeartRateMonitor extends AppCompatActivity {
                     return;
                 }
 
-                // Log.d(TAG,
-                // "totalTimeInSecs="+totalTimeInSecs+" beats="+beats);
 
                 if (beatsIndex == beatsArraySize) beatsIndex = 0;
                 beatsArray[beatsIndex] = dpm;
@@ -318,6 +314,7 @@ public class HeartRateMonitor extends AppCompatActivity {
         }
     };
 
+    //Displays the image of the back camera
     private static Camera.Size getSmallestPreviewSize(int width, int height, Camera.Parameters parameters) {
         Camera.Size result = null;
 

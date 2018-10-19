@@ -2,9 +2,11 @@ package group3.seshealthpatient.activities;
 
 /**
  * This abstract class is used to process images.
- *
+ * This class was API downloaded form GitHub
  * @author Justin Wetherell <phishman3579@gmail.com>
  */
+
+//Processes the Redness of the image (redness from your finger)
 public abstract class ImageProcessing {
 
     private static int decodeYUV420SPtoRedSum(byte[] yuv420sp, int width, int height) {
@@ -13,6 +15,8 @@ public abstract class ImageProcessing {
         final int frameSize = width * height;
 
         int sum = 0;
+
+        //Converts the red, green and blue values to determine the amount of "redness"
         for (int j = 0, yp = 0; j < height; j++) {
             int uvp = frameSize + (j >> 1) * width, u = 0, v = 0;
             for (int i = 0; i < width; i++, yp++) {
